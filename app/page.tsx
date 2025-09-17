@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
+import AdmissionModal from '@/components/admission/AdmissionModal';
 import { 
   GraduationCap, 
   Users, 
@@ -63,10 +64,11 @@ export default function HomePage() {
               institution where tradition meets innovation, preparing students for a global future.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
-                Schedule a Visit
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
+              <AdmissionModal 
+                schoolName="Himriti Public School"
+                triggerText="Apply for Admission"
+                triggerVariant="default"
+              />
               <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
                 Download Brochure
               </Button>

@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -5,7 +6,7 @@ interface PageLayoutProps {
   children: React.ReactNode;
 }
 
-export default function PageLayout({ children }: PageLayoutProps) {
+const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -15,4 +16,6 @@ export default function PageLayout({ children }: PageLayoutProps) {
       <Footer />
     </div>
   );
-}
+};
+
+export default PageLayout;

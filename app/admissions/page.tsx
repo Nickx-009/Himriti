@@ -685,7 +685,3 @@ export default function AdmissionsPage() {
     </PageLayout>
   );
 }
-  )
-}
-  )
-}

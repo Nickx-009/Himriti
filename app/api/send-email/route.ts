@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { z } from 'zod';
 
+// Force dynamic rendering for this API route
+export const dynamic = 'force-dynamic';
+
 // Input validation schema using Zod
 const contactFormSchema = z.object({
   parentName: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name too long'),

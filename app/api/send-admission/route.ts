@@ -3,6 +3,9 @@ import { Resend } from 'resend';
 import { admissionFormSchema, type AdmissionFormData } from '@/lib/validation/admission';
 import { GRADE_OPTIONS, RELATIONSHIP_OPTIONS, REFERRAL_SOURCE_OPTIONS } from '@/types/admission';
 
+// Force dynamic rendering for this API route
+export const dynamic = 'force-dynamic';
+
 // Rate limiting configuration
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes

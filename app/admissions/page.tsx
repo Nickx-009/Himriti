@@ -600,6 +600,9 @@ export default function AdmissionsPage() {
             </div>
 
             <div className="mt-16 text-center fade-in-section">
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Contact Admissions */}

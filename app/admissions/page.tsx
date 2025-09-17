@@ -506,6 +506,48 @@ export default function AdmissionsPage() {
             </Card>
 
             <div className="lg:col-span-2 mt-12 fade-in-section">
+              <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-[#d4831f]/10 rounded-2xl flex items-center justify-center">
+                    <Award className="h-8 w-8 text-[#d4831f]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#2d3748]">Annual Payment Discount</h3>
+                    <p className="text-[#4a5568]">Save with advance payment</p>
+                  </div>
+                </div>
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-[#d4831f]/10 px-6 py-3 rounded-full mb-4">
+                    <span className="text-3xl font-bold text-[#d4831f]">20%</span>
+                    <span className="text-[#2d3748] font-semibold">Discount</span>
+                  </div>
+                  <p className="text-[#4a5568] leading-relaxed">
+                    Parents paying the entire year's tuition in advance will receive a 
+                    <strong> 20% discount on tuition fees</strong>.
+                  </p>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 text-[#4a5568]">
+                    <CheckCircle className="h-5 w-5 text-[#d4831f] flex-shrink-0" />
+                    Significant savings on annual tuition
+                  </li>
+                  <li className="flex items-center gap-3 text-[#4a5568]">
+                    <CheckCircle className="h-5 w-5 text-[#d4831f] flex-shrink-0" />
+                    One-time payment convenience
+                  </li>
+                  <li className="flex items-center gap-3 text-[#4a5568]">
+                    <CheckCircle className="h-5 w-5 text-[#d4831f] flex-shrink-0" />
+                    No monthly payment hassles
+                  </li>
+                  <li className="flex items-center gap-3 text-[#4a5568]">
+                    <CheckCircle className="h-5 w-5 text-[#d4831f] flex-shrink-0" />
+                    Available for all grade levels
+                  </li>
+                </ul>
+              </Card>
+            </div>
+
+            <div className="lg:col-span-2 mt-12 fade-in-section">
               <div className="grid md:grid-cols-3 gap-8">
                 <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
                   <div className="flex items-center gap-4 mb-6">
@@ -599,7 +641,88 @@ export default function AdmissionsPage() {
               </div>
             </div>
 
-            <div className="mt-16 text-center fade-in-section">
+            <div className="space-y-6">
+              <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-[#c44569]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Heart className="h-8 w-8 text-[#c44569]" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#2d3748] mb-2">Our Commitment</h3>
+                  <Badge className="bg-[#c44569] text-white px-4 py-2">Social Impact Initiative</Badge>
+                </div>
+                <div className="text-center">
+                  <p className="text-[#4a5568] leading-relaxed mb-4">
+                    We are committed to providing <strong>free education to 50 underprivileged students</strong> 
+                    during our first 3 years of operation (2026-2029).
+                  </p>
+                  <p className="text-sm text-[#4a5568] leading-relaxed">
+                    This initiative reflects our belief that every child deserves access to quality education, 
+                    regardless of their economic background.
+                  </p>
+                </div>
+              </Card>
+
+              <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-[#2d5a27]/10 rounded-2xl flex items-center justify-center">
+                    <Award className="h-8 w-8 text-[#2d5a27]" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#2d3748]">Financial Aid</h3>
+                    <p className="text-[#4a5568]">Supporting deserving students</p>
+                  </div>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3 text-[#4a5568]">
+                    <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                    Merit-based scholarships available
+                  </li>
+                  <li className="flex items-center gap-3 text-[#4a5568]">
+                    <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                    Need-based financial assistance
+                  </li>
+                  <li className="flex items-center gap-3 text-[#4a5568]">
+                    <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                    Sibling discounts available
+                  </li>
+                  <li className="flex items-center gap-3 text-[#4a5568]">
+                    <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                    Flexible payment plans
+                  </li>
+                </ul>
+              </Card>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center fade-in-section">
+            <Card className="bg-gradient-to-r from-[#1f514c]/5 to-[#2d5a27]/5 border-0 shadow-lg rounded-2xl p-8 interactive-card">
+              <h3 className="text-2xl font-bold text-[#2d3748] mb-4">Additional Information</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#1f514c]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Calendar className="h-6 w-6 text-[#1f514c]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">Payment Schedule</h4>
+                  <p className="text-sm text-[#4a5568]">Quarterly payments accepted</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#2d5a27]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <FileText className="h-6 w-6 text-[#2d5a27]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">What's Included</h4>
+                  <p className="text-sm text-[#4a5568]">Comprehensive fee structure</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#d4831f]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Phone className="h-6 w-6 text-[#d4831f]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">Financial Counseling</h4>
+                  <p className="text-sm text-[#4a5568]">Personalized assistance available</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
       </section>
 
       {/* Contact Admissions */}
@@ -684,5 +807,4 @@ export default function AdmissionsPage() {
       </section>
     </PageLayout>
   );
-  )
 }

@@ -128,14 +128,41 @@ export default function AdmissionForm({
   const handleFormSubmit = async (data: AdmissionFormData) => {
     setIsSubmitting(true);
     try {
-      await onSubmit(data);
-      toast.success('Application submitted successfully!');
-      onClose();
+      const response = await fetch('/api/send-admission', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(
+          `Application submitted successfully! Reference: ${result.applicationRef}. Check your email for confirmation.`,
+          { duration: 8000 }
+        );
+        await onSubmit(data); // Call the parent's onSubmit for any additional handling
+      } else {
+        throw new Error(result.error || 'Failed to submit application');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
-      toast.error('Failed to submit application. Please try again.');
+      const errorMessage = error instanceof Error ? error.message : 'Failed to submit application. Please try again.';
+      toast.error(errorMessage, { duration: 6000 });
+      throw error; // Re-throw to prevent modal from closing
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleFormSubmitWrapper = async (data: AdmissionFormData) => {
+    try {
+      await handleFormSubmit(data);
+      onClose();
+    } catch (error) {
+      // Error already handled in handleFormSubmit, don't close modal
     }
   };
 
@@ -524,13 +551,13 @@ export default function AdmissionForm({
         </CardHeader>
         
         <CardContent className="p-8">
-          <form onSubmit={handleSubmit(handleFormSubmit)}>
+          <form onSubmit={handleSubmit(handleFormSubmitWrapper)}>
             <FormSteps
               currentStep={currentStep}
               totalSteps={TOTAL_STEPS}
               onStepChange={handleStepChange}
               onPrevious={handlePrevious}
-              onNext={currentStep === TOTAL_STEPS ? handleSubmit(handleFormSubmit) : handleNext}
+              onNext={currentStep === TOTAL_STEPS ? handleSubmit(handleFormSubmitWrapper) : handleNext}
               canProceed={true} // We'll validate on next/submit
               isFirstStep={currentStep === 1}
               isLastStep={currentStep === TOTAL_STEPS}

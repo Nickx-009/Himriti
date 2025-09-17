@@ -46,38 +46,13 @@ export default function AdmissionModal({
   }, [isOpen]);
 
   const handleSubmit = async (data: AdmissionFormData): Promise<void> => {
-    setIsSubmitting(true);
-    
-    try {
-      // Simulate API call - replace with actual submission logic
-      console.log('Admission Application Data:', data);
-      
-      // Here you would typically:
-      // 1. Send data to your API endpoint
-      // 2. Upload any files
-      // 3. Send confirmation emails
-      // 4. Store in database
-      
-      // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // For now, we'll just show success
-      toast.success(
-        `Application submitted successfully! We'll contact you at ${data.parent.email} within 24 hours.`,
-        {
-          duration: 5000,
-        }
-      );
-      
-      setIsOpen(false);
-      
-    } catch (error) {
-      console.error('Submission error:', error);
-      toast.error('Failed to submit application. Please try again or contact us directly.');
-      throw error; // Re-throw to let the form handle it
-    } finally {
-      setIsSubmitting(false);
-    }
+    // The actual submission is now handled in AdmissionForm.tsx
+    // This function is called after successful submission for any additional handling
+    console.log('Admission application submitted successfully:', {
+      studentName: data.student.fullName,
+      grade: data.student.gradeApplyingFor,
+      parentEmail: data.parent.email
+    });
   };
 
   const handleClose = () => {

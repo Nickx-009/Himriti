@@ -13,6 +13,7 @@ import {
   BookOpen,
   Globe
 } from 'lucide-react';
+import AdmissionModal from '@/components/admission/AdmissionModal';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -112,10 +113,11 @@ export default function Header() {
             <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white">
               Schedule Visit
             </Button>
-            <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
-              Apply Now
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <AdmissionModal 
+              schoolName="Himriti Public School"
+              triggerText="Apply Now"
+              triggerVariant="default"
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -157,9 +159,11 @@ export default function Header() {
               <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white">
                 Schedule Visit
               </Button>
-              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
-                Apply Now
-              </Button>
+              <AdmissionModal 
+                schoolName="Himriti Public School"
+                triggerText="Apply Now"
+                triggerVariant="default"
+              />
             </div>
           </div>
         )}

@@ -28,6 +28,7 @@ import {
   Handshake
 } from 'lucide-react';
 import Link from 'next/link';
+import AdmissionModal from '@/components/admission/AdmissionModal';
 
 export default function GlobalPartnershipsPage() {
   useEffect(() => {
@@ -542,10 +543,11 @@ export default function GlobalPartnershipsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/admissions">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
-                Apply for Admission
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
+              <AdmissionModal 
+                schoolName="Himriti Public School"
+                triggerText="Apply for Admission"
+                triggerVariant="default"
+              />
             </Link>
             <Link href="/contact">
               <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">

@@ -24,6 +24,7 @@ import {
   Target
 } from 'lucide-react';
 import Link from 'next/link';
+import AdmissionModal from '@/components/admission/AdmissionModal';
 
 export default function AdmissionsPage() {
   useEffect(() => {
@@ -65,10 +66,11 @@ export default function AdmissionsPage() {
               Applications are now open for the 2026-27 academic year across all grade levels.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
-                Start Application
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
+              <AdmissionModal 
+                schoolName="Himriti Public School"
+                triggerText="Start Application"
+                triggerVariant="default"
+              />
               <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
                 Download Brochure
                 <Download className="ml-2 h-5 w-5" />
@@ -673,10 +675,11 @@ export default function AdmissionsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
-              Apply Now
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Link href="/contact">
+              <AdmissionModal 
+                schoolName="Himriti Public School"
+                triggerText="Apply Now"
+                triggerVariant="default"
+              />
               <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
                 Ask Questions
                 <ArrowRight className="ml-2 h-5 w-5" />

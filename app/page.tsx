@@ -365,10 +365,11 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white flex-1 h-12 btn-interactive">
-                  Download Application
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <AdmissionModal 
+                  schoolName="Himriti Public School"
+                  triggerText="Apply Now"
+                  triggerVariant="default"
+                />
                 <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white flex-1 h-12 btn-interactive">
                   Schedule Tour
                 </Button>

@@ -1,62 +1,105 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { toast } from 'sonner';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { X, GraduationCap, Users, FileText, CheckCircle } from 'lucide-react';
-import { toast } from 'sonner';
-import AdmissionForm from './AdmissionForm';
-import { AdmissionFormData } from '@/lib/validation/admission';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { GraduationCap, Send } from 'lucide-react';
+import { GRADE_OPTIONS } from '@/types/admission';
+
+// Simple form schema with phone required instead of email
+const simpleAdmissionSchema = z.object({
+  studentName: z.string().min(2, 'Student name must be at least 2 characters'),
+  gradeApplyingFor: z.string().min(1, 'Please select a grade'),
+  parentName: z.string().min(2, 'Parent name must be at least 2 characters'),
+  phoneNumber: z.string().min(10, 'Please enter a valid phone number'),
+  email: z.string().email('Please enter a valid email address').optional().or(z.literal('')),
+  message: z.string().min(20, 'Please provide more details (minimum 20 characters)'),
+});
+
+type SimpleAdmissionData = z.infer<typeof simpleAdmissionSchema>;
 
 interface AdmissionModalProps {
   schoolName?: string;
-  schoolLogo?: string;
   triggerText?: string;
   triggerVariant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link' | 'destructive';
 }
 
 export default function AdmissionModal({
   schoolName = "Himriti Public School",
-  schoolLogo,
   triggerText = "Apply for Admission",
   triggerVariant = "default"
 }: AdmissionModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Handle escape key to close modal
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isOpen) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+    watch,
+    reset,
+  } = useForm<SimpleAdmissionData>({
+    resolver: zodResolver(simpleAdmissionSchema),
+  });
+
+  const watchedGrade = watch('gradeApplyingFor');
+
+  const onSubmit = async (data: SimpleAdmissionData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          parentName: data.parentName,
+          email: data.email || data.phoneNumber + '@phone.contact', // Fallback for phone-only contacts
+          phoneNumber: data.phoneNumber,
+          gradeLevel: GRADE_OPTIONS.find(g => g.value === data.gradeApplyingFor)?.label || data.gradeApplyingFor,
+          inquiryType: 'admissions',
+          message: `ADMISSION APPLICATION
+
+Student Name: ${data.studentName}
+Grade Applying For: ${GRADE_OPTIONS.find(g => g.value === data.gradeApplyingFor)?.label || data.gradeApplyingFor}
+Parent/Guardian: ${data.parentName}
+Phone: ${data.phoneNumber}
+${data.email ? `Email: ${data.email}` : ''}
+
+Message:
+${data.message}`,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success('Application submitted successfully! We\'ll contact you within 24 hours.');
+        reset();
         setIsOpen(false);
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.error || 'Failed to submit application. Please try again.');
       }
-    };
-
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      // Prevent body scroll when modal is open
-      document.body.style.overflow = 'hidden';
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('Failed to submit application. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
-
-  const handleSubmit = async (data: AdmissionFormData): Promise<void> => {
-    // The actual submission is now handled in AdmissionForm.tsx
-    // This function is called after successful submission for any additional handling
-    console.log('Admission application submitted successfully:', {
-      studentName: data.student.fullName,
-      grade: data.student.gradeApplyingFor,
-      parentEmail: data.parent.email
-    });
   };
 
   const handleClose = () => {
     if (!isSubmitting) {
+      reset();
       setIsOpen(false);
     }
   };
@@ -70,11 +113,8 @@ export default function AdmissionModal({
           className={`
             ${triggerVariant === 'default' ? 'bg-[#1f514c] hover:bg-[#2a6b65] text-white' : ''}
             ${triggerVariant === 'outline' ? 'border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white' : ''}
-            font-semibold px-8 py-3 rounded-lg transition-all duration-200 
-            shadow-lg hover:shadow-xl transform hover:scale-105
-            focus:outline-none focus:ring-2 focus:ring-[#1f514c] focus:ring-offset-2
+            px-10 py-4 text-lg h-14 btn-interactive
           `}
-          aria-label={`Open ${schoolName} admission application form`}
         >
           <GraduationCap className="mr-2 h-5 w-5" />
           {triggerText}
@@ -82,86 +122,158 @@ export default function AdmissionModal({
       </DialogTrigger>
       
       <DialogContent 
-        className="max-w-6xl w-full max-h-[90vh] overflow-hidden p-0 gap-0"
-        aria-describedby="admission-modal-description"
+        className="max-w-2xl w-full max-h-[90vh] overflow-y-auto"
       >
-        <DialogHeader className="sr-only">
+        <DialogHeader>
           <DialogTitle>
-            {schoolName} Admission Application
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-[#1f514c]/10 rounded-lg flex items-center justify-center">
+                <GraduationCap className="h-5 w-5 text-[#1f514c]" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold text-[#2d3748]">Apply for Admission</h2>
+                <p className="text-sm text-[#4a5568] font-normal">{schoolName}</p>
+              </div>
+            </div>
           </DialogTitle>
         </DialogHeader>
         
-        <div id="admission-modal-description" className="sr-only">
-          Complete admission application form for {schoolName}. 
-          Fill out student information, parent details, and academic requirements.
-        </div>
-
-        {/* Modal Header */}
-        <div className="bg-gradient-to-r from-[#1f514c] to-[#2d5a27] text-white p-6 relative">
-          <button
-            onClick={handleClose}
-            disabled={isSubmitting}
-            className="absolute top-4 right-4 p-2 rounded-full hover:bg-white/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            aria-label="Close admission application"
-          >
-            <X className="h-5 w-5" />
-          </button>
-          
-          <div className="flex items-center gap-4 mb-4">
-            {schoolLogo ? (
-              <img 
-                src={schoolLogo} 
-                alt={`${schoolName} logo`}
-                className="w-12 h-12 rounded-lg bg-white/10 p-1"
-              />
-            ) : (
-              <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center">
-                <GraduationCap className="h-6 w-6" />
-              </div>
-            )}
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <h1 className="text-2xl font-bold">{schoolName}</h1>
-              <p className="opacity-90">Admission Application</p>
+              <Label htmlFor="studentName" className="text-sm font-semibold text-[#2d3748]">
+                Student Name *
+              </Label>
+              <Input
+                id="studentName"
+                {...register('studentName')}
+                placeholder="Enter student's full name"
+                className="mt-1 focus:border-[#1f514c] focus:ring-[#1f514c]"
+              />
+              {errors.studentName && (
+                <p className="text-red-500 text-sm mt-1">{errors.studentName.message}</p>
+              )}
             </div>
-          </div>
-          
-          <div className="flex flex-wrap gap-4 text-sm">
-            <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-              <Users className="mr-1 h-3 w-3" />
-              K-12 Education
-            </Badge>
-            <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-              <FileText className="mr-1 h-3 w-3" />
-              5-Step Process
-            </Badge>
-            <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-              <CheckCircle className="mr-1 h-3 w-3" />
-              Secure & Confidential
-            </Badge>
-          </div>
-        </div>
 
-        {/* Modal Content */}
-        <div className="overflow-y-auto max-h-[calc(90vh-200px)]">
-          <AdmissionForm
-            onSubmit={handleSubmit}
-            onClose={handleClose}
-            schoolName={schoolName}
-          />
-        </div>
-
-        {/* Modal Footer */}
-        <div className="bg-[#faf7f2] p-4 border-t border-gray-200">
-          <div className="flex items-center justify-between text-sm text-[#4a5568]">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-[#1f514c]" />
-              <span>Your information is secure and confidential</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span>Need help? Contact us at himritihigh@gmail.com</span>
+            <div>
+              <Label htmlFor="gradeApplyingFor" className="text-sm font-semibold text-[#2d3748]">
+                Grade Applying For *
+              </Label>
+              <Select
+                value={watchedGrade || ''}
+                onValueChange={(value) => setValue('gradeApplyingFor', value)}
+              >
+                <SelectTrigger className="mt-1 focus:border-[#1f514c] focus:ring-[#1f514c]">
+                  <SelectValue placeholder="Select grade" />
+                </SelectTrigger>
+                <SelectContent>
+                  {GRADE_OPTIONS.map((grade) => (
+                    <SelectItem key={grade.value} value={grade.value}>
+                      {grade.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {errors.gradeApplyingFor && (
+                <p className="text-red-500 text-sm mt-1">{errors.gradeApplyingFor.message}</p>
+              )}
             </div>
           </div>
-        </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="parentName" className="text-sm font-semibold text-[#2d3748]">
+                Parent/Guardian Name *
+              </Label>
+              <Input
+                id="parentName"
+                {...register('parentName')}
+                placeholder="Enter parent/guardian name"
+                className="mt-1 focus:border-[#1f514c] focus:ring-[#1f514c]"
+              />
+              {errors.parentName && (
+                <p className="text-red-500 text-sm mt-1">{errors.parentName.message}</p>
+              )}
+            </div>
+
+            <div>
+              <Label htmlFor="phoneNumber" className="text-sm font-semibold text-[#2d3748]">
+                Phone Number *
+              </Label>
+              <Input
+                id="phoneNumber"
+                type="tel"
+                {...register('phoneNumber')}
+                placeholder="Enter phone number"
+                className="mt-1 focus:border-[#1f514c] focus:ring-[#1f514c]"
+              />
+              {errors.phoneNumber && (
+                <p className="text-red-500 text-sm mt-1">{errors.phoneNumber.message}</p>
+              )}
+            </div>
+          </div>
+
+          <div>
+            <Label htmlFor="email" className="text-sm font-semibold text-[#2d3748]">
+              Email Address (Optional)
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              {...register('email')}
+              placeholder="Enter email address"
+              className="mt-1 focus:border-[#1f514c] focus:ring-[#1f514c]"
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+            )}
+          </div>
+
+          <div>
+            <Label htmlFor="message" className="text-sm font-semibold text-[#2d3748]">
+              Tell us about your interest in our school *
+            </Label>
+            <Textarea
+              id="message"
+              {...register('message')}
+              placeholder="Please share why you're interested in Himriti Public School and any specific questions you have..."
+              className="mt-1 focus:border-[#1f514c] focus:ring-[#1f514c]"
+              rows={4}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+            )}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 pt-4">
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-[#1f514c] hover:bg-[#2a6b65] text-white flex-1 btn-interactive"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  Submit Application
+                  <Send className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleClose}
+              disabled={isSubmitting}
+              className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
+            >
+              Cancel
+            </Button>
+          </div>
+        </form>
       </DialogContent>
     </Dialog>
   );

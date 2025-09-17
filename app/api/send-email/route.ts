@@ -5,7 +5,7 @@ import { z } from 'zod';
 // Input validation schema using Zod
 const contactFormSchema = z.object({
   parentName: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name too long'),
-  email: z.string().email('Invalid email address'),
+  email: z.string().email('Invalid email address').optional().or(z.literal('')),
   phoneNumber: z.string().optional(),
   gradeLevel: z.string().optional(),
   inquiryType: z.string().optional(),
@@ -201,10 +201,14 @@ export async function POST(request: NextRequest) {
   const startTime = Date.now();
   
   try {
+    console.log('📧 Email API: Starting request processing');
+    
     // Get client IP for rate limiting
     const clientIP = request.headers.get('x-forwarded-for') || 
                     request.headers.get('x-real-ip') || 
                     'unknown';
+    
+    console.log('📧 Email API: Client IP:', clientIP);
 
     // Check rate limiting
     if (!checkRateLimit(clientIP)) {
@@ -221,6 +225,8 @@ export async function POST(request: NextRequest) {
     // Check if Resend is properly configured
     if (!resend) {
       console.error('Resend client not initialized - API key missing or invalid');
+      console.error('RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY);
+      console.error('RESEND_API_KEY format valid:', process.env.RESEND_API_KEY?.startsWith('re_'));
       return NextResponse.json(
         { error: 'Email service is temporarily unavailable. Please try again later or contact us directly.' },
         { status: 503 }
@@ -231,6 +237,7 @@ export async function POST(request: NextRequest) {
     let body;
     try {
       body = await request.json();
+      console.log('📧 Email API: Request body received:', JSON.stringify(body, null, 2));
     } catch (error) {
       console.error('Invalid JSON in request body:', error);
       return NextResponse.json(
@@ -243,6 +250,7 @@ export async function POST(request: NextRequest) {
     const validationResult = contactFormSchema.safeParse(body);
     if (!validationResult.success) {
       console.warn('Validation failed:', validationResult.error.errors);
+      console.log('📧 Email API: Validation errors:', JSON.stringify(validationResult.error.errors, null, 2));
       return NextResponse.json(
         { 
           error: 'Invalid input data',
@@ -256,6 +264,7 @@ export async function POST(request: NextRequest) {
     }
 
     const validatedData = validationResult.data;
+    console.log('📧 Email API: Validated data:', JSON.stringify(validatedData, null, 2));
 
     // Generate email content
     const htmlContent = generateEmailHTML(validatedData);
@@ -265,7 +274,7 @@ export async function POST(request: NextRequest) {
     const emailData = {
       from: 'Himriti Public School <noreply@himriti.com>',
       to: ['himritihigh@gmail.com'],
-      replyTo: validatedData.email,
+      replyTo: validatedData.email && validatedData.email.trim() !== '' ? validatedData.email : undefined,
       subject: `New Contact Form Submission${validatedData.inquiryType ? ` - ${validatedData.inquiryType}` : ''} - ${validatedData.parentName}`,
       html: htmlContent,
       text: textContent,
@@ -281,16 +290,23 @@ export async function POST(request: NextRequest) {
     };
 
     // Send email using Resend
-    console.log(`Attempting to send email for: ${validatedData.parentName} (${validatedData.email})`);
+    console.log(`📧 Email API: Attempting to send email for: ${validatedData.parentName} (${validatedData.email || 'no email provided'})`);
+    console.log('📧 Email API: Email data:', JSON.stringify({
+      ...emailData,
+      html: '[HTML CONTENT]',
+      text: '[TEXT CONTENT]'
+    }, null, 2));
     
     const { data, error } = await resend.emails.send(emailData);
 
     if (error) {
       console.error('Resend API error:', {
         error: error,
+        errorMessage: error.message,
+        errorName: error.name,
         timestamp: new Date().toISOString(),
         clientIP: clientIP,
-        userEmail: validatedData.email
+        userEmail: validatedData.email || 'no email provided'
       });
 
       // Handle specific Resend errors
@@ -316,9 +332,9 @@ export async function POST(request: NextRequest) {
 
     // Log successful email send
     const processingTime = Date.now() - startTime;
-    console.log(`Email sent successfully:`, {
+    console.log(`📧 Email API: Email sent successfully:`, {
       emailId: data?.id,
-      recipient: validatedData.email,
+      recipient: validatedData.email || 'no email provided',
       parentName: validatedData.parentName,
       inquiryType: validatedData.inquiryType || 'general',
       processingTime: `${processingTime}ms`,
@@ -339,7 +355,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     // Log unexpected errors
     const processingTime = Date.now() - startTime;
-    console.error('Unexpected error in send-email API:', {
+    console.error('📧 Email API: Unexpected error:', {
       error: error instanceof Error ? error.message : 'Unknown error',
       stack: error instanceof Error ? error.stack : undefined,
       timestamp: new Date().toISOString(),

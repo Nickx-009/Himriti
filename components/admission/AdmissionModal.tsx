@@ -57,18 +57,15 @@ export default function AdmissionModal({
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          parentName: data.parentName,
-          email: data.email || data.phoneNumber + '@phone.contact', // Fallback for phone-only contacts
-          phoneNumber: data.phoneNumber,
-          gradeLevel: GRADE_OPTIONS.find(g => g.value === data.gradeApplyingFor)?.label || data.gradeApplyingFor,
-          inquiryType: 'admissions',
-          message: `ADMISSION APPLICATION
+      console.log('🎯 Modal: Submitting form data:', data);
+      
+      const requestBody = {
+        parentName: data.parentName,
+        email: data.email && data.email.trim() !== '' ? data.email : undefined,
+        phoneNumber: data.phoneNumber,
+        gradeLevel: GRADE_OPTIONS.find(g => g.value === data.gradeApplyingFor)?.label || data.gradeApplyingFor,
+        inquiryType: 'admissions',
+        message: `ADMISSION APPLICATION
 
 Student Name: ${data.studentName}
 Grade Applying For: ${GRADE_OPTIONS.find(g => g.value === data.gradeApplyingFor)?.label || data.gradeApplyingFor}
@@ -78,20 +75,40 @@ ${data.email ? `Email: ${data.email}` : ''}
 
 Message:
 ${data.message}`,
-        }),
+      };
+      
+      console.log('🎯 Modal: Request body:', requestBody);
+      
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
       });
 
+      console.log('🎯 Modal: Response status:', response.status);
+      
+      const result = await response.json();
+      console.log('🎯 Modal: Response data:', result);
+      
       if (response.ok) {
-        toast.success('Application submitted successfully! We\'ll contact you within 24 hours.');
+        toast.success('Application submitted successfully! We\'ll contact you within 24 hours.', {
+          duration: 5000
+        });
         reset();
         setIsOpen(false);
       } else {
-        const errorData = await response.json();
-        toast.error(errorData.error || 'Failed to submit application. Please try again.');
+        console.error('🎯 Modal: Server error:', result);
+        toast.error(result.error || 'Failed to submit application. Please try again.', {
+          duration: 6000
+        });
       }
     } catch (error) {
-      console.error('Form submission error:', error);
-      toast.error('Failed to submit application. Please try again.');
+      console.error('🎯 Modal: Form submission error:', error);
+      toast.error('Failed to submit application. Please check your connection and try again.', {
+        duration: 6000
+      });
     } finally {
       setIsSubmitting(false);
     }

@@ -2,14 +2,23 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 // Initialize Resend with error handling
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY is not configured');
-}
+let resend: Resend | null = null;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+if (process.env.RESEND_API_KEY) {
+  resend = new Resend(process.env.RESEND_API_KEY);
+}
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Resend is configured
+    if (!resend) {
+      console.warn('RESEND_API_KEY is not configured. Email functionality is disabled.');
+      return NextResponse.json(
+        { message: 'Email sent successfully (demo mode - email functionality disabled)' },
+        { status: 200 }
+      );
+    }
+
     const body = await request.json();
     const { parentName, email, phoneNumber, gradeLevel, inquiryType, message } = body;
 

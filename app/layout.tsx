@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Himriti Public School - Embracing Heritage, Inspiring Future',
     description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
     images: ['https://himriti.com/Himriti.png'],
-    site: '@himritischool',
+    site: '@himritipublicschool',
     creator: '@himritipublicschool',
   },
   robots: {

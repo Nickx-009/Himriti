@@ -48,14 +48,9 @@ export default function Header() {
             <Link
               href="/"
               className={`transition-colors font-medium ${
-                isActiveLink("/")
-                  ? "text-[#1f514c] font-semibold"
-                  : "text-[#4a5568] hover:text-[#1f514c]"
-              }`}
-            >
-              Home
+                Apply Now
+              </Button>
             </Link>
-
             {/* About dropdown */}
             <div className="relative group">
               <Link

@@ -20,11 +20,22 @@ export const metadata: Metadata = {
     siteName: 'Himriti Public School',
     type: 'website',
     locale: 'en_IN',
+    images: [
+      {
+        url: 'https://himriti.com/Himriti.png',
+        width: 1200,
+        height: 630,
+        alt: 'Himriti Public School Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Himriti Public School - Embracing Heritage, Inspiring Future',
     description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
+    images: ['https://himriti.com/Himriti.png'],
+    site: '@himritischool',
+    creator: '@himritischool',
   },
   robots: {
     index: true,

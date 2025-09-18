@@ -32,19 +32,10 @@ export const metadata: Metadata = {
     title: 'Contact Himriti Public School - Get in Touch | Rampur Bushahr',
     description: 'Contact Himriti Public School in Rampur Bushahr, Shimla, Himachal Pradesh. Phone: +91 90154 17203, Email: himritihigh@gmail.com.',
     url: 'https://himriti.com/contact',
-    images: [
-      {
-        url: 'https://himriti.com/Himriti.png',
-        width: 1200,
-        height: 630,
-        alt: 'Contact Himriti Public School',
-      },
-    ],
   },
   twitter: {
     title: 'Contact Himriti Public School - Get in Touch | Rampur Bushahr',
     description: 'Contact Himriti Public School in Rampur Bushahr, Shimla, Himachal Pradesh. Phone: +91 90154 17203, Email: himritihigh@gmail.com.',
-    images: ['https://himriti.com/Himriti.png'],
   },
 };
 

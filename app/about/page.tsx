@@ -41,19 +41,10 @@ export const metadata: Metadata = {
     title: 'About Himriti Public School - Our Vision, Mission & Values',
     description: 'Learn about the foundation, vision, mission, core values, and unique Himalayan campus of Himriti Public School in Rampur Bushahr.',
     url: 'https://himriti.com/about',
-    images: [
-      {
-        url: 'https://himriti.com/Himriti.png',
-        width: 1200,
-        height: 630,
-        alt: 'About Himriti Public School - Our Vision and Mission',
-      },
-    ],
   },
   twitter: {
     title: 'About Himriti Public School - Our Vision, Mission & Values',
     description: 'Learn about the foundation, vision, mission, core values, and unique Himalayan campus of Himriti Public School in Rampur Bushahr.',
-    images: ['https://himriti.com/Himriti.png'],
   },
 };
 

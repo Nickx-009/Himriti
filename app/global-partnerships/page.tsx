@@ -39,19 +39,10 @@ export const metadata: Metadata = {
     title: 'Global Partnerships - International Education | Himriti Public School',
     description: 'Explore Himriti Public School\'s global partnerships for international education, cultural exchange, sister schools, and university collaborations.',
     url: 'https://himriti.com/global-partnerships',
-    images: [
-      {
-        url: 'https://himriti.com/Himriti.png',
-        width: 1200,
-        height: 630,
-        alt: 'Himriti Public School Global Partnerships',
-      },
-    ],
   },
   twitter: {
     title: 'Global Partnerships - International Education | Himriti Public School',
     description: 'Explore Himriti Public School\'s global partnerships for international education, cultural exchange, sister schools, and university collaborations.',
-    images: ['https://himriti.com/Himriti.png'],
   },
 };
 

@@ -11,7 +11,8 @@ import {
   ArrowRight,
   Heart,
   BookOpen,
-  Globe
+  Globe,
+  Users
 } from 'lucide-react';
 import AdmissionModal from '@/components/admission/AdmissionModal';
 

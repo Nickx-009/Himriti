@@ -4,7 +4,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Heart, BookOpen, Globe, Users } from "lucide-react";
+import { Menu, X, Heart, BookOpen, Globe, Users, ChevronRight } from "lucide-react";
 import AdmissionModal from "@/components/admission/AdmissionModal";
 
 export default function Header() {
@@ -30,13 +30,6 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4">
-            <Link href="/contact">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
-                Apply Now
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            </div>
             <div>
               <h1 className="text-lg font-bold text-[#2d3748]">Himriti</h1>
               <p className="text-sm text-[#4a5568] -mt-1">Public School</p>
@@ -48,6 +41,14 @@ export default function Header() {
             <Link
               href="/"
               className={`transition-colors font-medium ${
+                isActiveLink("/")
+                  ? "text-[#1f514c] font-semibold"
+                  : "text-[#4a5568] hover:text-[#1f514c]"
+              }`}
+            >
+              Home
+            </Link>
+
             {/* About dropdown */}
             <div className="relative group">
               <Link
@@ -296,6 +297,7 @@ export default function Header() {
               >
                 <Link href="/admissions">Apply Now</Link>
               </Button>
+            </nav>
           </div>
         )}
       </div>

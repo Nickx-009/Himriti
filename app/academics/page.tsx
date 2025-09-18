@@ -38,10 +38,19 @@ export const metadata: Metadata = {
     title: 'Academics - Comprehensive K-12 Education | Himriti Public School',
     description: 'Explore our comprehensive K-12 academic programs, STEM excellence, environmental studies, and global languages at Himriti Public School in Rampur Bushahr.',
     url: 'https://himriti.com/academics',
+    images: [
+      {
+        url: 'https://himriti.com/Himriti.png',
+        width: 1200,
+        height: 630,
+        alt: 'Himriti Public School Academic Programs',
+      },
+    ],
   },
   twitter: {
     title: 'Academics - Comprehensive K-12 Education | Himriti Public School',
     description: 'Explore our comprehensive K-12 academic programs, STEM excellence, environmental studies, and global languages at Himriti Public School in Rampur Bushahr.',
+    images: ['https://himriti.com/Himriti.png'],
   },
 };
 

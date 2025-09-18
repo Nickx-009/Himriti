@@ -35,10 +35,19 @@ export const metadata: Metadata = {
     title: 'Admissions 2026 - Apply Now | Himriti Public School',
     description: 'Apply for admission to Himriti Public School opening April 2026. Join our founding class in Rampur Bushahr, Shimla. K-12 admissions now open.',
     url: 'https://himriti.com/admissions',
+    images: [
+      {
+        url: 'https://himriti.com/Himriti.png',
+        width: 1200,
+        height: 630,
+        alt: 'Himriti Public School Admissions 2026',
+      },
+    ],
   },
   twitter: {
     title: 'Admissions 2026 - Apply Now | Himriti Public School',
     description: 'Apply for admission to Himriti Public School opening April 2026. Join our founding class in Rampur Bushahr, Shimla. K-12 admissions now open.',
+    images: ['https://himriti.com/Himriti.png'],
   },
 };
 

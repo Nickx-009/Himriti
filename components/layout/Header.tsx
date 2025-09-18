@@ -49,14 +49,10 @@ export default function Header() {
             <Link href="/" className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
               Home
             </Link>
-                    </div>
-                  </Link>
-                  
-                  <Link href="/nep-2020" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#2d5a27]/10 rounded-lg flex items-center justify-center">
-                        <BookOpen className="h-4 w-4 text-[#2d5a27]" />
-                      </div>
+              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
+                Apply Now
+              </Button>
+            </Link>
                       <div>
                         <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#2d5a27]">NEP 2020</h3>
                         <p className="text-xs text-[#4a5568]">Educational framework</p>
@@ -147,7 +143,11 @@ export default function Header() {
               <Link href="/admissions" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Admissions
               </Link>
-              <AdmissionModal />
+              <Link href="/admissions" onClick={toggleMenu}>
+                <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full">
+                  Apply Now
+                </Button>
+              </Link>
             </div>
           </div>
         )}

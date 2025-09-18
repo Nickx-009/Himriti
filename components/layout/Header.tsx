@@ -8,13 +8,20 @@ import {
   Menu,
   X,
   ChevronRight,
-  ArrowRight,
+  ChevronDown,
   Heart,
   BookOpen,
   Globe,
   Users
 } from 'lucide-react';
-import AdmissionModal from '@/components/admission/AdmissionModal';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,43 +56,69 @@ export default function Header() {
             <Link href="/" className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
               Home
             </Link>
-              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
-                Apply Now
-              </Button>
-            </Link>
-                      <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#2d5a27]">NEP 2020</h3>
-                        <p className="text-xs text-[#4a5568]">Educational framework</p>
+            
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`transition-colors font-medium ${isAboutActive ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+                    About
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-80 p-4">
+                      <div className="grid gap-3">
+                        <Link href="/about" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 bg-[#1f514c]/10 rounded-lg flex items-center justify-center">
+                              <Heart className="h-4 w-4 text-[#1f514c]" />
+                            </div>
+                            <div>
+                              <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#1f514c]">About Us</h3>
+                              <p className="text-xs text-[#4a5568]">Our mission and values</p>
+                            </div>
+                          </div>
+                        </Link>
+                        
+                        <Link href="/nep-2020" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 bg-[#2d5a27]/10 rounded-lg flex items-center justify-center">
+                              <BookOpen className="h-4 w-4 text-[#2d5a27]" />
+                            </div>
+                            <div>
+                              <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#2d5a27]">NEP 2020</h3>
+                              <p className="text-xs text-[#4a5568]">Educational framework</p>
+                            </div>
+                          </div>
+                        </Link>
+                        
+                        <Link href="/global-partnerships" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 bg-[#d4831f]/10 rounded-lg flex items-center justify-center">
+                              <Globe className="h-4 w-4 text-[#d4831f]" />
+                            </div>
+                            <div>
+                              <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#d4831f]">Global Partnerships</h3>
+                              <p className="text-xs text-[#4a5568]">International connections</p>
+                            </div>
+                          </div>
+                        </Link>
+                        
+                        <Link href="/about/work-with-us" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 bg-[#c44569]/10 rounded-lg flex items-center justify-center">
+                              <Users className="h-4 w-4 text-[#c44569]" />
+                            </div>
+                            <div>
+                              <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#c44569]">Work with Us</h3>
+                              <p className="text-xs text-[#4a5568]">Career opportunities</p>
+                            </div>
+                          </div>
+                        </Link>
                       </div>
                     </div>
-                  </Link>
-                  
-                  <Link href="/global-partnerships" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#d4831f]/10 rounded-lg flex items-center justify-center">
-                        <Globe className="h-4 w-4 text-[#d4831f]" />
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#d4831f]">Global Partnerships</h3>
-                        <p className="text-xs text-[#4a5568]">International connections</p>
-                      </div>
-                    </div>
-                  </Link>
-                  
-                  <Link href="/about/work-with-us" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#c44569]/10 rounded-lg flex items-center justify-center">
-                        <Users className="h-4 w-4 text-[#c44569]" />
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#c44569]">Work with Us</h3>
-                        <p className="text-xs text-[#4a5568]">Career opportunities</p>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             
             <Link href="/academics" className={`transition-colors font-medium ${isActiveLink('/academics') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
               Academics
@@ -102,11 +135,11 @@ export default function Header() {
             <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white">
               Schedule Visit
             </Button>
-            <AdmissionModal 
-              schoolName="Himriti Public School"
-              triggerText="Apply Now"
-              triggerVariant="default"
-            />
+            <Link href="/admissions">
+              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
+                Apply Now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -143,11 +176,19 @@ export default function Header() {
               <Link href="/admissions" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Admissions
               </Link>
-              <Link href="/admissions" onClick={toggleMenu}>
-                <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full">
-                  Apply Now
-                </Button>
+              <Link href="/contact" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+                Contact
               </Link>
+              <div className="flex flex-col gap-4 pt-4">
+                <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white w-full">
+                  Schedule Visit
+                </Button>
+                <Link href="/admissions" onClick={toggleMenu}>
+                  <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full">
+                    Apply Now
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         )}

@@ -57,7 +57,7 @@ export default function Header() {
               </button>
               
               {/* Mega Menu Dropdown */}
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-4">
                   <Link href="/about" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
                     <div className="flex items-center gap-3">
@@ -91,6 +91,18 @@ export default function Header() {
                       <div>
                         <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#d4831f]">Global Partnerships</h3>
                         <p className="text-xs text-[#4a5568]">International connections</p>
+                      </div>
+                    </div>
+                  </Link>
+                  
+                  <Link href="/about/work-with-us" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-[#c44569]/10 rounded-lg flex items-center justify-center">
+                        <Users className="h-4 w-4 text-[#c44569]" />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#c44569]">Work with Us</h3>
+                        <p className="text-xs text-[#4a5568]">Career opportunities</p>
                       </div>
                     </div>
                   </Link>
@@ -147,6 +159,9 @@ export default function Header() {
               </Link>
               <Link href="/global-partnerships" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/global-partnerships') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Global Partnerships
+              </Link>
+              <Link href="/about/work-with-us" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/about/work-with-us') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+                Work with Us
               </Link>
               <Link href="/admissions" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Admissions

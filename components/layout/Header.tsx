@@ -49,14 +49,6 @@ export default function Header() {
             <Link href="/" className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
               Home
             </Link>
-            
-            <div className="relative group">
-              <Link href="/about" className={`transition-colors font-medium ${isAboutActive ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
-                About
-              </Link>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="p-4">
-                  <Link href="/about" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#1f514c]/10 rounded-lg flex items-center justify-center">
                         <Heart className="h-4 w-4 text-[#1f514c]" />

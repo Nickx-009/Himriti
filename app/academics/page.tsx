@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -28,6 +29,21 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import AdmissionModal from '@/components/admission/AdmissionModal';
+
+export const metadata: Metadata = {
+  title: 'Academics - Comprehensive K-12 Education | Himriti Public School',
+  description: 'Explore our comprehensive K-12 academic programs, STEM excellence, environmental studies, and global languages at Himriti Public School in Rampur Bushahr, Himachal Pradesh.',
+  keywords: 'Himriti academics, K-12 education, STEM programs, environmental studies, global languages, Rampur Bushahr school curriculum, Himalayan education programs',
+  openGraph: {
+    title: 'Academics - Comprehensive K-12 Education | Himriti Public School',
+    description: 'Explore our comprehensive K-12 academic programs, STEM excellence, environmental studies, and global languages at Himriti Public School in Rampur Bushahr.',
+    url: 'https://himriti.com/academics',
+  },
+  twitter: {
+    title: 'Academics - Comprehensive K-12 Education | Himriti Public School',
+    description: 'Explore our comprehensive K-12 academic programs, STEM excellence, environmental studies, and global languages at Himriti Public School in Rampur Bushahr.',
+  },
+};
 
 export default function AcademicsPage() {
   useEffect(() => {

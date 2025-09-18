@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import type { Metadata } from 'next';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -22,6 +23,21 @@ import {
   Building
 } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Contact Himriti Public School - Get in Touch | Rampur Bushahr',
+  description: 'Contact Himriti Public School in Rampur Bushahr, Shimla, Himachal Pradesh. Phone: +91 90154 17203, Email: himritihigh@gmail.com. Schedule visits and ask questions.',
+  keywords: 'Himriti contact, school contact information, Rampur Bushahr school, Himachal Pradesh school contact, school phone number, school email, schedule school visit',
+  openGraph: {
+    title: 'Contact Himriti Public School - Get in Touch | Rampur Bushahr',
+    description: 'Contact Himriti Public School in Rampur Bushahr, Shimla, Himachal Pradesh. Phone: +91 90154 17203, Email: himritihigh@gmail.com.',
+    url: 'https://himriti.com/contact',
+  },
+  twitter: {
+    title: 'Contact Himriti Public School - Get in Touch | Rampur Bushahr',
+    description: 'Contact Himriti Public School in Rampur Bushahr, Shimla, Himachal Pradesh. Phone: +91 90154 17203, Email: himritihigh@gmail.com.',
+  },
+};
 
 // Form validation schema
 const formSchema = z.object({

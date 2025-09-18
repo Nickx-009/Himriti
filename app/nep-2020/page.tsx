@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -30,6 +31,21 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import AdmissionModal from '@/components/admission/AdmissionModal';
+
+export const metadata: Metadata = {
+  title: 'NEP 2020 Implementation - Transforming Education | Himriti Public School',
+  description: 'Discover how Himriti Public School implements National Education Policy 2020 with holistic development, flexible curriculum, and competency-based assessment in Rampur Bushahr.',
+  keywords: 'NEP 2020 implementation, National Education Policy, holistic education, flexible curriculum, competency-based assessment, Himriti NEP 2020, modern education framework',
+  openGraph: {
+    title: 'NEP 2020 Implementation - Transforming Education | Himriti Public School',
+    description: 'Discover how Himriti Public School implements National Education Policy 2020 with holistic development, flexible curriculum, and competency-based assessment.',
+    url: 'https://himriti.com/nep-2020',
+  },
+  twitter: {
+    title: 'NEP 2020 Implementation - Transforming Education | Himriti Public School',
+    description: 'Discover how Himriti Public School implements National Education Policy 2020 with holistic development, flexible curriculum, and competency-based assessment.',
+  },
+};
 
 export default function NEP2020Page() {
   useEffect(() => {

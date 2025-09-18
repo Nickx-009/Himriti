@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -23,6 +24,21 @@ import {
   Mail
 } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Himriti Public School - Embracing Heritage, Inspiring Future | Rampur Bushahr',
+  description: 'Premier K-12 educational institution opening April 2026 in Rampur Bushahr, Shimla, Himachal Pradesh. Holistic education combining tradition with innovation in the Himalayas.',
+  keywords: 'Himriti Public School, Rampur Bushahr school, Himachal Pradesh education, K-12 school, Himalayan education, holistic learning, school opening 2026, Shimla schools',
+  openGraph: {
+    title: 'Himriti Public School - Embracing Heritage, Inspiring Future | Rampur Bushahr',
+    description: 'Premier K-12 educational institution opening April 2026 in Rampur Bushahr, Shimla, Himachal Pradesh. Holistic education combining tradition with innovation.',
+    url: 'https://himriti.com',
+  },
+  twitter: {
+    title: 'Himriti Public School - Embracing Heritage, Inspiring Future | Rampur Bushahr',
+    description: 'Premier K-12 educational institution opening April 2026 in Rampur Bushahr, Shimla, Himachal Pradesh. Holistic education combining tradition with innovation.',
+  },
+};
 
 export default function HomePage() {
   useEffect(() => {

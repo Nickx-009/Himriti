@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -25,6 +26,21 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import AdmissionModal from '@/components/admission/AdmissionModal';
+
+export const metadata: Metadata = {
+  title: 'Admissions 2026 - Apply Now | Himriti Public School',
+  description: 'Apply for admission to Himriti Public School opening April 2026. Join our founding class in Rampur Bushahr, Shimla. K-12 admissions now open with transparent fee structure.',
+  keywords: 'Himriti admissions 2026, school admission application, Rampur Bushahr school admissions, K-12 school fees, Himachal Pradesh school admission, founding class 2026',
+  openGraph: {
+    title: 'Admissions 2026 - Apply Now | Himriti Public School',
+    description: 'Apply for admission to Himriti Public School opening April 2026. Join our founding class in Rampur Bushahr, Shimla. K-12 admissions now open.',
+    url: 'https://himriti.com/admissions',
+  },
+  twitter: {
+    title: 'Admissions 2026 - Apply Now | Himriti Public School',
+    description: 'Apply for admission to Himriti Public School opening April 2026. Join our founding class in Rampur Bushahr, Shimla. K-12 admissions now open.',
+  },
+};
 
 export default function AdmissionsPage() {
   useEffect(() => {

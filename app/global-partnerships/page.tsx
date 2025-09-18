@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -29,6 +30,21 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import AdmissionModal from '@/components/admission/AdmissionModal';
+
+export const metadata: Metadata = {
+  title: 'Global Partnerships - International Education | Himriti Public School',
+  description: 'Explore Himriti Public School\'s global partnerships for international education, cultural exchange, sister schools, and university collaborations from the Himalayas.',
+  keywords: 'global partnerships, international education, sister schools, cultural exchange, university collaborations, global citizenship, international school partnerships',
+  openGraph: {
+    title: 'Global Partnerships - International Education | Himriti Public School',
+    description: 'Explore Himriti Public School\'s global partnerships for international education, cultural exchange, sister schools, and university collaborations.',
+    url: 'https://himriti.com/global-partnerships',
+  },
+  twitter: {
+    title: 'Global Partnerships - International Education | Himriti Public School',
+    description: 'Explore Himriti Public School\'s global partnerships for international education, cultural exchange, sister schools, and university collaborations.',
+  },
+};
 
 export default function GlobalPartnershipsPage() {
   useEffect(() => {

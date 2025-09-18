@@ -49,15 +49,25 @@ export default function Header() {
             <Link href="/" className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
               Home
             </Link>
-            
-            {/* About Mega Menu */}
-            <div className="relative group">
-              <button className={`transition-colors font-medium flex items-center gap-1 ${isAboutActive ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
-                About
-                <ChevronRight className="h-4 w-4 rotate-90 transition-transform group-hover:rotate-180" />
-              </button>
-              
               {/* Mega Menu Dropdown */}
+              </Link>
+              <div className="flex flex-col space-y-4 pt-4">
+                <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white">
+                  Schedule Visit
+                </Button>
+                <AdmissionModal 
+                  schoolName="Himriti Public School"
+                  triggerText="Apply Now"
+                  triggerVariant="default"
+                />
+              </div>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}
               <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-4">
                   <Link href="/about" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
@@ -165,6 +175,14 @@ export default function Header() {
                 Work with Us
               </Link>
               <Link href="/admissions" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+                Admissions
+              </Link>
+              <Link href="/contact" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+                Contact
+              </Link>
+            </nav>
+            <div className="flex flex-col gap-3 pt-6 border-t border-gray-100 mt-6">
+              <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white">
                 Schedule Visit
               </Button>
               <AdmissionModal 

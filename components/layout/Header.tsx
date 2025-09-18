@@ -49,44 +49,10 @@ export default function Header() {
             <Link href="/" className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
               Home
             </Link>
-              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
-                Apply Now
-              </Button>
+                    </div>
+            <Link href="/about" className={`transition-colors font-medium ${isAboutActive ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              About
             </Link>
-                      <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#2d5a27]">NEP 2020</h3>
-                        <p className="text-xs text-[#4a5568]">Educational framework</p>
-                      </div>
-                    </div>
-                  </Link>
-                  
-                  <Link href="/global-partnerships" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#d4831f]/10 rounded-lg flex items-center justify-center">
-                        <Globe className="h-4 w-4 text-[#d4831f]" />
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#d4831f]">Global Partnerships</h3>
-                        <p className="text-xs text-[#4a5568]">International connections</p>
-                      </div>
-                    </div>
-                  </Link>
-                  
-                  <Link href="/about/work-with-us" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-[#c44569]/10 rounded-lg flex items-center justify-center">
-                        <Users className="h-4 w-4 text-[#c44569]" />
-                      </div>
-                      <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#c44569]">Work with Us</h3>
-                        <p className="text-xs text-[#4a5568]">Career opportunities</p>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            
             <Link href="/academics" className={`transition-colors font-medium ${isActiveLink('/academics') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
               Academics
             </Link>
@@ -140,7 +106,26 @@ export default function Header() {
               <Link href="/about/work-with-us" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/about/work-with-us') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Work with Us
               </Link>
-            </div>
+              <Link href="/admissions" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+                Admissions
+              </Link>
+              <Link href="/contact" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+                Contact
+              </Link>
+              
+              <div className="pt-4 border-t border-gray-200">
+                <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white w-full mb-3" onClick={toggleMenu}>
+                  Schedule Visit
+                </Button>
+                <Button
+                  asChild
+                  className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full"
+                  onClick={toggleMenu}
+                >
+                  <Link href="/admissions">Apply Now</Link>
+                </Button>
+              </div>
+            </nav>
           </div>
         )}
       </div>

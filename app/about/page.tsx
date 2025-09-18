@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -31,6 +32,21 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import AdmissionModal from '@/components/admission/AdmissionModal';
+
+export const metadata: Metadata = {
+  title: 'About Himriti Public School - Our Vision, Mission & Values',
+  description: 'Learn about the foundation, vision, mission, core values, and unique Himalayan campus of Himriti Public School in Rampur Bushahr. Discover our commitment to educational excellence and cultural heritage.',
+  keywords: 'Himriti Public School about, school vision mission, Himalayan education, Rampur Bushahr school, educational values, school leadership team',
+  openGraph: {
+    title: 'About Himriti Public School - Our Vision, Mission & Values',
+    description: 'Learn about the foundation, vision, mission, core values, and unique Himalayan campus of Himriti Public School in Rampur Bushahr.',
+    url: 'https://himriti.com/about',
+  },
+  twitter: {
+    title: 'About Himriti Public School - Our Vision, Mission & Values',
+    description: 'Learn about the foundation, vision, mission, core values, and unique Himalayan campus of Himriti Public School in Rampur Bushahr.',
+  },
+};
 
 export default function AboutPage() {
   useEffect(() => {

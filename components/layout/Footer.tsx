@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Facebook, Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -46,12 +47,34 @@ export default function Footer() {
 
           <div>
             <h4 className="font-semibold mb-6 text-lg">Connect</h4>
-            <ul className="space-y-3 text-sm opacity-80">
-              <li>Newsletter Signup</li>
-              <li>Parent Portal</li>
-              <li>Alumni Network</li>
-              <li>Community Events</li>
-            </ul>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 mb-6">
+                <a 
+                  href="https://www.facebook.com/himritipublicschool" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#1877f2] transition-colors duration-300 group"
+                  aria-label="Follow us on Facebook"
+                >
+                  <Facebook className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-300" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/himritipublicschool" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] transition-all duration-300 group"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="h-5 w-5 text-white group-hover:scale-110 transition-transform duration-300" />
+                </a>
+              </div>
+              <ul className="space-y-3 text-sm opacity-80">
+                <li>Newsletter Signup</li>
+                <li>Parent Portal</li>
+                <li>Alumni Network</li>
+                <li>Community Events</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -61,6 +84,15 @@ export default function Footer() {
             <a href="https://masarna.co" className="text-[#d4831f] hover:underline ml-1">Masarna</a> | 
             <span className="text-[#d4831f]"> Opening April 2026</span>
           </p>
+          <div className="flex items-center justify-center gap-6 mt-4 text-xs opacity-70">
+            <a href="https://www.facebook.com/himritipublicschool" target="_blank" rel="noopener noreferrer" className="hover:text-[#d4831f] transition-colors">
+              Facebook: @himritipublicschool
+            </a>
+            <span>•</span>
+            <a href="https://www.instagram.com/himritipublicschool" target="_blank" rel="noopener noreferrer" className="hover:text-[#d4831f] transition-colors">
+              Instagram: @himritipublicschool
+            </a>
+          </div>
         </div>
       </div>
     </footer>

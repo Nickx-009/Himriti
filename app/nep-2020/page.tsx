@@ -40,10 +40,19 @@ export const metadata: Metadata = {
     title: 'NEP 2020 Implementation - Transforming Education | Himriti Public School',
     description: 'Discover how Himriti Public School implements National Education Policy 2020 with holistic development, flexible curriculum, and competency-based assessment.',
     url: 'https://himriti.com/nep-2020',
+    images: [
+      {
+        url: 'https://himriti.com/Himriti.png',
+        width: 1200,
+        height: 630,
+        alt: 'Himriti Public School NEP 2020 Implementation',
+      },
+    ],
   },
   twitter: {
     title: 'NEP 2020 Implementation - Transforming Education | Himriti Public School',
     description: 'Discover how Himriti Public School implements National Education Policy 2020 with holistic development, flexible curriculum, and competency-based assessment.',
+    images: ['https://himriti.com/Himriti.png'],
   },
 };
 

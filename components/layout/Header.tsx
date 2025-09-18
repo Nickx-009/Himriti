@@ -163,19 +163,7 @@ export default function Header() {
               <Link href="/admissions" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Admissions
               </Link>
-              <Link href="/contact" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
-                Contact
-              </Link>
-            </nav>
-            <div className="flex flex-col gap-3 pt-6 border-t border-gray-100 mt-6">
-              <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white">
-                Schedule Visit
-              </Button>
-              <AdmissionModal 
-                schoolName="Himriti Public School"
-                triggerText="Apply Now"
-                triggerVariant="default"
-              />
+              <AdmissionModal />
             </div>
           </div>
         )}

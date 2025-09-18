@@ -292,6 +292,24 @@ export default function Header() {
                   isActiveLink("/admissions")
                     ? "text-[#1f514c] font-semibold"
                     : "text-[#4a5568] hover:text-[#1f514c]"
+                }`}
+              >
+                Admissions
+              </Link>
+              <Link
+                href="/contact"
+                onClick={toggleMenu}
+                className={`transition-colors font-medium ${
+                  isActiveLink("/contact")
+                    ? "text-[#1f514c] font-semibold"
+                    : "text-[#4a5568] hover:text-[#1f514c]"
+                }`}
+              >
+                Contact
+              </Link>
+              <Button
+                asChild
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white"
                 onClick={toggleMenu}
               >
                 <Link href="/admissions">Apply Now</Link>

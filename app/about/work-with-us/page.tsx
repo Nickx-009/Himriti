@@ -36,30 +36,6 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Work with Us - Career Opportunities | Himriti Public School',
-  description: 'Join Himriti Public School team in Rampur Bushahr. Teaching positions, support staff roles, internships, and partnership opportunities. Apply now for 2026 opening.',
-  keywords: 'Himriti careers, teaching jobs Himachal Pradesh, school jobs Rampur Bushahr, education careers, teacher recruitment, school staff positions',
-  openGraph: {
-    title: 'Work with Us - Career Opportunities | Himriti Public School',
-    description: 'Join Himriti Public School team in Rampur Bushahr. Teaching positions, support staff roles, internships, and partnership opportunities.',
-    url: 'https://himriti.com/about/work-with-us',
-    images: [
-      {
-        url: 'https://himriti.com/Himriti.png',
-        width: 1200,
-        height: 630,
-        alt: 'Work with Himriti Public School - Career Opportunities',
-      },
-    ],
-  },
-  twitter: {
-    title: 'Work with Us - Career Opportunities | Himriti Public School',
-    description: 'Join Himriti Public School team in Rampur Bushahr. Teaching positions, support staff roles, internships, and partnership opportunities.',
-    images: ['https://himriti.com/Himriti.png'],
-  },
-};
-
 // Form validation schema
 const applicationFormSchema = z.object({
   fullName: z.string().min(2, 'Name must be at least 2 characters'),

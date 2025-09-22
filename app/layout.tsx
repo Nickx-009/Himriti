@@ -1,21 +1,20 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Himriti Public School - Embracing Heritage, Inspiring Future',
-  description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
+  title: 'Himriti Public School - Excellence in Himalayan Education',
+  description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Where Himalayan tradition meets modern education.',
   keywords: 'Himriti Public School, Rampur Bushahr, Shimla, Himachal Pradesh, K-12 education, school admissions, Himalayan education',
   metadataBase: new URL('https://www.himriti.com'),
   alternates: {
     canonical: 'https://himriti.com',
   },
   openGraph: {
-    title: 'Himriti Public School - Embracing Heritage, Inspiring Future',
-    description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
+    title: 'Himriti Public School - Excellence in Himalayan Education',
+    description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026.',
     url: 'https://himriti.com',
     siteName: 'Himriti Public School',
     type: 'website',
@@ -23,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Himriti Public School - Embracing Heritage, Inspiring Future',
-    description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
+    title: 'Himriti Public School - Excellence in Himalayan Education',
+    description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026.',
   },
   robots: {
     index: true,
@@ -46,10 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
-        <Toaster position="top-right" richColors />
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

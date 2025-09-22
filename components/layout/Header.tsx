@@ -199,9 +199,11 @@ export default function Header() {
             </Button>
             <AdmissionModal
               schoolName="Himriti Public School"
-              triggerText="Apply Now"
-              triggerVariant="default"
-            />
+            >
+              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
+                Apply Now
+              </Button>
+            </AdmissionModal>
           </div>
 
           {/* Mobile Menu Button */}

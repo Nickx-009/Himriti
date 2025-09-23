@@ -301,7 +301,7 @@ export default function ContactPage() {
                   type="submit"
                   size="lg" 
                   disabled={isSubmitting}
-                  className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-12 py-4 text-lg h-14 btn-interactive disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-12 py-4 text-lg h-14 btn-interactive"
                 >
                   {isSubmitting ? (
                     <>

@@ -712,7 +712,3 @@ export default function AdmissionsPage() {
         </div>
       </section>
     </PageLayout>
-  );
-}
-  )
-}

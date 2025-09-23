@@ -368,6 +368,11 @@ export default function AboutPage() {
                     Traditional craft workshops and studios
                   </li>
                 </ul>
+                <div className="mt-6 p-4 bg-[#1f514c]/10 rounded-lg">
+                  <p className="text-sm text-[#1f514c] font-medium text-center">
+                    * Some amenities and facilities will be available by October 2026 and early 2027
+                  </p>
+                </div>
               </Card>
 
               <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 text-center interactive-card">
@@ -375,7 +380,6 @@ export default function AboutPage() {
                   <Calendar className="h-8 w-8 text-[#2d5a27]" />
                 </div>
                 <h4 className="text-xl font-bold text-[#2d3748] mb-2">Opening Soon</h4>
-                <p className="text-[#4a5568] mb-4">Campus construction in progress</p>
                 <Badge className="bg-[#2d5a27] text-white px-4 py-2">April 2026</Badge>
               </Card>
             </div>

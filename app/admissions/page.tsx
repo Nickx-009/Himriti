@@ -374,6 +374,263 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
+      {/* Fees & Financial Aid */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16 fade-in-section">
+            <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Fees & Financial Aid</h2>
+            <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
+              We believe quality education should be accessible to all deserving students. 
+              Our fee structure is designed to be transparent and fair.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 fade-in-section">
+            <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card lg:col-span-2">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-[#1f514c]/10 rounded-2xl flex items-center justify-center">
+                  <FileText className="h-8 w-8 text-[#1f514c]" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#2d3748]">Fee Structure</h3>
+                  <p className="text-[#4a5568]">Academic year 2026-27</p>
+                </div>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-white/50">
+                      <th className="text-left py-3 px-2 text-[#2d3748] font-semibold w-1/6">Class Level</th>
+                      <th className="text-center py-3 px-2 text-[#2d3748] font-semibold w-1/6">Monthly Tuition (₹)</th>
+                      <th className="text-center py-3 px-2 text-[#2d3748] font-semibold w-1/6">Annual Tuition (₹)</th>
+                      <th className="text-center py-3 px-2 text-[#2d3748] font-semibold w-1/6">Admission + Security (₹)</th>
+                      <th className="text-center py-3 px-2 text-[#2d3748] font-semibold w-1/6">Other Charges* (₹)</th>
+                      <th className="text-center py-3 px-2 text-[#2d3748] font-semibold w-1/6">Total (1st Year) (₹)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="space-y-2">
+                    <tr className="border-b border-white/30">
+                      <td className="py-3 px-2 text-[#4a5568] font-medium">Pre-Nursery</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">900</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">10,800</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">3,000</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">2,000</td>
+                      <td className="text-center py-3 px-2">
+                        <Badge className="bg-[#1f514c] text-white px-3 py-1 font-bold">15,800</Badge>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-white/30">
+                      <td className="py-3 px-2 text-[#4a5568] font-medium">Kindergarten (Nur + KG)</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">1,200</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">14,400</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">3,500</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">2,200</td>
+                      <td className="text-center py-3 px-2">
+                        <Badge className="bg-[#1f514c] text-white px-3 py-1 font-bold">20,100</Badge>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-white/30">
+                      <td className="py-3 px-2 text-[#4a5568] font-medium">Classes I–III</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">1,400</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">16,800</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">3,500</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">2,500</td>
+                      <td className="text-center py-3 px-2">
+                        <Badge className="bg-[#2d5a27] text-white px-3 py-1 font-bold">22,800</Badge>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-white/30">
+                      <td className="py-3 px-2 text-[#4a5568] font-medium">Classes IV–V</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">1,600</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">19,200</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">3,500</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">2,800</td>
+                      <td className="text-center py-3 px-2">
+                        <Badge className="bg-[#2d5a27] text-white px-3 py-1 font-bold">25,500</Badge>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-white/30">
+                      <td className="py-3 px-2 text-[#4a5568] font-medium">Classes VI–VIII</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">1,800</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">21,600</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">4,000</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">3,000</td>
+                      <td className="text-center py-3 px-2">
+                        <Badge className="bg-[#d4831f] text-white px-3 py-1 font-bold">28,600</Badge>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-white/30">
+                      <td className="py-3 px-2 text-[#4a5568] font-medium">Classes IX–X</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">2,000</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">24,000</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">4,000</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">3,200</td>
+                      <td className="text-center py-3 px-2">
+                        <Badge className="bg-[#d4831f] text-white px-3 py-1 font-bold">31,200</Badge>
+                      </td>
+                    </tr>
+                    <tr className="border-b border-white/30">
+                      <td className="py-3 px-2 text-[#4a5568] font-medium">Classes XI–XII (Science)</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">2,400</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">28,800</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">5,000</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">3,500</td>
+                      <td className="text-center py-3 px-2">
+                        <Badge className="bg-[#c44569] text-white px-3 py-1 font-bold">37,300</Badge>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-2 text-[#4a5568] font-medium">Classes XI–XII (Commerce/Humanities)</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">2,200</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">26,400</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">5,000</td>
+                      <td className="text-center py-3 px-2 text-[#4a5568]">3,000</td>
+                      <td className="text-center py-3 px-2">
+                        <Badge className="bg-[#c44569] text-white px-3 py-1 font-bold">34,400</Badge>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div className="mt-6 p-4 bg-[#1f514c]/10 rounded-lg">
+                  <p className="text-sm text-[#1f514c] font-medium mb-2">
+                    <strong>*Other Annual Charges include:</strong>
+                  </p>
+                  <ul className="text-xs text-[#1f514c] space-y-1">
+                    <li>• Snacks and refreshments</li>
+                    <li>• Extracurricular activities and sports</li>
+                    <li>• Field trips and educational excursions</li>
+                    <li>• Technology and lab usage fees</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            <div className="lg:col-span-2 mt-12 fade-in-section">
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 bg-[#d4831f]/10 rounded-2xl flex items-center justify-center">
+                      <Award className="h-8 w-8 text-[#d4831f]" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#2d3748]">Annual Payment Discount</h3>
+                      <p className="text-[#4a5568]">Save with advance payment</p>
+                    </div>
+                  </div>
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center gap-2 bg-[#d4831f]/10 px-4 py-2 rounded-full mb-4">
+                      <span className="text-2xl font-bold text-[#d4831f]">20%</span>
+                      <span className="text-[#2d3748] font-semibold text-sm">Discount</span>
+                    </div>
+                    <p className="text-[#4a5568] leading-relaxed text-sm">
+                      Parents paying the entire year's tuition in advance will receive a 
+                      <strong> 20% discount on tuition fees</strong>.
+                    </p>
+                  </div>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2 text-[#4a5568] text-sm">
+                      <CheckCircle className="h-4 w-4 text-[#d4831f] flex-shrink-0" />
+                      Significant savings on annual tuition
+                    </li>
+                    <li className="flex items-center gap-2 text-[#4a5568] text-sm">
+                      <CheckCircle className="h-4 w-4 text-[#d4831f] flex-shrink-0" />
+                      One-time payment convenience
+                    </li>
+                    <li className="flex items-center gap-2 text-[#4a5568] text-sm">
+                      <CheckCircle className="h-4 w-4 text-[#d4831f] flex-shrink-0" />
+                      No monthly payment hassles
+                    </li>
+                    <li className="flex items-center gap-2 text-[#4a5568] text-sm">
+                      <CheckCircle className="h-4 w-4 text-[#d4831f] flex-shrink-0" />
+                      Available for all grade levels
+                    </li>
+                  </ul>
+                </Card>
+
+                <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 bg-[#2d5a27]/10 rounded-2xl flex items-center justify-center">
+                      <Award className="h-8 w-8 text-[#2d5a27]" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#2d3748]">Financial Aid</h3>
+                      <p className="text-[#4a5568]">Supporting deserving students</p>
+                    </div>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-center gap-3 text-[#4a5568]">
+                      <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                      Merit-based scholarships available
+                    </li>
+                    <li className="flex items-center gap-3 text-[#4a5568]">
+                      <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                      Need-based financial assistance
+                    </li>
+                    <li className="flex items-center gap-3 text-[#4a5568]">
+                      <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                      Sibling discounts available
+                    </li>
+                    <li className="flex items-center gap-3 text-[#4a5568]">
+                      <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                      Flexible payment plans
+                    </li>
+                  </ul>
+                </Card>
+
+                <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-[#c44569]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Heart className="h-8 w-8 text-[#c44569]" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#2d3748] mb-2">Our Commitment</h3>
+                    <Badge className="bg-[#c44569] text-white px-4 py-2">Social Impact Initiative</Badge>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-[#4a5568] leading-relaxed mb-4">
+                      We are committed to providing <strong>free education to 50 underprivileged students</strong> 
+                      during our first 3 years of operation (2026-2029).
+                    </p>
+                    <p className="text-sm text-[#4a5568] leading-relaxed">
+                      This initiative reflects our belief that every child deserves access to quality education, 
+                      regardless of their economic background.
+                    </p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+
+
+          <div className="mt-16 text-center fade-in-section">
+            <Card className="bg-gradient-to-r from-[#1f514c]/5 to-[#2d5a27]/5 border-0 shadow-lg rounded-2xl p-8 interactive-card">
+              <h3 className="text-2xl font-bold text-[#2d3748] mb-4">Additional Information</h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#1f514c]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Calendar className="h-6 w-6 text-[#1f514c]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">Payment Schedule</h4>
+                  <p className="text-sm text-[#4a5568]">Quarterly payments accepted</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#2d5a27]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <FileText className="h-6 w-6 text-[#2d5a27]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">What's Included</h4>
+                  <p className="text-sm text-[#4a5568]">Comprehensive fee structure</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#d4831f]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Phone className="h-6 w-6 text-[#d4831f]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">Financial Counseling</h4>
+                  <p className="text-sm text-[#4a5568]">Personalized assistance available</p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Admissions */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -456,4 +713,6 @@ export default function AdmissionsPage() {
       </section>
     </PageLayout>
   );
+}
+  )
 }

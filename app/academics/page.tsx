@@ -227,8 +227,8 @@ export default function AcademicsPage() {
               <div className="w-16 h-16 bg-[#1f514c]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1f514c] transition-all duration-300">
                 <Languages className="h-8 w-8 text-[#1f514c] group-hover:text-white transition-all duration-300" />
               </div>
-              <h3 className="text-lg font-bold text-[#2d3748] mb-2">English Language Arts</h3>
-              <p className="text-sm text-[#4a5568]">Reading, writing, literature, and communication skills</p>
+              <h3 className="text-lg font-bold text-[#2d3748] mb-2">English & Hindi</h3>
+              <p className="text-sm text-[#4a5568]">Primary instruction languages with literature and communication</p>
             </Card>
 
             <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl text-center p-6 group interactive-card">
@@ -259,8 +259,8 @@ export default function AcademicsPage() {
               <div className="w-16 h-16 bg-[#1f514c]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1f514c] transition-all duration-300">
                 <Languages className="h-8 w-8 text-[#1f514c] group-hover:text-white transition-all duration-300" />
               </div>
-              <h3 className="text-lg font-bold text-[#2d3748] mb-2">Hindi & Sanskrit</h3>
-              <p className="text-sm text-[#4a5568]">Native language proficiency and classical studies</p>
+              <h3 className="text-lg font-bold text-[#2d3748] mb-2">Sanskrit & Regional Languages</h3>
+              <p className="text-sm text-[#4a5568]">Classical studies and local language appreciation</p>
             </Card>
 
             <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl text-center p-6 group interactive-card">
@@ -330,6 +330,11 @@ export default function AcademicsPage() {
                   Research mentorship opportunities
                 </li>
               </ul>
+              <div className="mt-6 p-4 bg-[#1f514c]/10 rounded-lg">
+                <p className="text-sm text-[#1f514c] font-medium text-center">
+                  * All STEM facilities will be fully operational by mid school year, October 2026
+                </p>
+              </div>
             </Card>
 
             <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
@@ -373,13 +378,13 @@ export default function AcademicsPage() {
                 </div>
               </div>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-[#4a5568]">
+                <li className="flex items-center gap-3 text-[#d4831f]">
                   <CheckCircle className="h-5 w-5 text-[#d4831f] flex-shrink-0" />
-                  English, Hindi, and Sanskrit
+                  English as primary medium with Hindi
                 </li>
                 <li className="flex items-center gap-3 text-[#4a5568]">
                   <CheckCircle className="h-5 w-5 text-[#d4831f] flex-shrink-0" />
-                  French or German as third language
+                  Sanskrit and French, German, Korean, or Spanish as additional languages
                 </li>
                 <li className="flex items-center gap-3 text-[#4a5568]">
                   <CheckCircle className="h-5 w-5 text-[#d4831f] flex-shrink-0" />
@@ -390,6 +395,11 @@ export default function AcademicsPage() {
                   International certification preparation
                 </li>
               </ul>
+              <div className="mt-6 p-4 bg-[#d4831f]/10 rounded-lg">
+                <p className="text-sm text-[#d4831f] font-medium text-center">
+                  * Global Languages program will be implemented starting from the 2027 academic session
+                </p>
+              </div>
             </Card>
 
             <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
@@ -468,6 +478,157 @@ export default function AcademicsPage() {
                 Focus on mastery of skills and knowledge rather than just grades, 
                 ensuring deep understanding and application.
               </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Extracurricular Activities */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16 fade-in-section">
+            <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Extracurricular Activities</h2>
+            <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
+              Beyond academics, we offer a rich variety of extracurricular activities that help 
+              students discover their passions, develop new skills, and build lasting friendships.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 fade-in-section">
+            <Card className="bg-[#faf7f2] border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl text-center p-6 group interactive-card">
+              <div className="w-16 h-16 bg-[#1f514c]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#1f514c] transition-all duration-300">
+                <Heart className="h-8 w-8 text-[#1f514c] group-hover:text-white transition-all duration-300" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2d3748] mb-2">Sports & Fitness</h3>
+              <p className="text-sm text-[#4a5568]">Cricket, football, basketball, badminton, athletics, and yoga</p>
+            </Card>
+
+            <Card className="bg-[#faf7f2] border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl text-center p-6 group interactive-card">
+              <div className="w-16 h-16 bg-[#2d5a27]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#2d5a27] transition-all duration-300">
+                <Palette className="h-8 w-8 text-[#2d5a27] group-hover:text-white transition-all duration-300" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2d3748] mb-2">Creative Arts</h3>
+              <p className="text-sm text-[#4a5568]">Painting, sculpture, photography, drama, and creative writing</p>
+            </Card>
+
+            <Card className="bg-[#faf7f2] border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl text-center p-6 group interactive-card">
+              <div className="w-16 h-16 bg-[#d4831f]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#d4831f] transition-all duration-300">
+                <Music className="h-8 w-8 text-[#d4831f] group-hover:text-white transition-all duration-300" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2d3748] mb-2">Music & Dance</h3>
+              <p className="text-sm text-[#4a5568]">Classical music, folk dance, choir, and instrumental ensembles</p>
+            </Card>
+
+            <Card className="bg-[#faf7f2] border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl text-center p-6 group interactive-card">
+              <div className="w-16 h-16 bg-[#c44569]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#c44569] transition-all duration-300">
+                <Users className="h-8 w-8 text-[#c44569] group-hover:text-white transition-all duration-300" />
+              </div>
+              <h3 className="text-lg font-bold text-[#2d3748] mb-2">Clubs & Societies</h3>
+              <p className="text-sm text-[#4a5568]">Debate club, science club, environmental club, and student council</p>
+            </Card>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 fade-in-section">
+            <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-[#1f514c]/10 rounded-2xl flex items-center justify-center">
+                  <Target className="h-8 w-8 text-[#1f514c]" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#2d3748]">Competitive Programs</h3>
+                  <p className="text-[#4a5568]">Excellence in competition</p>
+                </div>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#1f514c] flex-shrink-0" />
+                  Inter-school sports tournaments
+                </li>
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#1f514c] flex-shrink-0" />
+                  Regional and national debate competitions
+                </li>
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#1f514c] flex-shrink-0" />
+                  Science olympiads and fairs
+                </li>
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#1f514c] flex-shrink-0" />
+                  Cultural festivals and art exhibitions
+                </li>
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#1f514c] flex-shrink-0" />
+                  Model United Nations conferences
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-[#2d5a27]/10 rounded-2xl flex items-center justify-center">
+                  <TreePine className="h-8 w-8 text-[#2d5a27]" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#2d3748]">Community Service</h3>
+                  <p className="text-[#4a5568]">Giving back to society</p>
+                </div>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                  Environmental conservation projects
+                </li>
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                  Local community outreach programs
+                </li>
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                  Teaching assistance for younger students
+                </li>
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                  Cultural preservation initiatives
+                </li>
+                <li className="flex items-center gap-3 text-[#4a5568]">
+                  <CheckCircle className="h-5 w-5 text-[#2d5a27] flex-shrink-0" />
+                  Disaster relief and awareness campaigns
+                </li>
+              </ul>
+            </Card>
+          </div>
+
+          <div className="mt-16 text-center fade-in-section">
+            <Card className="bg-gradient-to-r from-[#1f514c]/5 to-[#2d5a27]/5 border-0 shadow-lg rounded-2xl p-8 interactive-card">
+              <h3 className="text-2xl font-bold text-[#2d3748] mb-4">Benefits of Participation</h3>
+              <p className="text-[#4a5568] leading-relaxed mb-6 max-w-3xl mx-auto">
+                Our extracurricular programs are designed to complement academic learning, 
+                helping students develop leadership skills, build confidence, and discover 
+                their unique talents and interests.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#1f514c]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Award className="h-6 w-6 text-[#1f514c]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">Leadership Development</h4>
+                  <p className="text-sm text-[#4a5568]">Build confidence and leadership skills</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#2d5a27]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Users className="h-6 w-6 text-[#2d5a27]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">Social Skills</h4>
+                  <p className="text-sm text-[#4a5568]">Develop teamwork and communication</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-[#d4831f]/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <Lightbulb className="h-6 w-6 text-[#d4831f]" />
+                  </div>
+                  <h4 className="font-semibold text-[#2d3748] mb-2">Creative Expression</h4>
+                  <p className="text-sm text-[#4a5568]">Explore talents and interests</p>
+                </div>
+              </div>
             </Card>
           </div>
         </div>

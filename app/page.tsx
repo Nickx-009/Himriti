@@ -54,13 +54,13 @@ export default function HomePage() {
               Opening April 2026
             </Badge>
             <h1 className="text-6xl lg:text-7xl font-bold text-[#2d3748] mb-8 leading-tight animate-fade-in-up">
-              Where Tradition
+              Embracing Heritage,
               <br />
-              <span className="text-[#1f514c]">Meets Excellence</span>
+              <span className="text-[#1f514c]">Inspiring Future</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
               Nestled in the heart of Rampur Bushahr, we're creating an educational 
-              institution that honors Himalayan heritage while preparing students for a global future.
+              institution where tradition meets innovation, preparing students for a global future.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
@@ -79,14 +79,14 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-[#1f514c]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 interactive-card">
                 <Users className="h-8 w-8 text-[#1f514c]" />
               </div>
-              <div className="text-3xl font-bold text-[#2d3748] mb-2">500+</div>
+              <div className="text-3xl font-bold text-[#2d3748] mb-2">250+</div>
               <div className="text-[#4a5568]">Student Capacity</div>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[#2d5a27]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 interactive-card">
                 <GraduationCap className="h-8 w-8 text-[#2d5a27]" />
               </div>
-              <div className="text-3xl font-bold text-[#2d3748] mb-2">50+</div>
+              <div className="text-3xl font-bold text-[#2d3748] mb-2">10+</div>
               <div className="text-[#4a5568]">Expert Faculty</div>
             </div>
             <div className="text-center">

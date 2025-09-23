@@ -12,7 +12,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-bold">Himriti Public School</h3>
-                <p className="text-sm opacity-80">Excellence in Education</p>
+                <p className="text-sm opacity-80">Embracing Heritage, Inspiring Future</p>
               </div>
             </Link>
             <p className="text-sm opacity-80 leading-relaxed">
@@ -37,10 +37,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-6 text-lg">Programs</h4>
             <ul className="space-y-3 text-sm opacity-80">
-              <li>Primary School (K-5)</li>
-              <li>Middle School (6-8)</li>
-              <li>High School (9-12)</li>
-              <li>Extracurricular Activities</li>
+              <li><Link href="/academics#primary" className="hover:text-[#d4831f] transition-colors">Primary School (K-5)</Link></li>
+              <li><Link href="/academics#middle" className="hover:text-[#d4831f] transition-colors">Middle School (6-8)</Link></li>
+              <li><Link href="/academics#high" className="hover:text-[#d4831f] transition-colors">High School (9-12)</Link></li>
+              <li><Link href="/academics#extracurricular" className="hover:text-[#d4831f] transition-colors">Extracurricular Activities</Link></li>
             </ul>
           </div>
 
@@ -57,8 +57,8 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-sm opacity-80">
-            © 2024 Himriti Public School. All rights reserved. | Visit us at 
-            <a href="https://himriti.com" className="text-[#d4831f] hover:underline ml-1">himriti.com</a> | 
+            © 2025 Himriti Public School. All rights reserved. | Made with ❤️ by 
+            <a href="https://masarna.co" className="text-[#d4831f] hover:underline ml-1">Masarna</a> | 
             <span className="text-[#d4831f]"> Opening April 2026</span>
           </p>
         </div>

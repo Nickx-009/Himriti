@@ -229,12 +229,12 @@ export default function NEP2020Page() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Mother tongue/local language as medium of instruction till Grade 5, 
+                  English as primary medium of instruction along with Hindi, 
                   with strong foundation in multiple languages.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
-                  <li>• Hindi as primary language</li>
-                  <li>• English proficiency</li>
+                  <li>• English as primary medium</li>
+                  <li>• Hindi language development</li>
                   <li>• Sanskrit studies</li>
                   <li>• Foreign language options</li>
                 </ul>

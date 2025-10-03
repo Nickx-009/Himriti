@@ -5,30 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import {
-  Mountain,
-  GraduationCap,
-  Users,
-  BookOpen,
-  Award,
-  ChevronRight,
-  ArrowRight,
-  CheckCircle,
-  Globe,
-  Target,
-  Heart,
-  TreePine,
-  Compass,
-  Shield,
-  Lightbulb,
-  UserCheck,
-  Building,
-  MapPin,
-  Calendar,
-  Leaf,
-  Sun,
-  Wind,
-} from 'lucide-react';
+import { Mountain, GraduationCap, Users, BookOpen, Award, ChevronRight, ArrowRight, CircleCheck as CheckCircle, Globe, Target, Heart, TreePine, Compass, Shield, Lightbulb, UserCheck, Building, MapPin, Calendar, Leaf, Sun, Wind } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AboutPage() {

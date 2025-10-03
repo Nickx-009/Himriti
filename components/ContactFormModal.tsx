@@ -17,8 +17,8 @@ import { Send, X } from 'lucide-react';
 
 const formSchema = z.object({
   parentName: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phoneNumber: z.string().optional(),
+  email: z.string().email('Please enter a valid email address').optional().or(z.literal('')),
+  phoneNumber: z.string().min(10, 'Phone number must be at least 10 digits'),
   gradeLevel: z.string().optional(),
   inquiryType: z.string().optional(),
   message: z.string().min(10, 'Message must be at least 10 characters'),
@@ -107,13 +107,13 @@ export default function ContactFormModal({
             </div>
             <div>
               <label className="block text-sm font-semibold text-[#2d3748] mb-2">
-                Email Address *
+                Email Address
               </label>
               <input
                 {...register('email')}
                 type="email"
                 className="w-full px-4 py-3 border border-[#F2F2F2] rounded-lg focus:border-[#1f514c] focus:outline-none transition-colors"
-                placeholder="Enter your email"
+                placeholder="Enter your email (optional)"
               />
               {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
             </div>
@@ -122,7 +122,7 @@ export default function ContactFormModal({
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-semibold text-[#2d3748] mb-2">
-                Phone Number
+                Phone Number *
               </label>
               <input
                 {...register('phoneNumber')}
@@ -130,6 +130,9 @@ export default function ContactFormModal({
                 className="w-full px-4 py-3 border border-[#F2F2F2] rounded-lg focus:border-[#1f514c] focus:outline-none transition-colors"
                 placeholder="Enter your phone number"
               />
+              {errors.phoneNumber && (
+                <p className="text-red-500 text-sm mt-1">{errors.phoneNumber.message}</p>
+              )}
             </div>
             <div>
               <label className="block text-sm font-semibold text-[#2d3748] mb-2">

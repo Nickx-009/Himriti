@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
+import Image from 'next/image';
 import { Button } from './button';
 
 interface WhatsAppWidgetProps {
@@ -39,8 +40,13 @@ export default function WhatsAppWidget({
             <div className="bg-white rounded-lg shadow-2xl p-4 w-80 border border-gray-200 mb-4 animate-fade-in-up">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#1f514c] flex items-center justify-center">
-                    <span className="text-xl font-bold text-white">H</span>
+                  <div className="w-12 h-12 relative">
+                    <Image
+                      src="/Himriti copy.png"
+                      alt="Himriti Public School Logo"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#2d3748] text-sm">Himriti Public School</h3>

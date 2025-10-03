@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,8 +8,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
             <Link href="/" className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">H</span>
+              <div className="w-12 h-12 relative">
+                <Image
+                  src="/Himriti copy.png"
+                  alt="Himriti Public School Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold">Himriti Public School</h3>

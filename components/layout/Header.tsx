@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronRight, ArrowRight, Heart, BookOpen, Globe, Briefcase } from 'lucide-react';
 import ContactFormModal from '@/components/ContactFormModal';
@@ -36,8 +37,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#1f514c] flex items-center justify-center">
-              <span className="text-2xl font-bold text-white">H</span>
+            <div className="w-12 h-12 relative">
+              <Image
+                src="/Himriti copy.png"
+                alt="Himriti Public School Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
             <div>
               <h1 className="text-lg font-bold text-[#2d3748]">Himriti</h1>

@@ -5,7 +5,24 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import { Calendar, FileText, Users, Award, ChevronRight, ArrowRight, CircleCheck as CheckCircle, Download, Phone, Mail, Clock, MapPin, GraduationCap, BookOpen, Heart, Target } from 'lucide-react';
+import {
+  Calendar,
+  FileText,
+  Users,
+  Award,
+  ChevronRight,
+  ArrowRight,
+  CircleCheck as CheckCircle,
+  Download,
+  Phone,
+  Mail,
+  Clock,
+  MapPin,
+  GraduationCap,
+  BookOpen,
+  Heart,
+  Target,
+} from 'lucide-react';
 import Link from 'next/link';
 
 export default function AdmissionsPage() {

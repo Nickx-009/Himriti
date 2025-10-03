@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronRight, ArrowRight, Heart, BookOpen, Globe } from 'lucide-react';
+import { Menu, X, ChevronRight, ArrowRight, Heart, BookOpen, Globe, Briefcase } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +19,10 @@ export default function Header() {
   };
 
   const isAboutActive =
-    pathname === '/about' || pathname === '/nep-2020' || pathname === '/global-partnerships';
+    pathname === '/about' ||
+    pathname === '/nep-2020' ||
+    pathname === '/global-partnerships' ||
+    pathname === '/careers';
 
   return (
     <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
@@ -111,6 +114,23 @@ export default function Header() {
                       </div>
                     </div>
                   </Link>
+
+                  <Link
+                    href="/careers"
+                    className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-[#c44569]/10 rounded-lg flex items-center justify-center">
+                        <Briefcase className="h-4 w-4 text-[#c44569]" />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#c44569]">
+                          Work with Us
+                        </h3>
+                        <p className="text-xs text-[#4a5568]">Join our team</p>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -192,6 +212,13 @@ export default function Header() {
                 className={`transition-colors font-medium ${isActiveLink('/global-partnerships') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
               >
                 Global Partnerships
+              </Link>
+              <Link
+                href="/careers"
+                onClick={closeMenu}
+                className={`transition-colors font-medium ${isActiveLink('/careers') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
+                Work with Us
               </Link>
               <Link
                 href="/admissions"

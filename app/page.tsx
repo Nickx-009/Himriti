@@ -5,7 +5,22 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import { GraduationCap, Users, BookOpen, Award, ChevronRight, ArrowRight, CircleCheck as CheckCircle, Target, Heart, Globe, Calendar, MapPin, Phone, Mail } from 'lucide-react';
+import {
+  GraduationCap,
+  Users,
+  BookOpen,
+  Award,
+  ChevronRight,
+  ArrowRight,
+  CircleCheck as CheckCircle,
+  Target,
+  Heart,
+  Globe,
+  Calendar,
+  MapPin,
+  Phone,
+  Mail,
+} from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomePage() {

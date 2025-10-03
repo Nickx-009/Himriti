@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://himriti.com/sitemap.xml
+
+# Disallow admin areas (if any in future)
+# Disallow: /admin/
+# Disallow: /api/

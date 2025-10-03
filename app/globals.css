@@ -381,9 +381,10 @@ html {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
   }
   
   .animate-bounce-gentle,
@@ -417,33 +418,6 @@ html {
 }
 
 /* Badge hover effects - ensure text turns white on hover */
-.bg-\[\#1f514c\]\/10:hover,
-.bg-\[\#2d5a27\]\/10:hover,
-.bg-\[\#d4831f\]\/10:hover,
-.bg-\[\#c44569\]\/10:hover,
-.bg-\[\#1f514c\]:hover,
-.bg-\[\#2d5a27\]:hover,
-.bg-\[\#d4831f\]:hover,
-.bg-\[\#c44569\]:hover {
-  color: white !important;
-}
-
-/* Interactive card hover effects for badges */
-.interactive-card:hover .bg-\[\#1f514c\]\/10,
-.interactive-card:hover .bg-\[\#2d5a27\]\/10,
-.interactive-card:hover .bg-\[\#d4831f\]\/10,
-.interactive-card:hover .bg-\[\#c44569\]\/10 {
-  color: white !important;
-}
-
-/* Specific badge hover states */
-.badge:hover,
-.badge.bg-\[\#1f514c\]\/10:hover,
-.badge.bg-\[\#2d5a27\]\/10:hover,
-.badge.bg-\[\#d4831f\]\/10:hover,
-.badge.bg-\[\#c44569\]\/10:hover {
-  color: white !important;
-}
 /* Modern card shadows */
 .shadow-lg {
   box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);

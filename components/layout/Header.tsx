@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -18,7 +18,8 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = useCallback(() => setIsMenuOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
   const isActiveLink = (path: string) => {
     if (path === '/') return pathname === '/';
@@ -131,25 +132,25 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-6 border-t border-gray-100">
             <nav className="flex flex-col space-y-6">
-              <Link href="/" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link href="/" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Home
               </Link>
-              <Link href="/about" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/about') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link href="/about" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/about') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 About
               </Link>
-              <Link href="/academics" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/academics') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link href="/academics" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/academics') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Academics
               </Link>
-              <Link href="/nep-2020" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/nep-2020') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link href="/nep-2020" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/nep-2020') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 NEP 2020
               </Link>
-              <Link href="/global-partnerships" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/global-partnerships') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link href="/global-partnerships" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/global-partnerships') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Global Partnerships
               </Link>
-              <Link href="/admissions" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link href="/admissions" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Admissions
               </Link>
-              <Link href="/contact" onClick={toggleMenu} className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link href="/contact" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
                 Contact
               </Link>
             </nav>

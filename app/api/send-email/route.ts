@@ -1,15 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Initialize Resend with error handling
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY is not configured');
-}
+// Initialize Resend with better error handling
+let resend: Resend | null = null;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+try {
+  if (process.env.RESEND_API_KEY) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+} catch (error) {
+  console.error('Failed to initialize Resend:', error);
+}
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Resend is properly configured
+    if (!resend) {
+      console.error('Resend not configured - missing RESEND_API_KEY');
+      return NextResponse.json(
+        { error: 'Email service is not configured. Please contact us directly at himritihigh@gmail.com' },
+        { status: 503 }
+      );
+    }
+
     const body = await request.json();
     const { parentName, email, phoneNumber, gradeLevel, inquiryType, message } = body;
 
@@ -25,6 +38,7 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: 'Himriti Public School <onboarding@resend.dev>',
       to: ['himritihigh@gmail.com'],
+      replyTo: email, // Allow direct reply to the parent
       subject: `New Contact Form Submission - ${inquiryType || 'General Inquiry'}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

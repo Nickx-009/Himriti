@@ -1,8 +1,8 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://himriti.com'
-  
+  const baseUrl = 'https://himriti.com';
+
   return [
     {
       url: baseUrl,
@@ -46,5 +46,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
-  ]
+  ];
 }

@@ -1,18 +1,10 @@
-"use client";
+'use client';
 
 import { useState, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { 
-  Menu,
-  X,
-  ChevronRight,
-  ArrowRight,
-  Heart,
-  BookOpen,
-  Globe
-} from 'lucide-react';
+import { Menu, X, ChevronRight, ArrowRight, Heart, BookOpen, Globe } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +18,8 @@ export default function Header() {
     return pathname.startsWith(path);
   };
 
-  const isAboutActive = pathname === '/about' || pathname === '/nep-2020' || pathname === '/global-partnerships';
+  const isAboutActive =
+    pathname === '/about' || pathname === '/nep-2020' || pathname === '/global-partnerships';
 
   return (
     <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
@@ -35,7 +28,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl overflow-hidden">
-              <img src="/Himriti.png" alt="Himriti Public School Logo" className="w-full h-full object-contain" />
+              <img
+                src="/Himriti.png"
+                alt="Himriti Public School Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <h1 className="text-lg font-bold text-[#2d3748]">Himriti</h1>
@@ -45,51 +42,71 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+            <Link
+              href="/"
+              className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+            >
               Home
             </Link>
-            
+
             {/* About Mega Menu */}
             <div className="relative group">
-              <button className={`transition-colors font-medium flex items-center gap-1 ${isAboutActive ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <button
+                className={`transition-colors font-medium flex items-center gap-1 ${isAboutActive ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
                 About
                 <ChevronRight className="h-4 w-4 rotate-90 transition-transform group-hover:rotate-180" />
               </button>
-              
+
               {/* Mega Menu Dropdown */}
               <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="p-4">
-                  <Link href="/about" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
+                  <Link
+                    href="/about"
+                    className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item"
+                  >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#1f514c]/10 rounded-lg flex items-center justify-center">
                         <Heart className="h-4 w-4 text-[#1f514c]" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#1f514c]">Our Story</h3>
+                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#1f514c]">
+                          Our Story
+                        </h3>
                         <p className="text-xs text-[#4a5568]">Mission, vision & values</p>
                       </div>
                     </div>
                   </Link>
-                  
-                  <Link href="/nep-2020" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
+
+                  <Link
+                    href="/nep-2020"
+                    className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item"
+                  >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#2d5a27]/10 rounded-lg flex items-center justify-center">
                         <BookOpen className="h-4 w-4 text-[#2d5a27]" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#2d5a27]">NEP 2020</h3>
+                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#2d5a27]">
+                          NEP 2020
+                        </h3>
                         <p className="text-xs text-[#4a5568]">Educational framework</p>
                       </div>
                     </div>
                   </Link>
-                  
-                  <Link href="/global-partnerships" className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item">
+
+                  <Link
+                    href="/global-partnerships"
+                    className="block p-3 rounded-xl hover:bg-[#faf7f2] transition-colors group/item"
+                  >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#d4831f]/10 rounded-lg flex items-center justify-center">
                         <Globe className="h-4 w-4 text-[#d4831f]" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#d4831f]">Global Partnerships</h3>
+                        <h3 className="text-sm font-semibold text-[#2d3748] group-hover/item:text-[#d4831f]">
+                          Global Partnerships
+                        </h3>
                         <p className="text-xs text-[#4a5568]">International connections</p>
                       </div>
                     </div>
@@ -97,20 +114,32 @@ export default function Header() {
                 </div>
               </div>
             </div>
-            
-            <Link href="/academics" className={`transition-colors font-medium ${isActiveLink('/academics') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+
+            <Link
+              href="/academics"
+              className={`transition-colors font-medium ${isActiveLink('/academics') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+            >
               Academics
             </Link>
-            <Link href="/admissions" className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+            <Link
+              href="/admissions"
+              className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+            >
               Admissions
             </Link>
-            <Link href="/contact" className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+            <Link
+              href="/contact"
+              className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+            >
               Contact
             </Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white">
+            <Button
+              variant="outline"
+              className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
+            >
               Schedule Visit
             </Button>
             <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
@@ -120,10 +149,7 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={toggleMenu}
-          >
+          <button className="md:hidden p-2" onClick={toggleMenu}>
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -132,35 +158,64 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden py-6 border-t border-gray-100">
             <nav className="flex flex-col space-y-6">
-              <Link href="/" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link
+                href="/"
+                onClick={closeMenu}
+                className={`transition-colors font-medium ${isActiveLink('/') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
                 Home
               </Link>
-              <Link href="/about" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/about') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link
+                href="/about"
+                onClick={closeMenu}
+                className={`transition-colors font-medium ${isActiveLink('/about') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
                 About
               </Link>
-              <Link href="/academics" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/academics') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link
+                href="/academics"
+                onClick={closeMenu}
+                className={`transition-colors font-medium ${isActiveLink('/academics') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
                 Academics
               </Link>
-              <Link href="/nep-2020" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/nep-2020') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link
+                href="/nep-2020"
+                onClick={closeMenu}
+                className={`transition-colors font-medium ${isActiveLink('/nep-2020') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
                 NEP 2020
               </Link>
-              <Link href="/global-partnerships" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/global-partnerships') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link
+                href="/global-partnerships"
+                onClick={closeMenu}
+                className={`transition-colors font-medium ${isActiveLink('/global-partnerships') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
                 Global Partnerships
               </Link>
-              <Link href="/admissions" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link
+                href="/admissions"
+                onClick={closeMenu}
+                className={`transition-colors font-medium ${isActiveLink('/admissions') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
                 Admissions
               </Link>
-              <Link href="/contact" onClick={closeMenu} className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}>
+              <Link
+                href="/contact"
+                onClick={closeMenu}
+                className={`transition-colors font-medium ${isActiveLink('/contact') ? 'text-[#1f514c] font-semibold' : 'text-[#4a5568] hover:text-[#1f514c]'}`}
+              >
                 Contact
               </Link>
             </nav>
             <div className="flex flex-col gap-3 pt-6 border-t border-gray-100 mt-6">
-              <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white">
+              <Button
+                variant="outline"
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
+              >
                 Schedule Visit
               </Button>
-              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
-                Apply Now
-              </Button>
+              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">Apply Now</Button>
             </div>
           </div>
         )}

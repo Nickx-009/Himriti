@@ -10,9 +10,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
       <WhatsAppWidget />
     </div>

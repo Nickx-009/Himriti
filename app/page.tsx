@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import { 
-  GraduationCap, 
-  Users, 
-  BookOpen, 
-  Award, 
+import {
+  GraduationCap,
+  Users,
+  BookOpen,
+  Award,
   ChevronRight,
   ArrowRight,
   CheckCircle,
@@ -19,7 +19,7 @@ import {
   Calendar,
   MapPin,
   Phone,
-  Mail
+  Mail,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -27,11 +27,11 @@ export default function HomePage() {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -50px 0px',
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         }
@@ -39,7 +39,7 @@ export default function HomePage() {
     }, observerOptions);
 
     const fadeElements = document.querySelectorAll('.fade-in-section');
-    fadeElements.forEach((el) => observer.observe(el));
+    fadeElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -47,7 +47,10 @@ export default function HomePage() {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section id="home" className="pt-20 pb-32 bg-gradient-to-b from-[#faf7f2] to-white overflow-hidden">
+      <section
+        id="home"
+        className="pt-20 pb-32 bg-gradient-to-b from-[#faf7f2] to-white overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
             <Badge className="bg-[#1f514c]/10 text-[#1f514c] border-[#1f514c]/20 mb-8 text-sm px-6 py-2 font-medium">
@@ -59,15 +62,22 @@ export default function HomePage() {
               <span className="text-[#1f514c]">Inspiring Future</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-2xl mx-auto animate-fade-in-up animate-delay-200">
-              Nestled in the heart of Rampur Bushahr, we're creating an educational 
-              institution where tradition meets innovation, preparing students for a global future.
+              Nestled in the heart of Rampur Bushahr, we're creating an educational institution
+              where tradition meets innovation, preparing students for a global future.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Schedule a Visit
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Download Brochure
               </Button>
             </div>
@@ -114,17 +124,20 @@ export default function HomePage() {
             <h2 className="text-5xl font-bold text-[#2d3748] mb-6">Our Foundation</h2>
             <div className="max-w-2xl mx-auto mb-8">
               <p className="text-lg text-[#1f514c] font-semibold mb-4">
-                <span className="text-[#d4831f]">Him</span>riti - Where <span className="text-[#d4831f]">Him</span>alayas Meet <span className="text-[#d4831f]">Riti</span> (Culture)
+                <span className="text-[#d4831f]">Him</span>riti - Where{' '}
+                <span className="text-[#d4831f]">Him</span>alayas Meet{' '}
+                <span className="text-[#d4831f]">Riti</span> (Culture)
               </p>
               <p className="text-base text-[#4a5568] leading-relaxed">
-                Our name reflects our essence: <strong>Him</strong> representing the majestic Himalayas that surround us, 
-                and <strong>Riti</strong> embodying the rich culture and customs we cherish. Together, Himriti symbolizes 
-                the perfect harmony between our natural heritage and cultural traditions.
+                Our name reflects our essence: <strong>Him</strong> representing the majestic
+                Himalayas that surround us, and <strong>Riti</strong> embodying the rich culture and
+                customs we cherish. Together, Himriti symbolizes the perfect harmony between our
+                natural heritage and cultural traditions.
               </p>
             </div>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Built on the principles of excellence, tradition, and innovation, 
-              we're creating more than just a school – we're nurturing a community.
+              Built on the principles of excellence, tradition, and innovation, we're creating more
+              than just a school – we're nurturing a community.
             </p>
           </div>
 
@@ -135,7 +148,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-bold text-[#2d3748] mb-4">Heritage</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Rooted in the rich cultural heritage of Himachal Pradesh, honoring traditional 
+                Rooted in the rich cultural heritage of Himachal Pradesh, honoring traditional
                 values while embracing modern educational methodologies.
               </p>
             </div>
@@ -146,8 +159,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-bold text-[#2d3748] mb-4">Excellence</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Comprehensive K-12 curriculum combining rigorous academics with creative 
-                expression, critical thinking, and character development.
+                Comprehensive K-12 curriculum combining rigorous academics with creative expression,
+                critical thinking, and character development.
               </p>
             </div>
 
@@ -157,8 +170,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-bold text-[#2d3748] mb-4">Community</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Building a strong community that supports every student's journey, 
-                fostering collaboration, empathy, and lifelong connections.
+                Building a strong community that supports every student's journey, fostering
+                collaboration, empathy, and lifelong connections.
               </p>
             </div>
           </div>
@@ -167,9 +180,9 @@ export default function HomePage() {
           <div className="bg-[#faf7f2] rounded-3xl p-12 text-center fade-in-section interactive-card">
             <h3 className="text-3xl font-bold text-[#2d3748] mb-6">Our Mission</h3>
             <p className="text-xl text-[#4a5568] leading-relaxed max-w-4xl mx-auto">
-              To nurture young minds in the heart of the Himalayas, where the timeless wisdom 
-              of our mountains meets cutting-edge education, preparing students to become 
-              compassionate leaders and global citizens.
+              To nurture young minds in the heart of the Himalayas, where the timeless wisdom of our
+              mountains meets cutting-edge education, preparing students to become compassionate
+              leaders and global citizens.
             </p>
           </div>
         </div>
@@ -181,8 +194,8 @@ export default function HomePage() {
           <div className="text-center mb-20 fade-in-section">
             <h2 className="text-5xl font-bold text-[#2d3748] mb-6">Academic Excellence</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Our comprehensive curriculum nurtures intellectual curiosity, creativity, 
-              and critical thinking skills at every grade level.
+              Our comprehensive curriculum nurtures intellectual curiosity, creativity, and critical
+              thinking skills at every grade level.
             </p>
           </div>
 
@@ -197,7 +210,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] mb-6 leading-relaxed">
-                  Foundation years focused on building strong literacy, numeracy, and social skills 
+                  Foundation years focused on building strong literacy, numeracy, and social skills
                   through play-based and experiential learning.
                 </p>
                 <ul className="space-y-3">
@@ -231,8 +244,8 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] mb-6 leading-relaxed">
-                  Transitional years emphasizing academic rigor, leadership development, 
-                  and exploration of individual interests and talents.
+                  Transitional years emphasizing academic rigor, leadership development, and
+                  exploration of individual interests and talents.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-[#4a5568]">
@@ -265,8 +278,8 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] mb-6 leading-relaxed">
-                  College preparatory program with advanced coursework, career guidance, 
-                  and opportunities for specialization in chosen fields.
+                  College preparatory program with advanced coursework, career guidance, and
+                  opportunities for specialization in chosen fields.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-[#4a5568]">
@@ -298,8 +311,8 @@ export default function HomePage() {
           <div className="text-center mb-20 fade-in-section">
             <h2 className="text-5xl font-bold text-[#2d3748] mb-6">Join Our Community</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Be part of our founding class and help shape the future of education 
-              in the Himalayas. Applications are now being accepted.
+              Be part of our founding class and help shape the future of education in the Himalayas.
+              Applications are now being accepted.
             </p>
           </div>
 
@@ -339,25 +352,33 @@ export default function HomePage() {
                     <div className="w-6 h-6 bg-[#1f514c]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                       <CheckCircle className="h-4 w-4 text-[#1f514c]" />
                     </div>
-                    <span className="text-[#4a5568] leading-relaxed">Completed application form with required documents</span>
+                    <span className="text-[#4a5568] leading-relaxed">
+                      Completed application form with required documents
+                    </span>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="w-6 h-6 bg-[#1f514c]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                       <CheckCircle className="h-4 w-4 text-[#1f514c]" />
                     </div>
-                    <span className="text-[#4a5568] leading-relaxed">Academic transcripts from previous school</span>
+                    <span className="text-[#4a5568] leading-relaxed">
+                      Academic transcripts from previous school
+                    </span>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="w-6 h-6 bg-[#1f514c]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                       <CheckCircle className="h-4 w-4 text-[#1f514c]" />
                     </div>
-                    <span className="text-[#4a5568] leading-relaxed">Student and parent interview (virtual or in-person)</span>
+                    <span className="text-[#4a5568] leading-relaxed">
+                      Student and parent interview (virtual or in-person)
+                    </span>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="w-6 h-6 bg-[#1f514c]/10 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
                       <CheckCircle className="h-4 w-4 text-[#1f514c]" />
                     </div>
-                    <span className="text-[#4a5568] leading-relaxed">Age-appropriate assessment for grade placement</span>
+                    <span className="text-[#4a5568] leading-relaxed">
+                      Age-appropriate assessment for grade placement
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -367,7 +388,10 @@ export default function HomePage() {
                   Download Application
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white flex-1 h-12 btn-interactive">
+                <Button
+                  variant="outline"
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white flex-1 h-12 btn-interactive"
+                >
                   Schedule Tour
                 </Button>
               </div>
@@ -382,8 +406,8 @@ export default function HomePage() {
           <div className="text-center mb-20 fade-in-section">
             <h2 className="text-5xl font-bold text-[#2d3748] mb-6">Get in Touch</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Have questions about our school? We'd love to hear from you. 
-              Contact us to learn more about joining the Himriti family.
+              Have questions about our school? We'd love to hear from you. Contact us to learn more
+              about joining the Himriti family.
             </p>
           </div>
 
@@ -394,8 +418,10 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">Visit Us</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Rampur Bushahr<br />
-                Shimla, Himachal Pradesh<br />
+                Rampur Bushahr
+                <br />
+                Shimla, Himachal Pradesh
+                <br />
                 India - 172001
               </p>
             </Card>
@@ -406,8 +432,10 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">Call Us</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                +91 90154 17203<br />
-                WhatsApp: +91 90154 17203<br />
+                +91 90154 17203
+                <br />
+                WhatsApp: +91 90154 17203
+                <br />
                 Mon-Fri: 9:00 AM - 5:00 PM
               </p>
             </Card>
@@ -418,8 +446,10 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">Email Us</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                himritihigh@gmail.com<br />
-                WhatsApp: +91 90154 17203<br />
+                himritihigh@gmail.com
+                <br />
+                WhatsApp: +91 90154 17203
+                <br />
                 We'll respond within 24 hours
               </p>
             </Card>

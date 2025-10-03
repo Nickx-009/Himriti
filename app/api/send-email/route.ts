@@ -18,7 +18,10 @@ export async function POST(request: NextRequest) {
     if (!resend) {
       console.error('Resend not configured - missing RESEND_API_KEY');
       return NextResponse.json(
-        { error: 'Email service is not configured. Please contact us directly at himritihigh@gmail.com' },
+        {
+          error:
+            'Email service is not configured. Please contact us directly at himritihigh@gmail.com',
+        },
         { status: 503 }
       );
     }
@@ -28,10 +31,7 @@ export async function POST(request: NextRequest) {
 
     // Validate required fields
     if (!parentName || !email || !message) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     // Send email using Resend
@@ -81,27 +81,17 @@ export async function POST(request: NextRequest) {
         ${message}
         
         This message was sent from the Himriti Public School website contact form.
-      `
+      `,
     });
 
     if (error) {
       console.error('Resend error:', error);
-      return NextResponse.json(
-        { error: 'Failed to send email' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
     }
 
-    return NextResponse.json(
-      { message: 'Email sent successfully', id: data?.id },
-      { status: 200 }
-    );
-
+    return NextResponse.json({ message: 'Email sent successfully', id: data?.id }, { status: 200 });
   } catch (error) {
     console.error('API error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

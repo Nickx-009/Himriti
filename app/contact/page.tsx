@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -9,17 +9,17 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
+import {
+  MapPin,
+  Phone,
+  Mail,
   Clock,
   ChevronRight,
   Send,
   MessageSquare,
   Calendar,
   Users,
-  Building
+  Building,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -37,7 +37,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const {
     register,
     handleSubmit,
@@ -49,7 +49,7 @@ export default function ContactPage() {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
@@ -60,7 +60,7 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
-        toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
+        toast.success("Message sent successfully! We'll get back to you within 24 hours.");
         reset();
       } else {
         const errorData = await response.json();
@@ -77,11 +77,11 @@ export default function ContactPage() {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -50px 0px',
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         }
@@ -89,7 +89,7 @@ export default function ContactPage() {
     }, observerOptions);
 
     const fadeElements = document.querySelectorAll('.fade-in-section');
-    fadeElements.forEach((el) => observer.observe(el));
+    fadeElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -109,16 +109,22 @@ export default function ContactPage() {
               <span className="text-[#1f514c]">Touch</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-3xl mx-auto">
-              We'd love to hear from you. Whether you have questions about our programs, 
-              want to schedule a visit, or are ready to begin the admission process, 
-              we're here to help.
+              We'd love to hear from you. Whether you have questions about our programs, want to
+              schedule a visit, or are ready to begin the admission process, we're here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Schedule Visit
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Download Brochure
               </Button>
             </div>
@@ -132,8 +138,8 @@ export default function ContactPage() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Contact Information</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Reach out to us through any of these channels. We're committed to responding 
-              promptly to all inquiries.
+              Reach out to us through any of these channels. We're committed to responding promptly
+              to all inquiries.
             </p>
           </div>
 
@@ -147,8 +153,10 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Rampur Bushahr<br />
-                  Shimla, Himachal Pradesh<br />
+                  Rampur Bushahr
+                  <br />
+                  Shimla, Himachal Pradesh
+                  <br />
                   India - 172001
                 </p>
                 <Badge className="bg-[#1f514c] text-white px-4 py-2">Opening April 2026</Badge>
@@ -164,8 +172,10 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  +91 90154 17203<br />
-                  WhatsApp: +91 90154 17203<br />
+                  +91 90154 17203
+                  <br />
+                  WhatsApp: +91 90154 17203
+                  <br />
                   <span className="text-sm">Mon-Fri: 9:00 AM - 5:00 PM</span>
                 </p>
                 <Badge className="bg-[#2d5a27] text-white px-4 py-2">Available Now</Badge>
@@ -181,8 +191,10 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  himritihigh@gmail.com<br />
-                  <span className="text-sm">General Inquiries & Admissions</span><br />
+                  himritihigh@gmail.com
+                  <br />
+                  <span className="text-sm">General Inquiries & Admissions</span>
+                  <br />
                   <span className="text-sm">Response within 24 hours</span>
                 </p>
                 <Badge className="bg-[#d4831f] text-white px-4 py-2">Quick Response</Badge>
@@ -251,7 +263,7 @@ export default function ContactPage() {
                   <label className="block text-sm font-semibold text-[#2d3748] mb-2">
                     Student Grade Level
                   </label>
-                  <select 
+                  <select
                     {...register('gradeLevel')}
                     className="w-full px-4 py-3 border border-[#F2F2F2] rounded-lg focus:border-[#1f514c] focus:outline-none transition-colors"
                   >
@@ -268,7 +280,7 @@ export default function ContactPage() {
                 <label className="block text-sm font-semibold text-[#2d3748] mb-2">
                   Inquiry Type
                 </label>
-                <select 
+                <select
                   {...register('inquiryType')}
                   className="w-full px-4 py-3 border border-[#F2F2F2] rounded-lg focus:border-[#1f514c] focus:outline-none transition-colors"
                 >
@@ -282,9 +294,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-[#2d3748] mb-2">
-                  Message *
-                </label>
+                <label className="block text-sm font-semibold text-[#2d3748] mb-2">Message *</label>
                 <textarea
                   {...register('message')}
                   rows={5}
@@ -297,9 +307,9 @@ export default function ContactPage() {
               </div>
 
               <div className="text-center">
-                <Button 
+                <Button
                   type="submit"
-                  size="lg" 
+                  size="lg"
                   disabled={isSubmitting}
                   className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-12 py-4 text-lg h-14 btn-interactive"
                 >
@@ -335,7 +345,7 @@ export default function ContactPage() {
             <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">When does the school open?</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Himriti Public School is scheduled to open in April 2026. We are currently in the 
+                Himriti Public School is scheduled to open in April 2026. We are currently in the
                 construction phase and accepting applications for our founding class.
               </p>
             </Card>
@@ -343,23 +353,25 @@ export default function ContactPage() {
             <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">What grades do you offer?</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                We offer comprehensive K-12 education, from Kindergarten through Grade 12, 
-                with age-appropriate curriculum and facilities for each grade level.
+                We offer comprehensive K-12 education, from Kindergarten through Grade 12, with
+                age-appropriate curriculum and facilities for each grade level.
               </p>
             </Card>
 
             <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">Can I visit the campus?</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                While our campus is under construction, we offer virtual tours and information 
+                While our campus is under construction, we offer virtual tours and information
                 sessions. Once construction is complete, we'll schedule in-person campus visits.
               </p>
             </Card>
 
             <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
-              <h3 className="text-xl font-bold text-[#2d3748] mb-4">How do I apply for admission?</h3>
+              <h3 className="text-xl font-bold text-[#2d3748] mb-4">
+                How do I apply for admission?
+              </h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Applications will open in January 2026. You can contact us now to be added to our 
+                Applications will open in January 2026. You can contact us now to be added to our
                 mailing list and receive updates about the application process.
               </p>
             </Card>
@@ -372,17 +384,24 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Ready to Join Our Community?</h2>
           <p className="text-xl text-[#4a5568] mb-12 leading-relaxed">
-            Take the first step towards your child's exceptional educational journey 
-            in the heart of the Himalayas.
+            Take the first step towards your child's exceptional educational journey in the heart of
+            the Himalayas.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/admissions">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Start Application
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+            >
               Schedule Call
               <Phone className="ml-2 h-5 w-5" />
             </Button>

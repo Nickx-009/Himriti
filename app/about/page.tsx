@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import { 
-  Mountain, 
-  GraduationCap, 
-  Users, 
-  BookOpen, 
-  Award, 
+import {
+  Mountain,
+  GraduationCap,
+  Users,
+  BookOpen,
+  Award,
   ChevronRight,
   ArrowRight,
   CheckCircle,
@@ -27,7 +27,7 @@ import {
   Calendar,
   Leaf,
   Sun,
-  Wind
+  Wind,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -35,11 +35,11 @@ export default function AboutPage() {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -50px 0px',
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         }
@@ -47,7 +47,7 @@ export default function AboutPage() {
     }, observerOptions);
 
     const fadeElements = document.querySelectorAll('.fade-in-section');
-    fadeElements.forEach((el) => observer.observe(el));
+    fadeElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -67,17 +67,24 @@ export default function AboutPage() {
               <span className="text-[#1f514c]">Educational Excellence</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-3xl mx-auto">
-              Founded on the principles of holistic education and rooted in the majestic 
-              Himalayas, we are creating an institution where tradition meets innovation, 
-              and every student discovers their unique potential.
+              Founded on the principles of holistic education and rooted in the majestic Himalayas,
+              we are creating an institution where tradition meets innovation, and every student
+              discovers their unique potential.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Contact Us
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+                >
                   Email Us
                 </Button>
               </Link>
@@ -101,9 +108,9 @@ export default function AboutPage() {
                     <h3 className="text-2xl font-semibold text-[#2d3748]">Vision</h3>
                   </div>
                   <p className="text-[#4a5568] leading-relaxed text-lg">
-                    To be a beacon of educational excellence in the Himalayas, nurturing 
-                    globally competent citizens who are deeply rooted in Indian values, 
-                    environmentally conscious, and committed to making a positive impact on the world.
+                    To be a beacon of educational excellence in the Himalayas, nurturing globally
+                    competent citizens who are deeply rooted in Indian values, environmentally
+                    conscious, and committed to making a positive impact on the world.
                   </p>
                 </div>
 
@@ -115,9 +122,9 @@ export default function AboutPage() {
                     <h3 className="text-2xl font-semibold text-[#2d3748]">Mission</h3>
                   </div>
                   <p className="text-[#4a5568] leading-relaxed text-lg">
-                    To provide transformative education that combines academic rigor with 
-                    character development, fostering critical thinking, creativity, and 
-                    compassion while celebrating our rich cultural heritage and natural environment.
+                    To provide transformative education that combines academic rigor with character
+                    development, fostering critical thinking, creativity, and compassion while
+                    celebrating our rich cultural heritage and natural environment.
                   </p>
                 </div>
               </div>
@@ -135,7 +142,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <p className="text-[#4a5568] leading-relaxed">
-                  Drawing inspiration from the timeless wisdom of the Himalayas, we integrate 
+                  Drawing inspiration from the timeless wisdom of the Himalayas, we integrate
                   environmental consciousness and cultural values into every aspect of learning.
                 </p>
               </Card>
@@ -151,7 +158,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <p className="text-[#4a5568] leading-relaxed">
-                  While honoring our roots, we prepare students for a globalized world with 
+                  While honoring our roots, we prepare students for a globalized world with
                   21st-century skills, international perspectives, and cross-cultural competence.
                 </p>
               </Card>
@@ -166,8 +173,8 @@ export default function AboutPage() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Our Core Values</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              These fundamental principles guide everything we do, shaping our educational 
-              approach and community culture.
+              These fundamental principles guide everything we do, shaping our educational approach
+              and community culture.
             </p>
           </div>
 
@@ -181,8 +188,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed">
-                  Fostering empathy, kindness, and understanding in all interactions, 
-                  creating a caring community where everyone feels valued and supported.
+                  Fostering empathy, kindness, and understanding in all interactions, creating a
+                  caring community where everyone feels valued and supported.
                 </p>
               </CardContent>
             </Card>
@@ -196,7 +203,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed">
-                  Pursuing the highest standards in academics, character, and personal growth, 
+                  Pursuing the highest standards in academics, character, and personal growth,
                   inspiring students to reach their full potential in all endeavors.
                 </p>
               </CardContent>
@@ -211,8 +218,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed">
-                  Upholding honesty, transparency, and ethical behavior in all aspects of 
-                  school life, building trust and respect within our community.
+                  Upholding honesty, transparency, and ethical behavior in all aspects of school
+                  life, building trust and respect within our community.
                 </p>
               </CardContent>
             </Card>
@@ -226,8 +233,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed">
-                  Embracing creativity, critical thinking, and new approaches to learning, 
-                  preparing students for an ever-changing world with adaptability and vision.
+                  Embracing creativity, critical thinking, and new approaches to learning, preparing
+                  students for an ever-changing world with adaptability and vision.
                 </p>
               </CardContent>
             </Card>
@@ -241,8 +248,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed">
-                  Promoting environmental stewardship and sustainable practices, teaching 
-                  students to be responsible guardians of our planet and natural resources.
+                  Promoting environmental stewardship and sustainable practices, teaching students
+                  to be responsible guardians of our planet and natural resources.
                 </p>
               </CardContent>
             </Card>
@@ -256,8 +263,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed">
-                  Building strong connections between students, families, and the broader 
-                  community, fostering collaboration and mutual support in all endeavors.
+                  Building strong connections between students, families, and the broader community,
+                  fostering collaboration and mutual support in all endeavors.
                 </p>
               </CardContent>
             </Card>
@@ -271,8 +278,8 @@ export default function AboutPage() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Our Himalayan Campus</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Nestled in the breathtaking landscape of Rampur Bushahr, our campus provides 
-              an inspiring environment where learning comes alive through nature.
+              Nestled in the breathtaking landscape of Rampur Bushahr, our campus provides an
+              inspiring environment where learning comes alive through nature.
             </p>
           </div>
 
@@ -285,10 +292,12 @@ export default function AboutPage() {
                     <MapPin className="h-6 w-6 text-[#1f514c]" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Strategic Location</h4>
+                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">
+                      Strategic Location
+                    </h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Located in the heart of Himachal Pradesh, offering easy accessibility 
-                      while maintaining the serenity of mountain life.
+                      Located in the heart of Himachal Pradesh, offering easy accessibility while
+                      maintaining the serenity of mountain life.
                     </p>
                   </div>
                 </div>
@@ -298,10 +307,12 @@ export default function AboutPage() {
                     <TreePine className="h-6 w-6 text-[#2d5a27]" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Natural Learning Environment</h4>
+                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">
+                      Natural Learning Environment
+                    </h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Surrounded by pristine forests, rivers, and mountains that serve as 
-                      outdoor classrooms for experiential learning.
+                      Surrounded by pristine forests, rivers, and mountains that serve as outdoor
+                      classrooms for experiential learning.
                     </p>
                   </div>
                 </div>
@@ -311,10 +322,12 @@ export default function AboutPage() {
                     <Wind className="h-6 w-6 text-[#d4831f]" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Clean & Healthy Air</h4>
+                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">
+                      Clean & Healthy Air
+                    </h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Pure mountain air and pollution-free environment promoting physical 
-                      health and mental well-being for optimal learning.
+                      Pure mountain air and pollution-free environment promoting physical health and
+                      mental well-being for optimal learning.
                     </p>
                   </div>
                 </div>
@@ -326,7 +339,7 @@ export default function AboutPage() {
                   <div>
                     <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Cultural Heritage</h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Rich local traditions and cultural practices that enrich the educational 
+                      Rich local traditions and cultural practices that enrich the educational
                       experience and connect students to their roots.
                     </p>
                   </div>
@@ -393,7 +406,7 @@ export default function AboutPage() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Leadership Team</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Our experienced leadership team brings together decades of educational expertise, 
+              Our experienced leadership team brings together decades of educational expertise,
               passion for student development, and commitment to excellence.
             </p>
           </div>
@@ -409,8 +422,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Leading with vision and experience in progressive education, 
-                  committed to nurturing every student's potential.
+                  Leading with vision and experience in progressive education, committed to
+                  nurturing every student's potential.
                 </p>
                 <Badge className="bg-[#1f514c]/10 text-[#1f514c]">25+ Years Experience</Badge>
               </CardContent>
@@ -426,8 +439,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Expert in NEP 2020 implementation and innovative teaching 
-                  methodologies for holistic student development.
+                  Expert in NEP 2020 implementation and innovative teaching methodologies for
+                  holistic student development.
                 </p>
                 <Badge className="bg-[#2d5a27]/10 text-[#2d5a27]">NEP 2020 Specialist</Badge>
               </CardContent>
@@ -438,13 +451,15 @@ export default function AboutPage() {
                 <div className="w-24 h-24 bg-[#d4831f]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Users className="h-12 w-12 text-[#d4831f]" />
                 </div>
-                <CardTitle className="text-xl text-[#2d3748] mb-2">Student Affairs Director</CardTitle>
+                <CardTitle className="text-xl text-[#2d3748] mb-2">
+                  Student Affairs Director
+                </CardTitle>
                 <p className="text-[#4a5568] text-sm">Student Development</p>
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Dedicated to student welfare, character development, and 
-                  creating a supportive learning environment.
+                  Dedicated to student welfare, character development, and creating a supportive
+                  learning environment.
                 </p>
                 <Badge className="bg-[#d4831f]/10 text-[#d4831f]">Student-Centered Approach</Badge>
               </CardContent>
@@ -458,16 +473,23 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Join the Himriti Family</h2>
           <p className="text-xl text-[#4a5568] mb-12 leading-relaxed">
-            Be part of our founding community and help shape the future of education 
-            in the Himalayas. Together, we'll create something extraordinary.
+            Be part of our founding community and help shape the future of education in the
+            Himalayas. Together, we'll create something extraordinary.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+            <Button
+              size="lg"
+              className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+            >
               Schedule Campus Visit
               <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
             <Link href="/admissions">
-              <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Apply for Admission
               </Button>
             </Link>

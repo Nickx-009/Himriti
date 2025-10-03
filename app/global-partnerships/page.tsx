@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import { 
-  Globe, 
-  GraduationCap, 
-  Users, 
-  Award, 
+import {
+  Globe,
+  GraduationCap,
+  Users,
+  Award,
   ChevronRight,
   ArrowRight,
   CheckCircle,
@@ -25,7 +25,7 @@ import {
   Calendar,
   MapPin,
   Star,
-  Handshake
+  Handshake,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -33,11 +33,11 @@ export default function GlobalPartnershipsPage() {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -50px 0px',
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         }
@@ -45,7 +45,7 @@ export default function GlobalPartnershipsPage() {
     }, observerOptions);
 
     const fadeElements = document.querySelectorAll('.fade-in-section');
-    fadeElements.forEach((el) => observer.observe(el));
+    fadeElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -65,16 +65,24 @@ export default function GlobalPartnershipsPage() {
               <span className="text-[#1f514c]">Across Borders</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-3xl mx-auto">
-              At Himriti Public School, we believe in preparing our students for a globalized world 
-              through meaningful partnerships with educational institutions and organizations worldwide.
+              At Himriti Public School, we believe in preparing our students for a globalized world
+              through meaningful partnerships with educational institutions and organizations
+              worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Explore Partnerships
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+                >
                   Partner With Us
                 </Button>
               </Link>
@@ -87,16 +95,20 @@ export default function GlobalPartnershipsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 fade-in-section">
-            <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Our Vision for Global Education</h2>
+            <h2 className="text-4xl font-bold text-[#2d3748] mb-6">
+              Our Vision for Global Education
+            </h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              We envision a world where students from the Himalayas can connect, collaborate, 
-              and learn alongside peers from diverse cultures and backgrounds.
+              We envision a world where students from the Himalayas can connect, collaborate, and
+              learn alongside peers from diverse cultures and backgrounds.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center fade-in-section">
             <div>
-              <h3 className="text-3xl font-bold text-[#2d3748] mb-8">Why Global Partnerships Matter</h3>
+              <h3 className="text-3xl font-bold text-[#2d3748] mb-8">
+                Why Global Partnerships Matter
+              </h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-[#1f514c]/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
@@ -105,8 +117,8 @@ export default function GlobalPartnershipsPage() {
                   <div>
                     <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Cultural Exchange</h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Students gain exposure to different cultures, perspectives, and ways of thinking, 
-                      fostering global citizenship and cultural sensitivity.
+                      Students gain exposure to different cultures, perspectives, and ways of
+                      thinking, fostering global citizenship and cultural sensitivity.
                     </p>
                   </div>
                 </div>
@@ -116,9 +128,11 @@ export default function GlobalPartnershipsPage() {
                     <Languages className="h-6 w-6 text-[#2d5a27]" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Language Development</h4>
+                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">
+                      Language Development
+                    </h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Real-world opportunities to practice and improve language skills through 
+                      Real-world opportunities to practice and improve language skills through
                       authentic communication with native speakers.
                     </p>
                   </div>
@@ -129,9 +143,11 @@ export default function GlobalPartnershipsPage() {
                     <Lightbulb className="h-6 w-6 text-[#d4831f]" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Innovation & Collaboration</h4>
+                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">
+                      Innovation & Collaboration
+                    </h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Joint projects and collaborative learning experiences that spark creativity 
+                      Joint projects and collaborative learning experiences that spark creativity
                       and innovative problem-solving approaches.
                     </p>
                   </div>
@@ -144,8 +160,8 @@ export default function GlobalPartnershipsPage() {
                   <div>
                     <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Future Readiness</h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Preparation for higher education and careers in an increasingly 
-                      interconnected and globalized world.
+                      Preparation for higher education and careers in an increasingly interconnected
+                      and globalized world.
                     </p>
                   </div>
                 </div>
@@ -207,8 +223,8 @@ export default function GlobalPartnershipsPage() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Types of Global Partnerships</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              We are actively developing various types of partnerships to provide 
-              diverse global learning opportunities for our students.
+              We are actively developing various types of partnerships to provide diverse global
+              learning opportunities for our students.
             </p>
           </div>
 
@@ -222,8 +238,8 @@ export default function GlobalPartnershipsPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Long-term partnerships with schools worldwide for regular student 
-                  and teacher exchanges, joint curricula, and shared learning experiences.
+                  Long-term partnerships with schools worldwide for regular student and teacher
+                  exchanges, joint curricula, and shared learning experiences.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Regular video conferences</li>
@@ -239,12 +255,14 @@ export default function GlobalPartnershipsPage() {
                 <div className="w-20 h-20 bg-[#2d5a27]/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#2d5a27] transition-all duration-300">
                   <BookOpen className="h-10 w-10 text-[#2d5a27] group-hover:text-white transition-all duration-300 group-hover:scale-110" />
                 </div>
-                <CardTitle className="text-xl text-[#2d3748] mb-2">University Collaborations</CardTitle>
+                <CardTitle className="text-xl text-[#2d3748] mb-2">
+                  University Collaborations
+                </CardTitle>
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Partnerships with international universities for advanced coursework, 
-                  research opportunities, and streamlined admission pathways.
+                  Partnerships with international universities for advanced coursework, research
+                  opportunities, and streamlined admission pathways.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Dual enrollment programs</li>
@@ -260,12 +278,14 @@ export default function GlobalPartnershipsPage() {
                 <div className="w-20 h-20 bg-[#d4831f]/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#d4831f] transition-all duration-300">
                   <Globe className="h-10 w-10 text-[#d4831f] group-hover:text-white transition-all duration-300 group-hover:scale-110" />
                 </div>
-                <CardTitle className="text-xl text-[#2d3748] mb-2">Cultural Organizations</CardTitle>
+                <CardTitle className="text-xl text-[#2d3748] mb-2">
+                  Cultural Organizations
+                </CardTitle>
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Collaborations with cultural institutions, museums, and organizations 
-                  to provide authentic cultural learning experiences.
+                  Collaborations with cultural institutions, museums, and organizations to provide
+                  authentic cultural learning experiences.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Virtual museum tours</li>
@@ -285,8 +305,8 @@ export default function GlobalPartnershipsPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Partnerships with language learning institutions for immersive 
-                  language programs and international certification preparation.
+                  Partnerships with language learning institutions for immersive language programs
+                  and international certification preparation.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Native speaker sessions</li>
@@ -302,12 +322,14 @@ export default function GlobalPartnershipsPage() {
                 <div className="w-20 h-20 bg-[#1f514c]/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#1f514c] transition-all duration-300">
                   <Building className="h-10 w-10 text-[#1f514c] group-hover:text-white transition-all duration-300 group-hover:scale-110" />
                 </div>
-                <CardTitle className="text-xl text-[#2d3748] mb-2">International Organizations</CardTitle>
+                <CardTitle className="text-xl text-[#2d3748] mb-2">
+                  International Organizations
+                </CardTitle>
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Collaborations with UNESCO, UNICEF, and other international bodies 
-                  for global citizenship and sustainable development programs.
+                  Collaborations with UNESCO, UNICEF, and other international bodies for global
+                  citizenship and sustainable development programs.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Global citizenship education</li>
@@ -327,8 +349,8 @@ export default function GlobalPartnershipsPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Technology-enabled partnerships that connect our students with peers 
-                  worldwide through virtual classrooms and collaborative projects.
+                  Technology-enabled partnerships that connect our students with peers worldwide
+                  through virtual classrooms and collaborative projects.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Virtual reality field trips</li>
@@ -348,8 +370,8 @@ export default function GlobalPartnershipsPage() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Benefits for Our Students</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Our global partnerships provide tangible benefits that enhance learning 
-              and prepare students for success in an interconnected world.
+              Our global partnerships provide tangible benefits that enhance learning and prepare
+              students for success in an interconnected world.
             </p>
           </div>
 
@@ -481,10 +503,12 @@ export default function GlobalPartnershipsPage() {
       <section className="py-20 bg-[#faf7f2]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 fade-in-section">
-            <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Partnership Development Timeline</h2>
+            <h2 className="text-4xl font-bold text-[#2d3748] mb-6">
+              Partnership Development Timeline
+            </h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              Our strategic approach to building meaningful global partnerships 
-              that will benefit our students from day one.
+              Our strategic approach to building meaningful global partnerships that will benefit
+              our students from day one.
             </p>
           </div>
 
@@ -505,7 +529,8 @@ export default function GlobalPartnershipsPage() {
               </div>
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">Partnership Planning</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Identifying and establishing initial partnerships with schools and organizations worldwide.
+                Identifying and establishing initial partnerships with schools and organizations
+                worldwide.
               </p>
             </div>
 
@@ -537,18 +562,25 @@ export default function GlobalPartnershipsPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Join Our Global Community</h2>
           <p className="text-xl text-[#4a5568] mb-12 leading-relaxed">
-            Give your child the opportunity to be part of a truly global educational experience. 
-            Our partnerships will open doors to a world of possibilities.
+            Give your child the opportunity to be part of a truly global educational experience. Our
+            partnerships will open doors to a world of possibilities.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/admissions">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Apply for Admission
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

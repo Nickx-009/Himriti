@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import { 
-  BookOpen, 
-  GraduationCap, 
-  Users, 
-  Award, 
+import {
+  BookOpen,
+  GraduationCap,
+  Users,
+  Award,
   ChevronRight,
   ArrowRight,
   CheckCircle,
@@ -26,7 +26,7 @@ import {
   TreePine,
   Brain,
   Puzzle,
-  Star
+  Star,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -34,11 +34,11 @@ export default function NEP2020Page() {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '0px 0px -50px 0px',
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         }
@@ -46,7 +46,7 @@ export default function NEP2020Page() {
     }, observerOptions);
 
     const fadeElements = document.querySelectorAll('.fade-in-section');
-    fadeElements.forEach((el) => observer.observe(el));
+    fadeElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -66,17 +66,24 @@ export default function NEP2020Page() {
               <span className="text-[#1f514c]">for the Future</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-3xl mx-auto">
-              At Himriti Public School, we are proud to be at the forefront of implementing 
-              India's National Education Policy 2020, creating a holistic and flexible 
-              learning environment that prepares students for the 21st century.
+              At Himriti Public School, we are proud to be at the forefront of implementing India's
+              National Education Policy 2020, creating a holistic and flexible learning environment
+              that prepares students for the 21st century.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Learn More
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
               <Link href="/academics">
-                <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+                >
                   View Academics
                 </Button>
               </Link>
@@ -91,9 +98,9 @@ export default function NEP2020Page() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">What is NEP 2020?</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              The National Education Policy 2020 is India's comprehensive framework for 
-              transforming education, emphasizing holistic development, critical thinking, 
-              and preparing students for a rapidly changing world.
+              The National Education Policy 2020 is India's comprehensive framework for transforming
+              education, emphasizing holistic development, critical thinking, and preparing students
+              for a rapidly changing world.
             </p>
           </div>
 
@@ -106,10 +113,12 @@ export default function NEP2020Page() {
                     <Brain className="h-6 w-6 text-[#1f514c]" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Holistic Development</h4>
+                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">
+                      Holistic Development
+                    </h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Focus on cognitive, physical, social, emotional, and moral development 
-                      of every student through integrated learning approaches.
+                      Focus on cognitive, physical, social, emotional, and moral development of
+                      every student through integrated learning approaches.
                     </p>
                   </div>
                 </div>
@@ -119,10 +128,12 @@ export default function NEP2020Page() {
                     <Puzzle className="h-6 w-6 text-[#2d5a27]" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Flexibility & Choice</h4>
+                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">
+                      Flexibility & Choice
+                    </h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Multiple pathways and flexible curriculum allowing students to 
-                      choose subjects based on their interests and career aspirations.
+                      Multiple pathways and flexible curriculum allowing students to choose subjects
+                      based on their interests and career aspirations.
                     </p>
                   </div>
                 </div>
@@ -134,8 +145,8 @@ export default function NEP2020Page() {
                   <div>
                     <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Critical Thinking</h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Emphasis on analytical thinking, creativity, and problem-solving 
-                      skills rather than rote memorization.
+                      Emphasis on analytical thinking, creativity, and problem-solving skills rather
+                      than rote memorization.
                     </p>
                   </div>
                 </div>
@@ -145,10 +156,12 @@ export default function NEP2020Page() {
                     <Heart className="h-6 w-6 text-[#c44569]" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">Cultural Rootedness</h4>
+                    <h4 className="text-xl font-semibold text-[#2d3748] mb-2">
+                      Cultural Rootedness
+                    </h4>
                     <p className="text-[#4a5568] leading-relaxed">
-                      Deep connection to Indian culture, values, and traditions while 
-                      maintaining a global outlook and perspective.
+                      Deep connection to Indian culture, values, and traditions while maintaining a
+                      global outlook and perspective.
                     </p>
                   </div>
                 </div>
@@ -164,9 +177,9 @@ export default function NEP2020Page() {
                   <h4 className="text-2xl font-bold text-[#2d3748] mb-2">Our Commitment</h4>
                 </div>
                 <p className="text-[#4a5568] leading-relaxed text-center">
-                  Himriti Public School is fully committed to implementing NEP 2020 
-                  principles from day one, ensuring our students receive education 
-                  that is relevant, engaging, and future-ready.
+                  Himriti Public School is fully committed to implementing NEP 2020 principles from
+                  day one, ensuring our students receive education that is relevant, engaging, and
+                  future-ready.
                 </p>
               </Card>
 
@@ -178,8 +191,8 @@ export default function NEP2020Page() {
                   <h4 className="text-2xl font-bold text-[#2d3748] mb-2">Innovation Focus</h4>
                 </div>
                 <p className="text-[#4a5568] leading-relaxed text-center">
-                  We embrace innovative teaching methods, technology integration, 
-                  and experiential learning to make education more effective and enjoyable.
+                  We embrace innovative teaching methods, technology integration, and experiential
+                  learning to make education more effective and enjoyable.
                 </p>
               </Card>
             </div>
@@ -191,10 +204,12 @@ export default function NEP2020Page() {
       <section className="py-20 bg-[#faf7f2]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 fade-in-section">
-            <h2 className="text-4xl font-bold text-[#2d3748] mb-6">NEP 2020 Implementation at Himriti</h2>
+            <h2 className="text-4xl font-bold text-[#2d3748] mb-6">
+              NEP 2020 Implementation at Himriti
+            </h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              We have carefully designed our curriculum and teaching methodologies 
-              to align with NEP 2020 guidelines, ensuring comprehensive implementation.
+              We have carefully designed our curriculum and teaching methodologies to align with NEP
+              2020 guidelines, ensuring comprehensive implementation.
             </p>
           </div>
 
@@ -208,8 +223,8 @@ export default function NEP2020Page() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Foundational Stage (3-8 years), Preparatory (8-11), Middle (11-14), 
-                  and Secondary Stage (14-18) with age-appropriate pedagogy.
+                  Foundational Stage (3-8 years), Preparatory (8-11), Middle (11-14), and Secondary
+                  Stage (14-18) with age-appropriate pedagogy.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Play-based early learning</li>
@@ -225,12 +240,14 @@ export default function NEP2020Page() {
                 <div className="w-20 h-20 bg-[#2d5a27]/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#2d5a27] transition-all duration-300">
                   <Languages className="h-10 w-10 text-[#2d5a27] group-hover:text-white transition-all duration-300 group-hover:scale-110" />
                 </div>
-                <CardTitle className="text-xl text-[#2d3748] mb-2">Multilingual Education</CardTitle>
+                <CardTitle className="text-xl text-[#2d3748] mb-2">
+                  Multilingual Education
+                </CardTitle>
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  English as primary medium of instruction along with Hindi, 
-                  with strong foundation in multiple languages.
+                  English as primary medium of instruction along with Hindi, with strong foundation
+                  in multiple languages.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• English as primary medium</li>
@@ -250,8 +267,8 @@ export default function NEP2020Page() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Integration of arts, crafts, and sports in curriculum to develop 
-                  creativity, aesthetic sense, and physical fitness.
+                  Integration of arts, crafts, and sports in curriculum to develop creativity,
+                  aesthetic sense, and physical fitness.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Visual arts programs</li>
@@ -271,8 +288,8 @@ export default function NEP2020Page() {
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Strong emphasis on Science, Technology, Engineering, and Mathematics 
-                  with hands-on learning and practical applications.
+                  Strong emphasis on Science, Technology, Engineering, and Mathematics with hands-on
+                  learning and practical applications.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Modern laboratories</li>
@@ -288,12 +305,14 @@ export default function NEP2020Page() {
                 <div className="w-20 h-20 bg-[#1f514c]/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#1f514c] transition-all duration-300">
                   <Award className="h-10 w-10 text-[#1f514c] group-hover:text-white transition-all duration-300 group-hover:scale-110" />
                 </div>
-                <CardTitle className="text-xl text-[#2d3748] mb-2">Competency-Based Assessment</CardTitle>
+                <CardTitle className="text-xl text-[#2d3748] mb-2">
+                  Competency-Based Assessment
+                </CardTitle>
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Regular and formative assessment focusing on learning outcomes 
-                  rather than high-stakes examinations.
+                  Regular and formative assessment focusing on learning outcomes rather than
+                  high-stakes examinations.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Continuous evaluation</li>
@@ -309,12 +328,14 @@ export default function NEP2020Page() {
                 <div className="w-20 h-20 bg-[#2d5a27]/10 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-[#2d5a27] transition-all duration-300">
                   <TreePine className="h-10 w-10 text-[#2d5a27] group-hover:text-white transition-all duration-300 group-hover:scale-110" />
                 </div>
-                <CardTitle className="text-xl text-[#2d3748] mb-2">Environmental Education</CardTitle>
+                <CardTitle className="text-xl text-[#2d3748] mb-2">
+                  Environmental Education
+                </CardTitle>
               </CardHeader>
               <CardContent className="p-8 pt-0 text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  Strong focus on environmental awareness, sustainability, 
-                  and connection with nature through our Himalayan setting.
+                  Strong focus on environmental awareness, sustainability, and connection with
+                  nature through our Himalayan setting.
                 </p>
                 <ul className="text-sm text-[#4a5568] space-y-2">
                   <li>• Outdoor learning</li>
@@ -334,8 +355,8 @@ export default function NEP2020Page() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Benefits for Our Students</h2>
             <p className="text-xl text-[#4a5568] max-w-3xl mx-auto leading-relaxed">
-              NEP 2020 implementation at Himriti ensures our students receive education 
-              that is comprehensive, relevant, and prepares them for future success.
+              NEP 2020 implementation at Himriti ensures our students receive education that is
+              comprehensive, relevant, and prepares them for future success.
             </p>
           </div>
 
@@ -468,18 +489,25 @@ export default function NEP2020Page() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Experience NEP 2020 at Himriti</h2>
           <p className="text-xl text-[#4a5568] mb-12 leading-relaxed">
-            Join us in this educational transformation. Give your child the advantage 
-            of learning in an environment designed for the future.
+            Join us in this educational transformation. Give your child the advantage of learning in
+            an environment designed for the future.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/admissions">
-              <Button size="lg" className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Apply for Admission
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

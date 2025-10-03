@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
@@ -9,9 +9,9 @@ interface WhatsAppWidgetProps {
   defaultMessage?: string;
 }
 
-export default function WhatsAppWidget({ 
-  phoneNumber = "919015417203", 
-  defaultMessage = "Hello! I'm interested in learning more about Himriti Public School." 
+export default function WhatsAppWidget({
+  phoneNumber = '919015417203',
+  defaultMessage = "Hello! I'm interested in learning more about Himriti Public School.",
 }: WhatsAppWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState(defaultMessage);
@@ -25,9 +25,9 @@ export default function WhatsAppWidget({
 
   const quickMessages = [
     "I'd like to schedule a campus visit",
-    "Can you send me the admission brochure?",
-    "What are your fee structures?",
-    "I have questions about your academic programs",
+    'Can you send me the admission brochure?',
+    'What are your fee structures?',
+    'I have questions about your academic programs',
   ];
 
   return (
@@ -40,9 +40,9 @@ export default function WhatsAppWidget({
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <img 
-                      src="/Himriti.png" 
-                      alt="Himriti Public School" 
+                    <img
+                      src="/Himriti.png"
+                      alt="Himriti Public School"
                       className="w-full h-full object-contain bg-[#faf7f2]"
                     />
                   </div>
@@ -51,7 +51,7 @@ export default function WhatsAppWidget({
                     <p className="text-xs text-[#4a5568]">Typically replies instantly</p>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => setIsOpen(false)}
                   className="text-gray-400 hover:text-gray-600"
                 >
@@ -63,7 +63,7 @@ export default function WhatsAppWidget({
                 <p className="text-sm text-[#4a5568] mb-3">
                   Hi there! 👋 How can we help you today?
                 </p>
-                
+
                 {/* Quick Message Buttons */}
                 <div className="space-y-2 mb-4">
                   {quickMessages.map((msg, index) => (
@@ -80,14 +80,14 @@ export default function WhatsAppWidget({
                 {/* Custom Message Input */}
                 <textarea
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={e => setMessage(e.target.value)}
                   placeholder="Type your message here..."
                   className="w-full p-3 border border-gray-200 rounded-lg text-sm resize-none focus:border-[#1f514c] focus:outline-none"
                   rows={3}
                 />
               </div>
 
-              <Button 
+              <Button
                 onClick={handleSendMessage}
                 className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white"
               >

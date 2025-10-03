@@ -8,15 +8,18 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Himriti Public School - Embracing Heritage, Inspiring Future',
-  description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
-  keywords: 'Himriti Public School, Rampur Bushahr, Shimla, Himachal Pradesh, K-12 education, school admissions, Himalayan education',
+  description:
+    'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
+  keywords:
+    'Himriti Public School, Rampur Bushahr, Shimla, Himachal Pradesh, K-12 education, school admissions, Himalayan education',
   metadataBase: new URL('https://www.himriti.com'),
   alternates: {
     canonical: 'https://himriti.com',
   },
   openGraph: {
     title: 'Himriti Public School - Embracing Heritage, Inspiring Future',
-    description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
+    description:
+      'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
     url: 'https://himriti.com',
     siteName: 'Himriti Public School',
     type: 'website',
@@ -25,7 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Himriti Public School - Embracing Heritage, Inspiring Future',
-    description: 'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
+    description:
+      'Premier K-12 educational institution in Rampur Bushahr, Shimla, Himachal Pradesh. Opening April 2026. Embracing Heritage, Inspiring Future.',
   },
   robots: {
     index: true,
@@ -40,11 +44,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>

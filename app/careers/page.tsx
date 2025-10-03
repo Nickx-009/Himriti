@@ -47,11 +47,13 @@ export default function CareersPage() {
       });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.fade-in-section');
-    fadeElements.forEach(el => observer.observe(el));
+    setTimeout(() => {
+      const fadeElements = document.querySelectorAll('.fade-in-section');
+      fadeElements.forEach(el => observer.observe(el));
+    }, 0);
 
     return () => observer.disconnect();
-  }, []);
+  }, [selectedCategory]);
 
   const teachingPositions = [
     {

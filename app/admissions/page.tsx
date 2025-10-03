@@ -102,7 +102,7 @@ export default function AdmissionsPage() {
                 <Calendar className="h-8 w-8 text-[#c44569]" />
               </div>
               <h3 className="text-lg font-bold text-[#2d3748] mb-2">Applications Open</h3>
-              <Badge className="bg-[#c44569] text-white px-4 py-2 mb-3">January 2025</Badge>
+              <Badge className="bg-[#c44569] text-white px-4 py-2 mb-3">January 2026</Badge>
               <p className="text-sm text-[#4a5568]">Online application portal goes live</p>
             </Card>
 
@@ -111,7 +111,7 @@ export default function AdmissionsPage() {
                 <Clock className="h-8 w-8 text-[#d4831f]" />
               </div>
               <h3 className="text-lg font-bold text-[#2d3748] mb-2">Application Deadline</h3>
-              <Badge className="bg-[#d4831f] text-white px-4 py-2 mb-3">March 2025</Badge>
+              <Badge className="bg-[#d4831f] text-white px-4 py-2 mb-3">March 2026</Badge>
               <p className="text-sm text-[#4a5568]">Final date for submission</p>
             </Card>
 
@@ -120,7 +120,7 @@ export default function AdmissionsPage() {
                 <FileText className="h-8 w-8 text-[#2d5a27]" />
               </div>
               <h3 className="text-lg font-bold text-[#2d3748] mb-2">Admission Results</h3>
-              <Badge className="bg-[#2d5a27] text-white px-4 py-2 mb-3">April 2025</Badge>
+              <Badge className="bg-[#2d5a27] text-white px-4 py-2 mb-3">1st week of March 2026</Badge>
               <p className="text-sm text-[#4a5568]">Acceptance notifications sent</p>
             </Card>
 

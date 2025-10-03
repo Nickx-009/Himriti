@@ -416,7 +416,8 @@ export default function AdmissionsPage() {
                 <p className="text-[#4a5568]">Academic year 2026-27</p>
               </div>
             </div>
-            <div className="overflow-x-auto">
+            {/* Desktop Table */}
+            <div className="hidden lg:block overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-white/50">
@@ -530,6 +531,128 @@ export default function AdmissionsPage() {
                 </tbody>
               </table>
               <div className="mt-6 p-4 bg-[#1f514c]/10 rounded-lg">
+                <p className="text-sm text-[#1f514c] font-medium mb-2">
+                  <strong>*Other Annual Charges include:</strong>
+                </p>
+                <ul className="text-xs text-[#1f514c] space-y-1">
+                  <li>• Snacks and refreshments</li>
+                  <li>• Extracurricular activities and sports</li>
+                  <li>• Field trips and educational excursions</li>
+                  <li>• Technology and lab usage fees</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Mobile Card Layout */}
+            <div className="lg:hidden space-y-4">
+              {[
+                {
+                  class: 'Pre-Nursery',
+                  monthly: '900',
+                  annual: '10,800',
+                  admission: '3,000',
+                  other: '2,000',
+                  total: '15,800',
+                  color: '#1f514c',
+                },
+                {
+                  class: 'Kindergarten (Nur + KG)',
+                  monthly: '1,200',
+                  annual: '14,400',
+                  admission: '3,500',
+                  other: '2,200',
+                  total: '20,100',
+                  color: '#1f514c',
+                },
+                {
+                  class: 'Classes I–III',
+                  monthly: '1,400',
+                  annual: '16,800',
+                  admission: '3,500',
+                  other: '2,500',
+                  total: '22,800',
+                  color: '#2d5a27',
+                },
+                {
+                  class: 'Classes IV–V',
+                  monthly: '1,600',
+                  annual: '19,200',
+                  admission: '3,500',
+                  other: '2,800',
+                  total: '25,500',
+                  color: '#2d5a27',
+                },
+                {
+                  class: 'Classes VI–VIII',
+                  monthly: '1,800',
+                  annual: '21,600',
+                  admission: '4,000',
+                  other: '3,000',
+                  total: '28,600',
+                  color: '#d4831f',
+                },
+                {
+                  class: 'Classes IX–X',
+                  monthly: '2,000',
+                  annual: '24,000',
+                  admission: '4,000',
+                  other: '3,200',
+                  total: '31,200',
+                  color: '#d4831f',
+                },
+                {
+                  class: 'Classes XI–XII (Science)',
+                  monthly: '2,400',
+                  annual: '28,800',
+                  admission: '5,000',
+                  other: '3,500',
+                  total: '37,300',
+                  color: '#c44569',
+                },
+                {
+                  class: 'Classes XI–XII (Commerce/Humanities)',
+                  monthly: '2,200',
+                  annual: '26,400',
+                  admission: '5,000',
+                  other: '3,000',
+                  total: '34,400',
+                  color: '#c44569',
+                },
+              ].map((fee, index) => (
+                <div
+                  key={index}
+                  className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm"
+                >
+                  <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+                    <h4 className="font-bold text-[#2d3748] text-base">{fee.class}</h4>
+                    <Badge
+                      className="text-white px-3 py-1 font-bold text-base"
+                      style={{ backgroundColor: fee.color }}
+                    >
+                      ₹{fee.total}
+                    </Badge>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <p className="text-[#4a5568] text-xs mb-1">Monthly Tuition</p>
+                      <p className="font-semibold text-[#2d3748]">₹{fee.monthly}</p>
+                    </div>
+                    <div>
+                      <p className="text-[#4a5568] text-xs mb-1">Annual Tuition</p>
+                      <p className="font-semibold text-[#2d3748]">₹{fee.annual}</p>
+                    </div>
+                    <div>
+                      <p className="text-[#4a5568] text-xs mb-1">Admission + Security</p>
+                      <p className="font-semibold text-[#2d3748]">₹{fee.admission}</p>
+                    </div>
+                    <div>
+                      <p className="text-[#4a5568] text-xs mb-1">Other Charges*</p>
+                      <p className="font-semibold text-[#2d3748]">₹{fee.other}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <div className="mt-4 p-4 bg-[#1f514c]/10 rounded-lg">
                 <p className="text-sm text-[#1f514c] font-medium mb-2">
                   <strong>*Other Annual Charges include:</strong>
                 </p>

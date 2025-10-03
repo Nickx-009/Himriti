@@ -446,7 +446,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">Email Us</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                himritihigh@gmail.com
+                hello@himriti.com
                 <br />
                 WhatsApp: +91 90154 17203
                 <br />

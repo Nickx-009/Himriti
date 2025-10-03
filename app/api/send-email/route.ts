@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           error:
-            'Email service is not configured. Please contact us directly at himritihigh@gmail.com',
+            'Email service is not configured. Please contact us directly at hello@himriti.com',
         },
         { status: 503 }
       );
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Himriti Public School <onboarding@resend.dev>',
-      to: ['himritihigh@gmail.com'],
+      to: ['hello@himriti.com'],
       replyTo: email, // Allow direct reply to the parent
       subject: `New Contact Form Submission - ${inquiryType || 'General Inquiry'}`,
       html: `

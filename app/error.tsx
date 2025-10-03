@@ -34,8 +34,8 @@ export default function Error({
           </Button>
           <p className="text-sm text-[#4a5568]">
             Contact us:{' '}
-            <a href="mailto:himritihigh@gmail.com" className="text-[#1f514c] hover:underline">
-              himritihigh@gmail.com
+            <a href="mailto:hello@himriti.com" className="text-[#1f514c] hover:underline">
+              hello@himriti.com
             </a>
           </p>
         </div>

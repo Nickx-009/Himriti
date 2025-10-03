@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact Us - Get in Touch | Himriti Public School',
   description:
-    'Contact Himriti Public School in Rampur Bushahr, Shimla. Phone: +91 90154 17203, Email: himritihigh@gmail.com. Schedule a visit or inquire about admissions.',
+    'Contact Himriti Public School in Rampur Bushahr, Shimla. Phone: +91 90154 17203, Email: hello@himriti.com. Schedule a visit or inquire about admissions.',
   keywords:
     'contact school, school address, phone number, email, visit school, Rampur Bushahr, Shimla school contact, admissions inquiry',
   alternates: {

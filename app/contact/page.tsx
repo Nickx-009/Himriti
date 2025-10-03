@@ -191,7 +191,7 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="p-8 pt-0">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
-                  himritihigh@gmail.com
+                  hello@himriti.com
                   <br />
                   <span className="text-sm">General Inquiries & Admissions</span>
                   <br />

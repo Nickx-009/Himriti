@@ -72,7 +72,7 @@ export const organizationSchema = {
     '@type': 'ContactPoint',
     telephone: '+91-90154-17203',
     contactType: 'Admissions',
-    email: 'himritihigh@gmail.com',
+    email: 'hello@himriti.com',
     availableLanguage: ['English', 'Hindi'],
   },
   sameAs: [

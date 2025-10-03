@@ -821,7 +821,7 @@ export default function AdmissionsPage() {
               </div>
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">Email Us</h3>
               <p className="text-[#4a5568] mb-4">
-                himritihigh@gmail.com
+                hello@himriti.com
                 <br />
                 Response within 24 hours
               </p>

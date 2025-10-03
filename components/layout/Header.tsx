@@ -36,12 +36,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl overflow-hidden">
-              <img
-                src="/Himriti.png"
-                alt="Himriti Public School Logo"
-                className="w-full h-full object-contain"
-              />
+            <div className="w-12 h-12 rounded-xl bg-[#1f514c] flex items-center justify-center">
+              <span className="text-2xl font-bold text-white">H</span>
             </div>
             <div>
               <h1 className="text-lg font-bold text-[#2d3748]">Himriti</h1>

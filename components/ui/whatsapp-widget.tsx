@@ -39,12 +39,8 @@ export default function WhatsAppWidget({
             <div className="bg-white rounded-lg shadow-2xl p-4 w-80 border border-gray-200 mb-4 animate-fade-in-up">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <img
-                      src="/Himriti.png"
-                      alt="Himriti Public School"
-                      className="w-full h-full object-contain bg-[#faf7f2]"
-                    />
+                  <div className="w-12 h-12 rounded-full bg-[#1f514c] flex items-center justify-center">
+                    <span className="text-xl font-bold text-white">H</span>
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#2d3748] text-sm">Himriti Public School</h3>

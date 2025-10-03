@@ -1,9 +1,15 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json(
+      { error: 'Email service not configured. Please contact the administrator.' },
+      { status: 503 }
+    );
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const data = await req.json();
 

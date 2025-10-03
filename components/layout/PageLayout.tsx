@@ -1,6 +1,8 @@
 import Header from './Header';
 import Footer from './Footer';
 import WhatsAppWidget from '@/components/ui/whatsapp-widget';
+import StructuredData from '@/components/StructuredData';
+import { organizationSchema, localBusinessSchema } from '@/lib/metadata';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -8,11 +10,15 @@ interface PageLayoutProps {
 
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>{children}</main>
-      <Footer />
-      <WhatsAppWidget />
-    </div>
+    <>
+      <StructuredData data={organizationSchema} />
+      <StructuredData data={localBusinessSchema} />
+      <div className="min-h-screen bg-white">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <WhatsAppWidget />
+      </div>
+    </>
   );
 }

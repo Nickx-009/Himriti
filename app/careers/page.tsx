@@ -5,7 +5,29 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import { Briefcase, Users, Heart, TrendingUp, MapPin, Clock, DollarSign, CircleCheck as CheckCircle, GraduationCap, BookOpen, Target, Award, Globe, Lightbulb, UserCheck, Calendar, FileText, Mail, Phone, ChevronRight, ArrowRight } from 'lucide-react';
+import {
+  Briefcase,
+  Users,
+  Heart,
+  TrendingUp,
+  MapPin,
+  Clock,
+  DollarSign,
+  CircleCheck as CheckCircle,
+  GraduationCap,
+  BookOpen,
+  Target,
+  Award,
+  Globe,
+  Lightbulb,
+  UserCheck,
+  Calendar,
+  FileText,
+  Mail,
+  Phone,
+  ChevronRight,
+  ArrowRight,
+} from 'lucide-react';
 import Link from 'next/link';
 
 export default function CareersPage() {

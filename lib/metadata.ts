@@ -110,3 +110,69 @@ export const localBusinessSchema = {
     closes: '17:00',
   },
 };
+
+export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: item.url,
+  })),
+});
+
+export const courseSchema = (courseName: string, description: string) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: courseName,
+  description: description,
+  provider: {
+    '@type': 'EducationalOrganization',
+    name: 'Himriti Public School',
+    url: 'https://himriti.com',
+  },
+});
+
+export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+});
+
+export const jobPostingSchema = (
+  title: string,
+  description: string,
+  employmentType: string,
+  datePosted: string
+) => ({
+  '@context': 'https://schema.org',
+  '@type': 'JobPosting',
+  title: title,
+  description: description,
+  datePosted: datePosted,
+  employmentType: employmentType,
+  hiringOrganization: {
+    '@type': 'Organization',
+    name: 'Himriti Public School',
+    sameAs: 'https://himriti.com',
+    logo: 'https://himriti.com/Himriti.png',
+  },
+  jobLocation: {
+    '@type': 'Place',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rampur Bushahr',
+      addressLocality: 'Shimla',
+      addressRegion: 'Himachal Pradesh',
+      addressCountry: 'IN',
+    },
+  },
+});

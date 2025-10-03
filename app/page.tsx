@@ -66,20 +66,24 @@ export default function HomePage() {
               where tradition meets innovation, preparing students for a global future.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                size="lg"
-                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
-              >
-                Schedule a Visit
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
-              >
-                Download Brochure
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+                >
+                  Schedule a Visit
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <a href="mailto:hello@himriti.com?subject=Brochure Request">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+                >
+                  Download Brochure
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -384,16 +388,23 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white flex-1 h-12 btn-interactive">
-                  Download Application
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white flex-1 h-12 btn-interactive"
+                <a
+                  href="mailto:hello@himriti.com?subject=Application Form Request"
+                  className="flex-1"
                 >
-                  Schedule Tour
-                </Button>
+                  <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full h-12 btn-interactive">
+                    Download Application
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+                <Link href="/contact" className="flex-1">
+                  <Button
+                    variant="outline"
+                    className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white w-full h-12 btn-interactive"
+                  >
+                    Schedule Tour
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

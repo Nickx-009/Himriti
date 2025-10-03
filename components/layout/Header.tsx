@@ -156,16 +156,20 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button
-              variant="outline"
-              className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
-            >
-              Schedule Visit
-            </Button>
-            <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
-              Apply Now
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
+              >
+                Schedule Visit
+              </Button>
+            </Link>
+            <Link href="/admissions">
+              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
+                Apply Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -236,13 +240,17 @@ export default function Header() {
               </Link>
             </nav>
             <div className="flex flex-col gap-3 pt-6 border-t border-gray-100 mt-6">
-              <Button
-                variant="outline"
-                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
-              >
-                Schedule Visit
-              </Button>
-              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">Apply Now</Button>
+              <Link href="/contact">
+                <Button
+                  variant="outline"
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
+                >
+                  Schedule Visit
+                </Button>
+              </Link>
+              <Link href="/admissions">
+                <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">Apply Now</Button>
+              </Link>
             </div>
           </div>
         )}

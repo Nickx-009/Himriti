@@ -72,14 +72,16 @@ export default function AdmissionsPage() {
                 Start Application
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
-              >
-                Download Brochure
-                <Download className="ml-2 h-5 w-5" />
-              </Button>
+              <a href="mailto:hello@himriti.com?subject=Brochure Request">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+                >
+                  Download Brochure
+                  <Download className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -825,7 +827,9 @@ export default function AdmissionsPage() {
                 <br />
                 Response within 24 hours
               </p>
-              <Button className="bg-[#2d5a27] hover:bg-[#3a7235] text-white">Send Email</Button>
+              <a href="mailto:hello@himriti.com?subject=Admissions Inquiry">
+                <Button className="bg-[#2d5a27] hover:bg-[#3a7235] text-white">Send Email</Button>
+              </a>
             </Card>
 
             <Card className="bg-[#faf7f2] border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl text-center p-8 interactive-card">
@@ -838,7 +842,9 @@ export default function AdmissionsPage() {
                 <br />
                 Shimla, Himachal Pradesh
               </p>
-              <Button className="bg-[#d4831f] hover:bg-[#b8721a] text-white">Schedule Visit</Button>
+              <Link href="/contact">
+                <Button className="bg-[#d4831f] hover:bg-[#b8721a] text-white">Schedule Visit</Button>
+              </Link>
             </Card>
           </div>
         </div>

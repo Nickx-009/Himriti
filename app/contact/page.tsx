@@ -113,20 +113,24 @@ export default function ContactPage() {
               schedule a visit, or are ready to begin the admission process, we're here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                size="lg"
-                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
-              >
-                Schedule Visit
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
-              >
-                Download Brochure
-              </Button>
+              <a href="#contact-form">
+                <Button
+                  size="lg"
+                  className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+                >
+                  Schedule Visit
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+              <a href="mailto:hello@himriti.com?subject=Brochure Request">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+                >
+                  Download Brochure
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -205,7 +209,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-[#faf7f2]">
+      <section id="contact-form" className="py-20 bg-[#faf7f2]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Send Us a Message</h2>
@@ -397,14 +401,16 @@ export default function ContactPage() {
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
-            >
-              Schedule Call
-              <Phone className="ml-2 h-5 w-5" />
-            </Button>
+            <a href="tel:+919015417203">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
+                Schedule Call
+                <Phone className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
           </div>
         </div>
       </section>

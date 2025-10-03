@@ -5,28 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import {
-  Globe,
-  GraduationCap,
-  Users,
-  Award,
-  ChevronRight,
-  ArrowRight,
-  CheckCircle,
-  Target,
-  Lightbulb,
-  Heart,
-  Building,
-  BookOpen,
-  Languages,
-  Plane,
-  Video,
-  Mail,
-  Calendar,
-  MapPin,
-  Star,
-  Handshake,
-} from 'lucide-react';
+import { Globe, GraduationCap, Users, Award, ChevronRight, ArrowRight, CircleCheck as CheckCircle, Target, Lightbulb, Heart, Building, BookOpen, Languages, Plane, Video, Mail, Calendar, MapPin, Star, Handshake } from 'lucide-react';
 import Link from 'next/link';
 
 export default function GlobalPartnershipsPage() {

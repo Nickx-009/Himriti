@@ -5,27 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import PageLayout from '@/components/layout/PageLayout';
-import {
-  BookOpen,
-  GraduationCap,
-  Users,
-  Award,
-  ChevronRight,
-  ArrowRight,
-  CheckCircle,
-  Target,
-  Lightbulb,
-  Globe,
-  Microscope,
-  Palette,
-  Music,
-  Calculator,
-  Languages,
-  Atom,
-  TreePine,
-  Heart,
-  Building,
-} from 'lucide-react';
+import { BookOpen, GraduationCap, Users, Award, ChevronRight, ArrowRight, CircleCheck as CheckCircle, Target, Lightbulb, Globe, Microscope, Palette, Music, Calculator, Languages, Atom, TreePine, Heart, Building } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AcademicsPage() {

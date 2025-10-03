@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -24,8 +24,17 @@ import {
   Target,
 } from 'lucide-react';
 import Link from 'next/link';
+import ContactFormModal from '@/components/ContactFormModal';
 
 export default function AdmissionsPage() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [modalInquiryType, setModalInquiryType] = useState('');
+
+  const openContactModal = (inquiryType?: string) => {
+    setModalInquiryType(inquiryType || '');
+    setIsContactModalOpen(true);
+  };
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -72,16 +81,15 @@ export default function AdmissionsPage() {
                 Start Application
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
-              <a href="mailto:hello@himriti.com?subject=Brochure Request">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
-                >
-                  Download Brochure
-                  <Download className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => openContactModal('brochure')}
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
+                Download Brochure
+                <Download className="ml-2 h-5 w-5" />
+              </Button>
             </div>
           </div>
         </div>
@@ -827,9 +835,12 @@ export default function AdmissionsPage() {
                 <br />
                 Response within 24 hours
               </p>
-              <a href="mailto:hello@himriti.com?subject=Admissions Inquiry">
-                <Button className="bg-[#2d5a27] hover:bg-[#3a7235] text-white">Send Email</Button>
-              </a>
+              <Button
+                onClick={() => openContactModal('admissions')}
+                className="bg-[#2d5a27] hover:bg-[#3a7235] text-white"
+              >
+                Send Email
+              </Button>
             </Card>
 
             <Card className="bg-[#faf7f2] border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl text-center p-8 interactive-card">
@@ -842,9 +853,12 @@ export default function AdmissionsPage() {
                 <br />
                 Shimla, Himachal Pradesh
               </p>
-              <Link href="/contact">
-                <Button className="bg-[#d4831f] hover:bg-[#b8721a] text-white">Schedule Visit</Button>
-              </Link>
+              <Button
+                onClick={() => openContactModal('visit')}
+                className="bg-[#d4831f] hover:bg-[#b8721a] text-white"
+              >
+                Schedule Visit
+              </Button>
             </Card>
           </div>
         </div>
@@ -879,6 +893,12 @@ export default function AdmissionsPage() {
           </div>
         </div>
       </section>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        defaultInquiryType={modalInquiryType}
+      />
     </PageLayout>
   );
 }

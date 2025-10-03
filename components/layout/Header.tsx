@@ -5,13 +5,19 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronRight, ArrowRight, Heart, BookOpen, Globe, Briefcase } from 'lucide-react';
+import ContactFormModal from '@/components/ContactFormModal';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = useCallback(() => setIsMenuOpen(prev => !prev), []);
   const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+  const openContactModal = useCallback(() => {
+    setIsContactModalOpen(true);
+    closeMenu();
+  }, [closeMenu]);
 
   const isActiveLink = (path: string) => {
     if (path === '/') return pathname === '/';
@@ -156,14 +162,13 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/contact">
-              <Button
-                variant="outline"
-                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
-              >
-                Schedule Visit
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              onClick={openContactModal}
+              className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
+            >
+              Schedule Visit
+            </Button>
             <Link href="/admissions">
               <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
                 Apply Now
@@ -240,21 +245,28 @@ export default function Header() {
               </Link>
             </nav>
             <div className="flex flex-col gap-3 pt-6 border-t border-gray-100 mt-6">
-              <Link href="/contact">
-                <Button
-                  variant="outline"
-                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white"
-                >
-                  Schedule Visit
-                </Button>
-              </Link>
+              <Button
+                variant="outline"
+                onClick={openContactModal}
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white w-full"
+              >
+                Schedule Visit
+              </Button>
               <Link href="/admissions">
-                <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">Apply Now</Button>
+                <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full">
+                  Apply Now
+                </Button>
               </Link>
             </div>
           </div>
         )}
       </div>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        defaultInquiryType="visit"
+      />
     </header>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -22,8 +22,17 @@ import {
   Mail,
 } from 'lucide-react';
 import Link from 'next/link';
+import ContactFormModal from '@/components/ContactFormModal';
 
 export default function HomePage() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [modalInquiryType, setModalInquiryType] = useState('');
+
+  const openContactModal = (inquiryType?: string) => {
+    setModalInquiryType(inquiryType || '');
+    setIsContactModalOpen(true);
+  };
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -66,24 +75,22 @@ export default function HomePage() {
               where tradition meets innovation, preparing students for a global future.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
-                >
-                  Schedule a Visit
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <a href="mailto:hello@himriti.com?subject=Brochure Request">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
-                >
-                  Download Brochure
-                </Button>
-              </a>
+              <Button
+                size="lg"
+                onClick={() => openContactModal('visit')}
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
+                Schedule a Visit
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => openContactModal('brochure')}
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
+                Download Brochure
+              </Button>
             </div>
           </div>
 
@@ -388,23 +395,20 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="mailto:hello@himriti.com?subject=Application Form Request"
-                  className="flex-1"
+                <Button
+                  onClick={() => openContactModal('application')}
+                  className="bg-[#1f514c] hover:bg-[#2a6b65] text-white flex-1 h-12 btn-interactive"
                 >
-                  <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full h-12 btn-interactive">
-                    Download Application
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-                <Link href="/contact" className="flex-1">
-                  <Button
-                    variant="outline"
-                    className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white w-full h-12 btn-interactive"
-                  >
-                    Schedule Tour
-                  </Button>
-                </Link>
+                  Download Application
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => openContactModal('visit')}
+                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white flex-1 h-12 btn-interactive"
+                >
+                  Schedule Tour
+                </Button>
               </div>
             </div>
           </div>
@@ -467,6 +471,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        defaultInquiryType={modalInquiryType}
+      />
     </PageLayout>
   );
 }

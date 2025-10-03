@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import ContactFormModal from '@/components/ContactFormModal';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -37,6 +38,13 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [modalInquiryType, setModalInquiryType] = useState('');
+
+  const openContactModal = (inquiryType?: string) => {
+    setModalInquiryType(inquiryType || '');
+    setIsContactModalOpen(true);
+  };
 
   const {
     register,
@@ -113,24 +121,22 @@ export default function ContactPage() {
               schedule a visit, or are ready to begin the admission process, we're here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a href="#contact-form">
-                <Button
-                  size="lg"
-                  className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
-                >
-                  Schedule Visit
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
-              <a href="mailto:hello@himriti.com?subject=Brochure Request">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
-                >
-                  Download Brochure
-                </Button>
-              </a>
+              <Button
+                size="lg"
+                onClick={() => openContactModal('visit')}
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
+                Schedule Visit
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => openContactModal('brochure')}
+                className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white px-10 py-4 text-lg h-14 btn-interactive"
+              >
+                Download Brochure
+              </Button>
             </div>
           </div>
         </div>
@@ -414,6 +420,12 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        defaultInquiryType={modalInquiryType}
+      />
     </PageLayout>
   );
 }

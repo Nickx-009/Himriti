@@ -746,8 +746,8 @@ export default function AdmissionsPage() {
               <div className="text-center">
                 <p className="text-[#4a5568] leading-relaxed mb-4">
                   We are committed to providing{' '}
-                  <strong>free education to 50 underprivileged students</strong>
-                  during our first 3 years of operation (2026-2029).
+                  <strong>free education to 50 underprivileged students</strong> during our first 3
+                  years of operation (2026-2029).
                 </p>
                 <p className="text-sm text-[#4a5568] leading-relaxed">
                   This initiative reflects our belief that every child deserves access to quality

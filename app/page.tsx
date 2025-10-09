@@ -338,15 +338,15 @@ export default function HomePage() {
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-between items-center py-4 border-b border-white/50">
                   <span className="text-[#4a5568] font-medium">Application Opens</span>
-                  <Badge className="bg-[#c44569] text-white px-4 py-2">January 2025</Badge>
+                  <Badge className="bg-[#c44569] text-white px-4 py-2">January 2026</Badge>
                 </div>
                 <div className="flex justify-between items-center py-4 border-b border-white/50">
                   <span className="text-[#4a5568] font-medium">Application Deadline</span>
-                  <Badge className="bg-[#d4831f] text-white px-4 py-2">March 2025</Badge>
+                  <Badge className="bg-[#d4831f] text-white px-4 py-2">March 2026</Badge>
                 </div>
                 <div className="flex justify-between items-center py-4 border-b border-white/50">
                   <span className="text-[#4a5568] font-medium">Admission Results</span>
-                  <Badge className="bg-[#2d5a27] text-white px-4 py-2">April 2025</Badge>
+                  <Badge className="bg-[#2d5a27] text-white px-4 py-2">April 2026</Badge>
                 </div>
                 <div className="flex justify-between items-center py-4">
                   <span className="text-[#4a5568] font-medium">School Opens</span>

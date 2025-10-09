@@ -65,7 +65,7 @@ export default function GlobalPartnershipsPage() {
               <span className="text-[#1f514c]">Across Borders</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-3xl mx-auto">
-              At Himriti Public School, we believe in preparing our students for a globalized world
+              At Himriti, we believe in preparing our students for a globalized world
               through meaningful partnerships with educational institutions and organizations
               worldwide.
             </p>
@@ -519,7 +519,7 @@ export default function GlobalPartnershipsPage() {
               </div>
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">School Opening</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Himriti Public School opens with foundational programs and local community focus.
+                Himriti opens with foundational programs and local community focus.
               </p>
             </div>
 

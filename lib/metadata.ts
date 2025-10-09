@@ -15,15 +15,15 @@ export function generateMetadata({
   ogImage = '/og-image.jpg',
   canonical,
 }: PageMetadata): Metadata {
-  const fullTitle = `${title} | Himriti Public School`;
+  const fullTitle = `${title} | Himriti`;
   const baseUrl = 'https://himriti.com';
 
   return {
     title: fullTitle,
     description,
     keywords: keywords
-      ? `${keywords}, Himriti Public School, Rampur Bushahr, Shimla, Himachal Pradesh, K-12 education`
-      : 'Himriti Public School, Rampur Bushahr, Shimla, Himachal Pradesh, K-12 education',
+      ? `${keywords}, Himriti, Rampur Bushahr, Shimla, Himachal Pradesh, K-12 education`
+      : 'Himriti, Rampur Bushahr, Shimla, Himachal Pradesh, K-12 education',
     alternates: {
       canonical: canonical ? `${baseUrl}${canonical}` : undefined,
     },
@@ -31,7 +31,7 @@ export function generateMetadata({
       title: fullTitle,
       description,
       url: canonical ? `${baseUrl}${canonical}` : baseUrl,
-      siteName: 'Himriti Public School',
+      siteName: 'Himriti',
       images: [
         {
           url: ogImage,
@@ -55,7 +55,7 @@ export function generateMetadata({
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
-  name: 'Himriti Public School',
+  name: 'Himriti',
   alternateName: 'Himriti School',
   url: 'https://himriti.com',
   logo: 'https://himriti.com/Himriti.png',
@@ -85,7 +85,7 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'School',
-  name: 'Himriti Public School',
+  name: 'Himriti',
   image: 'https://himriti.com/Himriti.png',
   '@id': 'https://himriti.com',
   url: 'https://himriti.com',
@@ -129,7 +129,7 @@ export const courseSchema = (courseName: string, description: string) => ({
   description: description,
   provider: {
     '@type': 'EducationalOrganization',
-    name: 'Himriti Public School',
+    name: 'Himriti',
     url: 'https://himriti.com',
   },
 });
@@ -161,7 +161,7 @@ export const jobPostingSchema = (
   employmentType: employmentType,
   hiringOrganization: {
     '@type': 'Organization',
-    name: 'Himriti Public School',
+    name: 'Himriti',
     sameAs: 'https://himriti.com',
     logo: 'https://himriti.com/Himriti.png',
   },

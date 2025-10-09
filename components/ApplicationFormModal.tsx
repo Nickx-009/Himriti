@@ -133,7 +133,7 @@ export default function ApplicationFormModal({ isOpen, onClose }: ApplicationFor
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-[#2d3748]">
-            Himriti Public School Application
+            Himriti Application
           </DialogTitle>
           <DialogDescription className="text-[#4a5568]">
             Step {currentStep} of 4 - Please fill in all required fields
@@ -507,13 +507,13 @@ export default function ApplicationFormModal({ isOpen, onClose }: ApplicationFor
 
               <div>
                 <label className="block text-sm font-semibold text-[#2d3748] mb-2">
-                  Why Himriti Public School? *
+                  Why Himriti? *
                 </label>
                 <textarea
                   {...register('whyHimriti')}
                   rows={5}
                   className="w-full px-4 py-3 border border-[#F2F2F2] rounded-lg focus:border-[#1f514c] focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us why you want your child to join Himriti Public School"
+                  placeholder="Tell us why you want your child to join Himriti"
                 ></textarea>
                 {errors.whyHimriti && (
                   <p className="text-red-500 text-sm mt-1">{errors.whyHimriti.message}</p>

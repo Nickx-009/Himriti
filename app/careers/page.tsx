@@ -329,7 +329,7 @@ export default function CareersPage() {
       experience: '10+ years',
       positions: 1,
       description:
-        'Lead our founding school as Principal. Academic and operations head, shaping the vision, culture, and excellence of Himriti Public School.',
+        'Lead our founding school as Principal. Academic and operations head, shaping the vision, culture, and excellence of Himriti.',
       responsibilities: [
         'Provide strategic leadership and vision for the school',
         'Oversee both academic programs and daily operations',
@@ -586,7 +586,7 @@ export default function CareersPage() {
               <span className="text-[#1f514c]">Education with Us</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-3xl mx-auto">
-              Be part of something extraordinary. Join Himriti Public School as we create a
+              Be part of something extraordinary. Join Himriti as we create a
               world-class educational institution in the heart of the Himalayas. Shape young minds
               and make a lasting impact.
             </p>

@@ -111,7 +111,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
             <Badge className="bg-[#1f514c]/10 text-[#1f514c] border-[#1f514c]/20 mb-8 text-sm px-6 py-2 font-medium">
-              Contact Himriti Public School
+              Contact Himriti
             </Badge>
             <h1 className="text-5xl lg:text-6xl font-bold text-[#2d3748] mb-8 leading-tight">
               Get in
@@ -349,7 +349,7 @@ export default function ContactPage() {
           <div className="text-center mb-16 fade-in-section">
             <h2 className="text-4xl font-bold text-[#2d3748] mb-6">Frequently Asked Questions</h2>
             <p className="text-xl text-[#4a5568] leading-relaxed">
-              Quick answers to common questions about Himriti Public School.
+              Quick answers to common questions about Himriti.
             </p>
           </div>
 
@@ -357,7 +357,7 @@ export default function ContactPage() {
             <Card className="bg-[#faf7f2] border-0 shadow-lg rounded-2xl p-8 interactive-card">
               <h3 className="text-xl font-bold text-[#2d3748] mb-4">When does the school open?</h3>
               <p className="text-[#4a5568] leading-relaxed">
-                Himriti Public School is scheduled to open in April 2026. We are currently in the
+                Himriti is scheduled to open in April 2026. We are currently in the
                 construction phase and accepting applications for our founding class.
               </p>
             </Card>

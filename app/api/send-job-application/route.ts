@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     const data = await req.json();
 
     const emailContent = `
-      <h2>New Job Application - Himriti Public School</h2>
+      <h2>New Job Application - Himriti</h2>
 
       <h3>Position Applied For</h3>
       <p><strong>Job Title:</strong> ${data.jobTitle}</p>
@@ -35,7 +35,7 @@ export async function POST(req: Request) {
       <p style="white-space: pre-wrap;">${data.coverLetter}</p>
 
       <hr>
-      <p><em>This application was submitted through the Himriti Public School careers page.</em></p>
+      <p><em>This application was submitted through the Himriti careers page.</em></p>
     `;
 
     await resend.emails.send({

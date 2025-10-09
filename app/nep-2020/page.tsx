@@ -66,7 +66,7 @@ export default function NEP2020Page() {
               <span className="text-[#1f514c]">for the Future</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-3xl mx-auto">
-              At Himriti Public School, we are proud to be at the forefront of implementing India's
+              At Himriti, we are proud to be at the forefront of implementing India's
               National Education Policy 2020, creating a holistic and flexible learning environment
               that prepares students for the 21st century.
             </p>
@@ -177,7 +177,7 @@ export default function NEP2020Page() {
                   <h4 className="text-2xl font-bold text-[#2d3748] mb-2">Our Commitment</h4>
                 </div>
                 <p className="text-[#4a5568] leading-relaxed text-center">
-                  Himriti Public School is fully committed to implementing NEP 2020 principles from
+                  Himriti is fully committed to implementing NEP 2020 principles from
                   day one, ensuring our students receive education that is relevant, engaging, and
                   future-ready.
                 </p>

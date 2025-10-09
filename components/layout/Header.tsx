@@ -43,19 +43,18 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-4">
-            <div className="w-12 h-12 relative">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-14 h-14 relative">
               <Image
-                src="/Himriti copy.png"
-                alt="Himriti Public School Logo"
+                src="/Himriti (2).png"
+                alt="Himriti Logo"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-[#2d3748]">Himriti</h1>
-              <p className="text-sm text-[#4a5568] -mt-1">Public School</p>
+              <h1 className="text-xl font-bold text-[#2d3748]">Himriti</h1>
             </div>
           </Link>
 

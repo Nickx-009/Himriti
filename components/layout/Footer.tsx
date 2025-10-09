@@ -7,17 +7,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
-            <Link href="/" className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 relative">
+            <Link href="/" className="flex items-center gap-3 mb-6">
+              <div className="w-14 h-14 relative">
                 <Image
-                  src="/Himriti copy.png"
-                  alt="Himriti Public School Logo"
+                  src="/Himriti (2).png"
+                  alt="Himriti Logo"
                   fill
                   className="object-contain"
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Himriti Public School</h3>
+                <h3 className="text-xl font-bold">Himriti</h3>
                 <p className="text-sm opacity-80">Embracing Heritage, Inspiring Future</p>
               </div>
             </Link>
@@ -112,7 +112,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-sm opacity-80">
-            © 2025 Himriti Public School. All rights reserved. | Made with ❤️ by
+            © 2025 Himriti. All rights reserved. | Made with ❤️ by
             <a href="https://masarna.co" className="text-[#d4831f] hover:underline ml-1">
               Masarna
             </a>{' '}

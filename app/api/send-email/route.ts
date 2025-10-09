@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const emailOptions: any = {
-      from: 'Himriti Public School <onboarding@resend.dev>',
+      from: 'Himriti <onboarding@resend.dev>',
       to: ['hello@himriti.com'],
       subject: `New Contact Form Submission - ${inquiryType || 'General Inquiry'}`,
       html: `
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
           
           <div style="margin-top: 20px; padding: 15px; background-color: #e6fffa; border-left: 4px solid #1f514c; border-radius: 4px;">
             <p style="margin: 0; color: #2d3748; font-size: 14px;">
-              This message was sent from the Himriti Public School website contact form.
+              This message was sent from the Himriti website contact form.
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
         Message:
         ${message}
         
-        This message was sent from the Himriti Public School website contact form.
+        This message was sent from the Himriti website contact form.
       `,
     };
 

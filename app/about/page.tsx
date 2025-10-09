@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
             <Badge className="bg-[#1f514c]/10 text-[#1f514c] border-[#1f514c]/20 mb-8 text-sm px-6 py-2 font-medium">
-              About Himriti Public School
+              About Himriti
             </Badge>
             <h1 className="text-5xl lg:text-6xl font-bold text-[#2d3748] mb-8 leading-tight">
               Our Story of

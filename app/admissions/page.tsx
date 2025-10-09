@@ -72,7 +72,7 @@ export default function AdmissionsPage() {
               <span className="text-[#1f514c]">Founding Class</span>
             </h1>
             <p className="text-xl text-[#4a5568] mb-12 leading-relaxed max-w-3xl mx-auto">
-              Be part of history as we welcome our first students to Himriti Public School.
+              Be part of history as we welcome our first students to Himriti.
               Applications are now open for the 2026-27 academic year across all grade levels.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

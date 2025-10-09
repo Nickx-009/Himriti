@@ -13,7 +13,7 @@ export default function Footer() {
                   src="/Himriti (2).png"
                   alt="Himriti Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain brightness-0 invert"
                 />
               </div>
               <div>

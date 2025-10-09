@@ -27,6 +27,7 @@ import {
   Phone,
   ChevronRight,
   ArrowRight,
+  ChevronDown,
 } from 'lucide-react';
 import Link from 'next/link';
 import JobApplicationModal from '@/components/JobApplicationModal';
@@ -37,10 +38,15 @@ export default function CareersPage() {
   const [selectedJob, setSelectedJob] = useState<{ title: string; department: string } | null>(
     null
   );
+  const [expandedJobId, setExpandedJobId] = useState<number | null>(null);
 
   const openApplicationModal = (jobTitle: string, department: string) => {
     setSelectedJob({ title: jobTitle, department });
     setIsApplicationModalOpen(true);
+  };
+
+  const toggleJobExpansion = (index: number) => {
+    setExpandedJobId(expandedJobId === index ? null : index);
   };
 
   useEffect(() => {
@@ -687,107 +693,124 @@ export default function CareersPage() {
             </div>
           </div>
 
-          <div className="space-y-6 fade-in-section">
-            {filteredPositions.map((position, index) => (
-              <Card
-                key={index}
-                className="bg-white border-0 shadow-lg rounded-2xl p-8 interactive-card hover:shadow-xl transition-shadow"
-              >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                  <div className="flex-1">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-14 h-14 bg-[#1f514c]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                        {position.department === 'Teaching' ? (
-                          <GraduationCap className="h-7 w-7 text-[#1f514c]" />
-                        ) : position.department === 'Leadership' ? (
-                          <Target className="h-7 w-7 text-[#c44569]" />
-                        ) : (
-                          <Briefcase className="h-7 w-7 text-[#2d5a27]" />
-                        )}
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-[#2d3748] mb-2">{position.title}</h3>
-                        <div className="flex flex-wrap gap-2 mb-3">
-                          <Badge className="bg-[#1f514c]/10 text-[#1f514c]">
-                            {position.department}
-                          </Badge>
-                          <Badge className="bg-[#2d5a27]/10 text-[#2d5a27]">{position.level}</Badge>
-                          {position.positions > 1 && (
-                            <Badge className="bg-[#d4831f]/10 text-[#d4831f]">
-                              {position.positions} Openings
-                            </Badge>
+          <div className="space-y-4 fade-in-section">
+            {filteredPositions.map((position, index) => {
+              const isExpanded = expandedJobId === index;
+              return (
+                <Card
+                  key={index}
+                  className="bg-white border-0 shadow-lg rounded-2xl overflow-hidden transition-all duration-300"
+                >
+                  <div
+                    className="p-6 cursor-pointer hover:bg-[#faf7f2] transition-colors"
+                    onClick={() => toggleJobExpansion(index)}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-start gap-4 flex-1">
+                        <div className="w-12 h-12 bg-[#1f514c]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                          {position.department === 'Teaching' ? (
+                            <GraduationCap className="h-6 w-6 text-[#1f514c]" />
+                          ) : position.department === 'Leadership' ? (
+                            <Target className="h-6 w-6 text-[#c44569]" />
+                          ) : (
+                            <Briefcase className="h-6 w-6 text-[#2d5a27]" />
                           )}
                         </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-[#2d3748] mb-2">
+                            {position.title}
+                          </h3>
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            <Badge className="bg-[#1f514c]/10 text-[#1f514c] text-xs">
+                              {position.department}
+                            </Badge>
+                            <Badge className="bg-[#2d5a27]/10 text-[#2d5a27] text-xs">
+                              {position.level}
+                            </Badge>
+                            {position.positions > 1 && (
+                              <Badge className="bg-[#d4831f]/10 text-[#d4831f] text-xs">
+                                {position.positions} Openings
+                              </Badge>
+                            )}
+                          </div>
+                          <div className="flex flex-wrap gap-4 text-sm text-[#4a5568]">
+                            <div className="flex items-center gap-1">
+                              <MapPin className="h-4 w-4" />
+                              <span>{position.location}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Clock className="h-4 w-4" />
+                              <span>{position.experience}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Briefcase className="h-4 w-4" />
+                              <span>{position.type}</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-
-                    <p className="text-[#4a5568] mb-6 leading-relaxed">{position.description}</p>
-
-                    <div className="grid md:grid-cols-2 gap-4 mb-6">
-                      <div className="flex items-center gap-2 text-sm text-[#4a5568]">
-                        <Briefcase className="h-4 w-4 text-[#1f514c]" />
-                        <span>{position.type}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-[#4a5568]">
-                        <MapPin className="h-4 w-4 text-[#1f514c]" />
-                        <span>{position.location}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-[#4a5568]">
-                        <Clock className="h-4 w-4 text-[#1f514c]" />
-                        <span>{position.experience} experience</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm text-[#4a5568]">
-                        <Users className="h-4 w-4 text-[#1f514c]" />
-                        <span>
-                          {position.positions} {position.positions === 1 ? 'Position' : 'Positions'}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-semibold text-[#2d3748] mb-3 flex items-center gap-2">
-                          <CheckCircle className="h-5 w-5 text-[#1f514c]" />
-                          Key Responsibilities
-                        </h4>
-                        <ul className="space-y-2">
-                          {position.responsibilities.map((item, i) => (
-                            <li key={i} className="text-sm text-[#4a5568] flex items-start gap-2">
-                              <span className="text-[#1f514c] mt-1">•</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-[#2d3748] mb-3 flex items-center gap-2">
-                          <Award className="h-5 w-5 text-[#2d5a27]" />
-                          Qualifications
-                        </h4>
-                        <ul className="space-y-2">
-                          {position.qualifications.map((item, i) => (
-                            <li key={i} className="text-sm text-[#4a5568] flex items-start gap-2">
-                              <span className="text-[#2d5a27] mt-1">•</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <ChevronDown
+                        className={`h-6 w-6 text-[#1f514c] flex-shrink-0 transition-transform duration-300 ${
+                          isExpanded ? 'rotate-180' : ''
+                        }`}
+                      />
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-3 lg:w-48">
-                    <Button
-                      onClick={() => openApplicationModal(position.title, position.department)}
-                      className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full"
-                    >
-                      Apply Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
+                  {isExpanded && (
+                    <div className="px-6 pb-6 border-t border-gray-100 pt-6 animate-in slide-in-from-top-2">
+                      <p className="text-[#4a5568] mb-6 leading-relaxed">
+                        {position.description}
+                      </p>
+
+                      <div className="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                          <h4 className="font-semibold text-[#2d3748] mb-3 flex items-center gap-2">
+                            <CheckCircle className="h-5 w-5 text-[#1f514c]" />
+                            Key Responsibilities
+                          </h4>
+                          <ul className="space-y-2">
+                            {position.responsibilities.map((item, i) => (
+                              <li key={i} className="text-sm text-[#4a5568] flex items-start gap-2">
+                                <span className="text-[#1f514c] mt-1">•</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-[#2d3748] mb-3 flex items-center gap-2">
+                            <Award className="h-5 w-5 text-[#2d5a27]" />
+                            Qualifications
+                          </h4>
+                          <ul className="space-y-2">
+                            {position.qualifications.map((item, i) => (
+                              <li key={i} className="text-sm text-[#4a5568] flex items-start gap-2">
+                                <span className="text-[#2d5a27] mt-1">•</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-3">
+                        <Button
+                          onClick={e => {
+                            e.stopPropagation();
+                            openApplicationModal(position.title, position.department);
+                          }}
+                          className="bg-[#1f514c] hover:bg-[#2a6b65] text-white"
+                        >
+                          Apply Now
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

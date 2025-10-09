@@ -878,6 +878,7 @@ export default function AdmissionsPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               size="lg"
+              onClick={() => setIsApplicationModalOpen(true)}
               className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
             >
               Apply Now

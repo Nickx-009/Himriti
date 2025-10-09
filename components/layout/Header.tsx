@@ -7,16 +7,23 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronRight, ArrowRight, Heart, BookOpen, Globe, Briefcase } from 'lucide-react';
 import ContactFormModal from '@/components/ContactFormModal';
+import ApplicationFormModal from '@/components/ApplicationFormModal';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = useCallback(() => setIsMenuOpen(prev => !prev), []);
   const closeMenu = useCallback(() => setIsMenuOpen(false), []);
   const openContactModal = useCallback(() => {
     setIsContactModalOpen(true);
+    closeMenu();
+  }, [closeMenu]);
+
+  const openApplicationModal = useCallback(() => {
+    setIsApplicationModalOpen(true);
     closeMenu();
   }, [closeMenu]);
 
@@ -172,12 +179,13 @@ export default function Header() {
             >
               Schedule Visit
             </Button>
-            <Link href="/admissions">
-              <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white">
-                Apply Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            <Button
+              onClick={openApplicationModal}
+              className="bg-[#1f514c] hover:bg-[#2a6b65] text-white"
+            >
+              Apply Now
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -255,11 +263,12 @@ export default function Header() {
               >
                 Schedule Visit
               </Button>
-              <Link href="/admissions">
-                <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full">
-                  Apply Now
-                </Button>
-              </Link>
+              <Button
+                onClick={openApplicationModal}
+                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full"
+              >
+                Apply Now
+              </Button>
             </div>
           </div>
         )}
@@ -269,6 +278,10 @@ export default function Header() {
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
         defaultInquiryType="visit"
+      />
+      <ApplicationFormModal
+        isOpen={isApplicationModalOpen}
+        onClose={() => setIsApplicationModalOpen(false)}
       />
     </header>
   );

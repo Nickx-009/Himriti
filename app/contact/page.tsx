@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import ContactFormModal from '@/components/ContactFormModal';
+import ApplicationFormModal from '@/components/ApplicationFormModal';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -39,6 +40,7 @@ type FormData = z.infer<typeof formSchema>;
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
   const [modalInquiryType, setModalInquiryType] = useState('');
 
   const openContactModal = (inquiryType?: string) => {
@@ -398,15 +400,14 @@ export default function ContactPage() {
             the Himalayas.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/admissions">
-              <Button
-                size="lg"
-                className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
-              >
-                Start Application
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              onClick={() => setIsApplicationModalOpen(true)}
+              className="bg-[#1f514c] hover:bg-[#2a6b65] text-white px-10 py-4 text-lg h-14 btn-interactive"
+            >
+              Start Application
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Button>
             <a href="tel:+919015417203">
               <Button
                 size="lg"
@@ -425,6 +426,10 @@ export default function ContactPage() {
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
         defaultInquiryType={modalInquiryType}
+      />
+      <ApplicationFormModal
+        isOpen={isApplicationModalOpen}
+        onClose={() => setIsApplicationModalOpen(false)}
       />
     </PageLayout>
   );

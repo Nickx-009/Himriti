@@ -29,9 +29,19 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import Link from 'next/link';
+import JobApplicationModal from '@/components/JobApplicationModal';
 
 export default function CareersPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<{ title: string; department: string } | null>(
+    null
+  );
+
+  const openApplicationModal = (jobTitle: string, department: string) => {
+    setSelectedJob({ title: jobTitle, department });
+    setIsApplicationModalOpen(true);
+  };
 
   useEffect(() => {
     const observerOptions = {
@@ -767,15 +777,12 @@ export default function CareersPage() {
                   </div>
 
                   <div className="flex flex-col gap-3 lg:w-48">
-                    <Button className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full">
+                    <Button
+                      onClick={() => openApplicationModal(position.title, position.department)}
+                      className="bg-[#1f514c] hover:bg-[#2a6b65] text-white w-full"
+                    >
                       Apply Now
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      className="border-[#1f514c] text-[#1f514c] hover:bg-[#1f514c] hover:text-white w-full"
-                    >
-                      Learn More
                     </Button>
                   </div>
                 </div>
@@ -888,6 +895,13 @@ export default function CareersPage() {
           </Card>
         </div>
       </section>
+
+      <JobApplicationModal
+        isOpen={isApplicationModalOpen}
+        onClose={() => setIsApplicationModalOpen(false)}
+        jobTitle={selectedJob?.title || ''}
+        department={selectedJob?.department || ''}
+      />
     </PageLayout>
   );
 }

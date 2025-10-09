@@ -30,15 +30,14 @@ export async function POST(request: NextRequest) {
     const { parentName, email, phoneNumber, gradeLevel, inquiryType, message } = body;
 
     // Validate required fields
-    if (!parentName || !email || !message) {
+    if (!parentName || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     // Send email using Resend
-    const { data, error } = await resend.emails.send({
+    const emailOptions: any = {
       from: 'Himriti Public School <onboarding@resend.dev>',
       to: ['hello@himriti.com'],
-      replyTo: email, // Allow direct reply to the parent
       subject: `New Contact Form Submission - ${inquiryType || 'General Inquiry'}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -82,7 +81,13 @@ export async function POST(request: NextRequest) {
         
         This message was sent from the Himriti Public School website contact form.
       `,
-    });
+    };
+
+    if (email) {
+      emailOptions.replyTo = email;
+    }
+
+    const { data, error } = await resend.emails.send(emailOptions);
 
     if (error) {
       console.error('Resend error:', error);

@@ -66,7 +66,7 @@ export default function HomePage() {
             src="/Mountain Hike Adventure.png"
             alt="Mountain landscape"
             fill
-            className="object-cover opacity-[0.08]"
+            className="object-cover opacity-[0.25]"
             priority
           />
         </div>

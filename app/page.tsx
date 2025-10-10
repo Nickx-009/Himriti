@@ -22,6 +22,7 @@ import {
   Mail,
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import ContactFormModal from '@/components/ContactFormModal';
 
 export default function HomePage() {
@@ -58,11 +59,20 @@ export default function HomePage() {
       {/* Hero Section */}
       <section
         id="home"
-        className="pt-20 pb-32 bg-gradient-to-b from-[#faf7f2] to-white overflow-hidden"
+        className="pt-20 pb-32 bg-gradient-to-b from-[#faf7f2] to-white overflow-hidden relative"
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/Mountain Hike Adventure.png"
+            alt="Mountain landscape"
+            fill
+            className="object-cover opacity-[0.08]"
+            priority
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <Badge className="bg-[#1f514c]/10 text-[#1f514c] border-[#1f514c]/20 mb-8 text-sm px-6 py-2 font-medium">
+            <Badge className="bg-[#1f514c]/10 text-[#1f514c] border-[#1f514c]/20 mb-8 text-sm px-6 py-2 font-medium backdrop-blur-sm">
               Opening April 2026
             </Badge>
             <h1 className="text-6xl lg:text-7xl font-bold text-[#2d3748] mb-8 leading-tight animate-fade-in-up">
